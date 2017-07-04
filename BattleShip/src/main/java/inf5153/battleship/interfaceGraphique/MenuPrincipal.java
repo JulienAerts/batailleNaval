@@ -78,7 +78,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJouerSeulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJouerSeulActionPerformed
-        // TODO add your handling code here:
+        FenetreChoisirDifficulte fenetreChoix = new FenetreChoisirDifficulte();
+        fenetreChoix.pack();
+        fenetreChoix.setLocationRelativeTo(null);
+        fenetreChoix.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnJouerSeulActionPerformed
 
     private void btnChargerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChargerPartieActionPerformed
