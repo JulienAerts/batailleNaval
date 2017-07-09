@@ -1,6 +1,6 @@
 package inf5153.battleship.domain;
 
-import controleur.*;
+import inf5153.battleship.controleur.*;
 
 public class Case {
 

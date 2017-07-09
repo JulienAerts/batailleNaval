@@ -1,4 +1,4 @@
-package controleur;
+package inf5153.battleship.controleur;
 
 public enum Reponse {
 	Touche,
