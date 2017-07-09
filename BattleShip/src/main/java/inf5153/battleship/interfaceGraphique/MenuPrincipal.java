@@ -31,10 +31,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnChargerPartie = new javax.swing.JButton();
         btnVoirRecord = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         btnJouerSeul.setText("Nouvelle partie");
@@ -44,7 +44,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnJouerSeul);
-        btnJouerSeul.setBounds(330, 430, 140, 32);
+        btnJouerSeul.setBounds(330, 430, 140, 23);
 
         btnChargerPartie.setText("Charger une partie");
         btnChargerPartie.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +53,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnChargerPartie);
-        btnChargerPartie.setBounds(330, 460, 140, 32);
+        btnChargerPartie.setBounds(330, 460, 140, 23);
 
         btnVoirRecord.setText("Meilleure score");
         btnVoirRecord.setActionCommand("Meilleure record");
@@ -63,16 +63,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVoirRecord);
-        btnVoirRecord.setBounds(330, 490, 140, 32);
+        btnVoirRecord.setBounds(330, 490, 140, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu_fond.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Menu_Principal.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 30, 800, 600);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Nuage_fond.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-270, 0, 1070, 610);
+        jLabel1.setBounds(0, -20, 800, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,6 +132,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnJouerSeul;
     private javax.swing.JButton btnVoirRecord;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

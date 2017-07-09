@@ -29,8 +29,12 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
 
         btnCommencerPartie = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
         btnCommencerPartie.setText("Lancer la partie");
         btnCommencerPartie.setActionCommand("");
@@ -39,34 +43,24 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
                 btnCommencerPartieActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCommencerPartie);
+        btnCommencerPartie.setBounds(320, 430, 140, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "facile", "difficile" }));
+        jComboBox1.setMaximumSize(new java.awt.Dimension(105, 23));
+        jComboBox1.setMinimumSize(new java.awt.Dimension(105, 23));
+        jComboBox1.setName(""); // NOI18N
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(350, 400, 80, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCommencerPartie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(135, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(btnCommencerPartie)
-                .addGap(42, 42, 42))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Fenetre_Choix.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -20, 810, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,5 +77,6 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCommencerPartie;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
