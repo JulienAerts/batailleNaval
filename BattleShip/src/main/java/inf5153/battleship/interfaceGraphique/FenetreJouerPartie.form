@@ -283,9 +283,9 @@
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jButtonF6" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="jButton82" min="-2" pref="25" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jButtonF7" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="jButtonF8" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jButtonF9" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -492,8 +492,8 @@
                           <Component id="jButtonF4" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonF5" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonF6" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jButton82" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonF7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButtonF8" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonF9" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonF10" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel21" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
@@ -843,12 +843,12 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton82">
+            <Component class="javax.swing.JButton" name="jButtonF7">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonF7">
+            <Component class="javax.swing.JButton" name="jButtonF8">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1295,11 +1295,11 @@
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jButton2B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="jButton443" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jButton3B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jButton4B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="jButton445" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jButton5B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jButton6B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -1309,7 +1309,7 @@
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jButton9B" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="jButton450" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jButton10B" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jButton1C" min="-2" pref="25" max="-2" attributes="0"/>
@@ -1333,7 +1333,7 @@
                                       <Component id="jButton10C" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jButton471" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jButton1D" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jButton2D" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -1532,14 +1532,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButton1B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton2B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jButton443" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButton3B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton4B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jButton445" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButton5B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton6B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton7B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton8B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton9B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jButton450" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButton10B" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel47" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1556,7 +1556,7 @@
                           <Component id="jLabel48" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton471" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButton1D" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton2D" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton3D" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButton4D" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
@@ -1717,7 +1717,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton443">
+            <Component class="javax.swing.JButton" name="jButton3B">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1727,7 +1727,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton445">
+            <Component class="javax.swing.JButton" name="jButton5B">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1752,7 +1752,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton450">
+            <Component class="javax.swing.JButton" name="jButton10B">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1807,7 +1807,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton471">
+            <Component class="javax.swing.JButton" name="jButton1D">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -2301,27 +2301,42 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="D&#xe9;marrer"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnFinPartie">
       <Properties>
         <Property name="text" type="java.lang.String" value="Quitter"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnSauvegarder">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sauvegarder"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnReinitialise">
       <Properties>
         <Property name="text" type="java.lang.String" value="R&#xe9;initialiser"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnChangerOrientation">
       <Properties>
         <Property name="text" type="java.lang.String" value="Orientation"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Container class="javax.swing.JPanel" name="pnlContourMesBateaux">
       <Properties>

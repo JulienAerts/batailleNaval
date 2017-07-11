@@ -87,8 +87,8 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         jButtonF4 = new javax.swing.JButton();
         jButtonF5 = new javax.swing.JButton();
         jButtonF6 = new javax.swing.JButton();
-        jButton82 = new javax.swing.JButton();
         jButtonF7 = new javax.swing.JButton();
+        jButtonF8 = new javax.swing.JButton();
         jButtonF9 = new javax.swing.JButton();
         jButtonF10 = new javax.swing.JButton();
         jButtonG1 = new javax.swing.JButton();
@@ -165,14 +165,14 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         jButton10A = new javax.swing.JButton();
         jButton1B = new javax.swing.JButton();
         jButton2B = new javax.swing.JButton();
-        jButton443 = new javax.swing.JButton();
+        jButton3B = new javax.swing.JButton();
         jButton4B = new javax.swing.JButton();
-        jButton445 = new javax.swing.JButton();
+        jButton5B = new javax.swing.JButton();
         jButton6B = new javax.swing.JButton();
         jButton7B = new javax.swing.JButton();
         jButton8B = new javax.swing.JButton();
         jButton9B = new javax.swing.JButton();
-        jButton450 = new javax.swing.JButton();
+        jButton10B = new javax.swing.JButton();
         jButton1C = new javax.swing.JButton();
         jButton2C = new javax.swing.JButton();
         jButton3C = new javax.swing.JButton();
@@ -183,7 +183,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         jButton8C = new javax.swing.JButton();
         jButton9C = new javax.swing.JButton();
         jButton10C = new javax.swing.JButton();
-        jButton471 = new javax.swing.JButton();
+        jButton1D = new javax.swing.JButton();
         jButton2D = new javax.swing.JButton();
         jButton3D = new javax.swing.JButton();
         jButton4D = new javax.swing.JButton();
@@ -506,9 +506,9 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(jButtonF6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jButton82, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
                         .addComponent(jButtonF7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jButtonF8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jButtonF9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -700,8 +700,8 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                     .addComponent(jButtonF4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonF5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonF6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton82, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonF7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonF8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonF9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonF10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -894,11 +894,11 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton2B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jButton443, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton4B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jButton445, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton5B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton6B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
@@ -908,7 +908,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton9B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jButton450, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton10B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlCarteAdversaireLayout.createSequentialGroup()
                                 .addComponent(jButton1C, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
@@ -930,7 +930,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton10C, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlCarteAdversaireLayout.createSequentialGroup()
-                                .addComponent(jButton471, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton1D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(jButton2D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
@@ -1114,14 +1114,14 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                 .addGroup(pnlCarteAdversaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton443, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton445, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton450, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10B, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlCarteAdversaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1C, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1136,7 +1136,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                     .addComponent(jButton10C, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlCarteAdversaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton471, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4D, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1408,12 +1408,13 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnChangerOrientation;
-    private javax.swing.JButton btnDemarrerPartie;
-    private javax.swing.JButton btnFinPartie;
-    private javax.swing.JButton btnReinitialise;
-    private javax.swing.JButton btnSauvegarder;
+    public javax.swing.JButton btnChangerOrientation;
+    public javax.swing.JButton btnDemarrerPartie;
+    public javax.swing.JButton btnFinPartie;
+    public javax.swing.JButton btnReinitialise;
+    public javax.swing.JButton btnSauvegarder;
     public javax.swing.JButton jButton10A;
+    public javax.swing.JButton jButton10B;
     public javax.swing.JButton jButton10C;
     public javax.swing.JButton jButton10D;
     public javax.swing.JButton jButton10E;
@@ -1425,6 +1426,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButton1A;
     public javax.swing.JButton jButton1B;
     public javax.swing.JButton jButton1C;
+    public javax.swing.JButton jButton1D;
     public javax.swing.JButton jButton1E;
     public javax.swing.JButton jButton1F;
     public javax.swing.JButton jButton1G;
@@ -1442,6 +1444,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButton2I;
     public javax.swing.JButton jButton2J;
     public javax.swing.JButton jButton3A;
+    public javax.swing.JButton jButton3B;
     public javax.swing.JButton jButton3C;
     public javax.swing.JButton jButton3D;
     public javax.swing.JButton jButton3E;
@@ -1450,10 +1453,6 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButton3H;
     public javax.swing.JButton jButton3I;
     public javax.swing.JButton jButton3J;
-    public javax.swing.JButton jButton443;
-    public javax.swing.JButton jButton445;
-    public javax.swing.JButton jButton450;
-    public javax.swing.JButton jButton471;
     public javax.swing.JButton jButton4A;
     public javax.swing.JButton jButton4B;
     public javax.swing.JButton jButton4C;
@@ -1465,6 +1464,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButton4I;
     public javax.swing.JButton jButton4J;
     public javax.swing.JButton jButton5A;
+    public javax.swing.JButton jButton5B;
     public javax.swing.JButton jButton5C;
     public javax.swing.JButton jButton5D;
     public javax.swing.JButton jButton5E;
@@ -1493,7 +1493,6 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButton7H;
     public javax.swing.JButton jButton7I;
     public javax.swing.JButton jButton7J;
-    public javax.swing.JButton jButton82;
     public javax.swing.JButton jButton8A;
     public javax.swing.JButton jButton8B;
     public javax.swing.JButton jButton8C;
@@ -1579,6 +1578,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public javax.swing.JButton jButtonF5;
     public javax.swing.JButton jButtonF6;
     public javax.swing.JButton jButtonF7;
+    public javax.swing.JButton jButtonF8;
     public javax.swing.JButton jButtonF9;
     public javax.swing.JButton jButtonG1;
     public javax.swing.JButton jButtonG10;
