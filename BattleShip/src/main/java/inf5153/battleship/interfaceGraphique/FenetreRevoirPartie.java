@@ -1,5 +1,6 @@
 package inf5153.battleship.interfaceGraphique;
 
+import javax.swing.JButton;
 import inf5153.battleship.controleur.RevoirPartieControleur;
 import inf5153.battleship.domain.Position;
 

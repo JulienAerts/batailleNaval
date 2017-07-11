@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package inf5153.battleship.interfaceGraphique;
 
-/**
- *
- * @author 0-pc
- */
 public class FenetreChoisirDifficulte extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FenetreChoisirDifficulte
-     */
+    
+    private String niveauDif;
+   
     public FenetreChoisirDifficulte() {
         initComponents();
     }
@@ -66,11 +57,19 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCommencerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommencerPartieActionPerformed
-        // TODO add your handling code here:
+
+        FenetreJouerPartie fenetrePartie;
+        fenetrePartie = new FenetreJouerPartie(niveauDif);
+        fenetrePartie.pack();
+        fenetrePartie.setLocationRelativeTo(null);
+        fenetrePartie.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCommencerPartieActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+
+        niveauDif = jComboBox1.getSelectedItem().toString();
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 

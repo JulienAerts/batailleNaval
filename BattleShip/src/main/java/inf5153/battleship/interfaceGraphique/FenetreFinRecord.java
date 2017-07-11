@@ -1,5 +1,5 @@
 package inf5153.battleship.interfaceGraphique;
-
+import javax.swing.JButton;
 public class FenetreFinRecord extends FenetreRecords {
 
 	private JButton btnRevoirPartie;

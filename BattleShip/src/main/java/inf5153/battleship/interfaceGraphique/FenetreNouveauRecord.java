@@ -1,5 +1,5 @@
 package inf5153.battleship.interfaceGraphique;
-
+import javax.swing.JButton;
 import javax.swing.JTextArea;
 
 public class FenetreNouveauRecord extends FenetreFinRecord {
