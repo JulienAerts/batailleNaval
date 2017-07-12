@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package inf5153.battleship.interfaceGraphique;
+import inf5153.battleship.controleur.MenuPrincipalControleur;
 
-/**
- *
- * @author 0-pc
- */
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    
+    MenuPrincipalControleur controleur = new MenuPrincipalControleur();
     /**
      * Creates new form MenuPrincipal
      */
@@ -30,7 +25,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnJouerSeul = new javax.swing.JButton();
         btnChargerPartie = new javax.swing.JButton();
         btnVoirRecord = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblImageFond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -65,10 +60,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(btnVoirRecord);
         btnVoirRecord.setBounds(330, 490, 140, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Menu_Principal.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -20, 800, 600);
+        lblImageFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Menu_Principal.png"))); // NOI18N
+        lblImageFond.setText("jLabel1");
+        getContentPane().add(lblImageFond);
+        lblImageFond.setBounds(0, -20, 800, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +126,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnChargerPartie;
     private javax.swing.JButton btnJouerSeul;
     private javax.swing.JButton btnVoirRecord;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblImageFond;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,8 +2,10 @@ package inf5153.battleship.controleur;
 
 import inf5153.battleship.interfaceGraphique.FenetreJouerPartie;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 
 public final class EffetControleur {
@@ -11,13 +13,17 @@ public final class EffetControleur {
     public JButton mapBoutonsJoueur[];
     public JButton mapBoutonsAdv[];
     public JButton listeBateaux[];
+    JButton boutonsSelectionner[];
+    JButton boutonsEnMemoire[]=new JButton[30];
     private FenetreJouerPartie partie;
-    
+    boolean CLICK=false;
+    boolean possedeBateau=false;
+    boolean etatBateauxEstPlacer[] = new boolean[5];
     private int i=0,j=0;
-
+    int datocolor[][]=new int [8][4];
     
     String temp[];
-    int datacolor[][];
+
     
     
     Color couleurs[]={Color.RED,Color.BLUE,Color.GREEN,Color.YELLOW,Color.WHITE};
@@ -32,11 +38,124 @@ public final class EffetControleur {
         
         pred=mapBoutonsJoueur[0].getBackground();
         desactiverBoutonsOption(false);
+        initialiserListenerMouse();
 
     }
     
+    private void initialiserListenerMouse(){
+        for (int i=0;i<100;i++){
+            mapBoutonsJoueur[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt){
+                    mapBoutonsJoueurMouseEntered(evt);                   
+                }
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt){
+                    mapBoutonsJoueurMouseExited(evt);
+                };
+            });
+            mapBoutonsJoueur[i].addActionListener((ActionEvent evt) -> {
+                mapBoutonsJoueurActionPerformed(evt);
+            });
+        }
+    }
+    private void mapBoutonsJoueurMouseEntered(java.awt.event.MouseEvent evt) {
+        try{
+            int x=partie.pnlCarteJoueur.getMousePosition().getLocation().x;
+            int y=partie.pnlCarteJoueur.getMousePosition().getLocation().y;
+            if (!possedeBateau){
+                if(!etatBateauxEstPlacer[0]){
+                    dessinerGrille("porte-avion", x, y);
+                }else if(!etatBateauxEstPlacer[1]){
+                    dessinerGrille("croiseur", x, y);
+                }else if(!etatBateauxEstPlacer[2]){
+                    dessinerGrille("contre-torpilleurs", x, y);
+                }else if(!etatBateauxEstPlacer[3]){
+                    dessinerGrille("sous-marin", x, y);
+                }else if(!etatBateauxEstPlacer[4]){
+                    dessinerGrille("torpilleur", x, y);
+                }
+            }
+        }catch(NullPointerException e){}
+    }
+    private void mapBoutonsJoueurActionPerformed(java.awt.event.ActionEvent evt){
+        if (!possedeBateau){
+            if(pasDeRepetition(boutonsSelectionner)){
+                CLICK=true;
+                if(!etatBateauxEstPlacer[0]){
+                    enregistrerBoutonMem("porte-avion");
+                    etatBateauxEstPlacer[0]=true;
+                }else if(!etatBateauxEstPlacer[1]){
+                    enregistrerBoutonMem("croiseur");
+                    etatBateauxEstPlacer[1]=true;
+                }else if(!etatBateauxEstPlacer[2]){
+                    enregistrerBoutonMem("contre-torpilleurs");
+                    etatBateauxEstPlacer[2]=true;
+                }else if(!etatBateauxEstPlacer[3]){
+                    enregistrerBoutonMem("sous-marin");
+                    etatBateauxEstPlacer[3]=true;
+                }else if(!etatBateauxEstPlacer[4]){
+                    enregistrerBoutonMem("torpilleur");
+                    etatBateauxEstPlacer[4]=true;
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Pas plus qu<un bateau sur les meme cases","Message Avertissement",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
     
+    private JButton [] getboutonsSelectionner(){
+        return boutonsSelectionner;
+    }
     
+    private void setboutonsSelectionner(JButton boutons[]){
+        boutonsSelectionner=boutons;
+        for(int i=0;i<boutons.length;i++){
+            boutons[i].setBackground(getColor());
+        }
+    }
+    
+    private Color getColor(){
+        Color c=(Color.GREEN);
+        return c;
+    }
+    
+     private void verificationRepetition (JButton bouton){
+        for(int i=0;i<30;i++){
+            if(boutonsEnMemoire[i]==bouton){
+                bouton.setBackground(getColor());
+                break;
+            }else{
+                bouton.setBackground(pred);
+            }
+        }
+    }
+    
+    private boolean pasDeRepetition(JButton bouton[]){
+        boolean OK=true;
+        for(int i=0;i<bouton.length;i++){
+            for(int j=0;j<30;j++){
+                if(bouton[i]==boutonsEnMemoire[j]){
+                    OK=false;
+                    break;
+                }
+            }
+        }
+        return OK;
+    }
+    
+    private void mapBoutonsJoueurMouseExited(java.awt.event.MouseEvent evt) {
+        if(!possedeBateau){
+            JButton cap[]=getboutonsSelectionner();
+            if(!CLICK){
+                for(int i=0;i<cap.length;i++){
+                verificationRepetition(cap[i]);
+                }
+            }else{
+                CLICK=false;
+            }
+        }
+    }
     private void desactiverBoutonsOption(boolean action){
         this.partie.btnSauvegarder.setEnabled(action);
         this.partie.btnDemarrerPartie.setEnabled(action);
@@ -57,7 +176,115 @@ public final class EffetControleur {
         }
     }
     
+    private void dessinerGrille(String Tipo, int x, int y){    //     ←        ↑       →      ↓
+        for(int i=0;i<10;i++){
+            switch (Tipo){
+                case "porte-avion":
+                    System.out.println(x+" "+y);
+                    if(x>=149 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        JButton cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                        setboutonsSelectionner(cap);
+                    }else if(x>=10 && y>=22 && x<149 && y<=398){
+                        System.out.println(x+" entre "+y);
+                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
+                        setboutonsSelectionner(cap);
+                    }
+                    break;
+                case "croiseur":
+                    if(x>=285 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
+                        JButton cap[]={mapBoutonsJoueur[(i*10)+11],mapBoutonsJoueur[(i*10)+12],mapBoutonsJoueur[(i*15)+13],mapBoutonsJoueur[(i*10)+14]};
+                        setboutonsSelectionner(cap);
+                    }else if(x>=10 && y>=24 && x<285 && y<=398){
+                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
+                        setboutonsSelectionner(cap);
+                    }
+                    break;
+                case "contre-torpilleurs":
+                    if(x>=310 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
+                        JButton cap[]={mapBoutonsJoueur[(i*10)+12],mapBoutonsJoueur[(i*10)+13],mapBoutonsJoueur[(i*10)+14]};
+                        setboutonsSelectionner(cap);
+                    }else if(x>=10 && y>=24 && x<310 && y<=398){
+                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
+                        setboutonsSelectionner(cap);
+                    }
+                    break;
+                case "sous-marin":
+                    if(x>=335 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
+                        JButton cap[]={mapBoutonsJoueur[(i*10)+13], mapBoutonsJoueur[(i*10)+14]};
+                        setboutonsSelectionner(cap);
+                    }else if(x>=10 && y>=24 && x<335 && y<=398){
+                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
+                        setboutonsSelectionner(cap);
+                    }
+                    break;
+                case "torpilleur":
+                    if(x>=(i*25)+10 && y>=274 && x<(i*25)+35 && y<=398){
+                        JButton cap[]={mapBoutonsJoueur[i+150],mapBoutonsJoueur[i+165],mapBoutonsJoueur[i+180],mapBoutonsJoueur[i+195],mapBoutonsJoueur[i+210]};
+                        setboutonsSelectionner(cap);
+                    }else if(x>=10 && y>=24 && x<=384 && y<274){
+                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+15],mapBoutonsJoueur[identifierLesBoutons(x, y)+30],mapBoutonsJoueur[identifierLesBoutons(x, y)+45],mapBoutonsJoueur[identifierLesBoutons(x, y)+60]};
+                        setboutonsSelectionner(cap);
+                    }
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Placer le bateau sur votre carte!","Message avertissement",JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+        }
+    }
     
+    private int identifierLesBoutons(int x, int y){
+        int numero=0;
+        for(int i=0;i<10;i++){
+            
+            if(x>=10 && y>=(i*25)+23 && x<49 && y<(i*25)+48){
+                numero=(i*10);
+            }else if (x>=49 && y>=(i*25)+23 && x<74 && y<(i*25)+48){
+                numero=(i*10)+1;
+            }else if (x>=74 && y>=(i*25)+23 && x<99 && y<(i*25)+48){
+                numero=(i*10)+2;
+            }else if (x>=99 && y>=(i*25)+23 && x<124 && y<(i*25)+48){
+                numero=(i*10)+3;
+            }else if (x>=124 && y>=(i*25)+23 && x<149 && y<(i*25)+48){
+                numero=(i*10)+4;
+            }else if (x>=149 && y>=(i*25)+23 && x<174 && y<(i*25)+48){
+                numero=(i*10)+5;
+            }else if (x>=174 && y>=(i*25)+23 && x<199 && y<(i*25)+48){
+                numero=(i*10)+6;
+            }else if (x>=199 && y>=(i*25)+23 && x<224 && y<(i*25)+48){
+                numero=(i*10)+7;
+            }else if (x>=224 && y>=(i*25)+23 && x<249 && y<(i*25)+48){
+                numero=(i*10)+8;
+            }else if (x>=249 && y>=(i*25)+22 && x<260 && y<(i*25)+48){
+                numero=(i*10)+9;
+            }
+        }
+        System.out.println("Num "+numero);
+        return numero;
+    }
+    
+    private void enregistrerBoutonMem(String cmd){
+        switch (cmd){
+            case "porte-avion":
+                System.arraycopy(boutonsSelectionner, 0, boutonsEnMemoire, 0, 5);  
+                break;
+            case "croiseur":
+                System.arraycopy(boutonsSelectionner, 0, boutonsEnMemoire, 5, 4);  
+                break;
+            case "contre-torpilleurs":
+                System.arraycopy(boutonsSelectionner, 0, boutonsEnMemoire, 9, 3); 
+                break;
+            case "sous-marin":
+                System.arraycopy(boutonsSelectionner, 0, boutonsEnMemoire, 12, 3); 
+                break;
+            case "torpilleur":
+                System.arraycopy(boutonsSelectionner, 0, boutonsEnMemoire, 15, 2);
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Erreur de sauvegarde des positions des bateaux","Message avertissement",JOptionPane.ERROR_MESSAGE);
+                break;
+        }
+    }
     private void init_listeBateaux(){
         listeBateaux = new JButton[17];
         

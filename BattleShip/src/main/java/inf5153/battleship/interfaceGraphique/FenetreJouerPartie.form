@@ -53,7 +53,7 @@
                       <Component id="pnlContourAdversaire" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace pref="59" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -421,7 +421,6 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonA1" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonA2" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonA3" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonA4" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
@@ -432,7 +431,9 @@
                           <Component id="jButtonA9" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonA10" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel16" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButtonA1" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButtonB1" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jButtonB2" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
@@ -557,19 +558,14 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JButton" name="jButtonA1">
-              <Properties>
-                <Property name="mnemonic" type="int" value="98"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="actionCommand" type="java.lang.String" value="boton1"/>
-                <Property name="name" type="java.lang.String" value="boton1" noResource="true"/>
-              </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="FenetreJouerPartie_jButtonA1"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonA2">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Juego_jButton2"/>
+                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="FenetreJouerPartie_jButtonA2"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>

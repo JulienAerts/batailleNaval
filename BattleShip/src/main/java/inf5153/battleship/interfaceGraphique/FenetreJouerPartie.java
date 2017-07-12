@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package inf5153.battleship.interfaceGraphique;
-
+import inf5153.battleship.controleur.EffetControleur;
 /**
  *
  * @author 0-pc
  */
 public class FenetreJouerPartie extends javax.swing.JFrame {
     private final String niveauDif;
+    private EffetControleur controleur ;
     /**
      * Creates new form FenetreJouerPartie
      * @param nivDif
@@ -18,6 +19,8 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     public FenetreJouerPartie(String nivDif) {
         niveauDif = nivDif;
         initComponents();
+        controleur = new EffetControleur(this);
+
     }
 
     /**
@@ -308,11 +311,6 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         pnlContourCarteJoueur.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true), "Base Joueur", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 15))); // NOI18N
 
         pnlCarteJoueur.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        jButtonA1.setMnemonic('b');
-        jButtonA1.setToolTipText("");
-        jButtonA1.setActionCommand("boton1");
-        jButtonA1.setName("boton1"); // NOI18N
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("1");
@@ -634,7 +632,6 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addGap(0, 0, 0)
                 .addGroup(pnlCarteJoueurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonA1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonA2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonA3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonA4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -644,7 +641,9 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                     .addComponent(jButtonA8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonA9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonA10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonA1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
                 .addGroup(pnlCarteJoueurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonB1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonB2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1374,7 +1373,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
                         .addComponent(pnlContourCarteJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(pnlContourAdversaire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
