@@ -5,7 +5,6 @@
  */
 package inf5153.battleship.interfaceGraphique;
 
-import inf5153.battleship.controleur.EffetControleur;
 import inf5153.battleship.controleur.PartieControleur;
 
 /**
@@ -14,14 +13,14 @@ import inf5153.battleship.controleur.PartieControleur;
  */
 public class FenetreJouerPartie extends FenetrePartie{
     private final String niveauDif;
-    private EffetControleur controleur ;
+    private EffetPlacementBateaux placementBateaux ;
     private PartieControleur controleur2;
     
     public FenetreJouerPartie(String nivDif) {
         niveauDif = nivDif;
         super.initComponents();
         initListener();
-        controleur = new EffetControleur(this);
+        placementBateaux = new EffetPlacementBateaux(this);
         controleur2 = new PartieControleur();
     }
     
@@ -41,7 +40,7 @@ public class FenetreJouerPartie extends FenetrePartie{
     }
     
     private void btnChangerOrientationActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        controleur.orientation = !controleur.orientation;
+        placementBateaux.orientation = !placementBateaux.orientation;
     }                                                     
 
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {                                               
