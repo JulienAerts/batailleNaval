@@ -1253,6 +1253,11 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
 
         btnChangerOrientation.setText("Orientation");
         btnChangerOrientation.setToolTipText("");
+        btnChangerOrientation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangerOrientationActionPerformed(evt);
+            }
+        });
 
         pnlContourMesBateaux.setBackground(new java.awt.Color(255, 255, 255));
         pnlContourMesBateaux.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Mes Navires", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
@@ -1404,6 +1409,10 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnChangerOrientationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangerOrientationActionPerformed
+        controleur.orientation = !controleur.orientation;
+    }//GEN-LAST:event_btnChangerOrientationActionPerformed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
