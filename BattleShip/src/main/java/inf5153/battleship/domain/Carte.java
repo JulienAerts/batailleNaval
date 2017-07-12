@@ -1,25 +1,83 @@
 package inf5153.battleship.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Carte {
         public final int HAUTEUR = 10;
         public final int LARGEUR = 10;
         
 	private Case[][] cases;
-	private ArrayList<Case> bateaux;
+	private ArrayList<Bateau> bateaux;
+
+        public ArrayList<Bateau> getBateaux() {
+            return bateaux;
+        }
 
         public Carte() {
             cases = new Case[HAUTEUR][LARGEUR];
+            
+            for(int x = 0; x < LARGEUR; x++) {
+                for(int y = 0; y < HAUTEUR; y++)
+                    cases[x][y] = new Case(new Position(x, y));
+            }
+            bateaux = new ArrayList<Bateau>();
         }
         
 	/**
 	 * 
 	 * @param bateau
 	 */
-	public void placerBateau(Bateau bateau) {
-		// TODO - implement Carte.placerBateau
-		throw new UnsupportedOperationException();
+	public void placerBateau(Bateau bateau, ArrayList<Position> positions) throws Exception {
+            
+            for(Position position : positions) {
+                bateau.addCase(getCase(position));
+                getCase(position).setBateau(bateau);
+            }
+            bateaux.add(bateau);
+	}
+        
+        public boolean positionsDisponibles(List<Position> positions) {
+            for(Position position : positions) {
+                if(getCase(position).bateauExiste())
+                    return false;
+            }
+            return true;
+        }
+        
+	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position position, int longueur) {
+            
+            ArrayList<Position> positions = new ArrayList();
+            int positionInitiale;
+            if(orientation == Orientation.Horizontal) {
+                positionInitiale = position.getCoordonneXToInt();
+                
+                if(positionInitiale + longueur < LARGEUR) {
+                    for(int i = positionInitiale; i < LARGEUR && positions.size() < longueur; i++) {
+                        positions.add(new Position(i, positionInitiale));
+                    }
+                }
+                else {
+                    for(int i = positionInitiale; i > 0 && positions.size() < longueur; i--) {
+                        positions.add(new Position(i, positionInitiale));
+                    }
+                }
+            }
+            else {
+                positionInitiale = position.getCoordonneY();
+                
+                if(positionInitiale + longueur <= HAUTEUR) {
+                    for(int i = positionInitiale; i < HAUTEUR && positions.size() < longueur; i++) {
+                        positions.add(new Position(positionInitiale, i));
+                    }
+                }
+                else {
+                    for(int i = positionInitiale; i > 0 && positions.size() < longueur; i--) {
+                        positions.add(new Position(positionInitiale, i));
+                    }
+                }
+            }
+            return positions;
 	}
 
 	/**
@@ -27,17 +85,8 @@ public class Carte {
 	 * @param position
 	 */
 	public Case getCase(Position position) {
-		// TODO - implement Carte.getCase
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param bateaux
-	 */
-	public void placerBateaux(ArrayList<Bateau> bateaux) {
-		// TODO - implement Carte.placerBateaux
-		throw new UnsupportedOperationException();
+            Case casea = cases[position.getCoordonneXToInt()][position.getCoordonneY()];
+            return casea;
 	}
 
 }

@@ -16,6 +16,9 @@ public class Position {
             coordonneY = pCoordonneY;
         }
         
+	public int getCoordonneXToInt() {
+            return (int)this.coordonneX - 'a';
+	}
 	public char getCoordonneX() {
 		return this.coordonneX;
 	}

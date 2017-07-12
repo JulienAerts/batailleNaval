@@ -25,13 +25,21 @@ public class PartieControleur {
 	}
 
 	public void commencerPartie() {
-		// TODO - implement PartieControleur.commencerPartie
+            // TODO: Validations du joueur1 ??
+            try
+            {
                 partie = new Partie();
-                List<Bateau> bateaux = partie.getJoueur2().choisirPositionsBateaux();
-                
-		throw new UnsupportedOperationException();
+                partie.getJoueur2().placerBateauxAleatoire();
+            }
+            catch(Exception ex)
+            {
+                // Écrire dans le log de l'écran
+            }
 	}
 
+        public ArrayList<Bateau> getBateauxIA() {
+            return partie.getJoueur2().getCarte().getBateaux();
+        }
 	/**
 	 * 
 	 * @param position

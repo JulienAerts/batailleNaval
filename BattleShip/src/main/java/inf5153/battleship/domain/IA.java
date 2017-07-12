@@ -1,9 +1,6 @@
 package inf5153.battleship.domain;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class IA extends Joueur {
@@ -32,62 +29,42 @@ public class IA extends Joueur {
 		throw new UnsupportedOperationException();
 	}
 
-	private Position positionAleatoire() {
-		// TODO - implement IA.positionAleatoire
-		throw new UnsupportedOperationException();
-	}
+	public void placerBateauxAleatoire() throws Exception {
+            
+            ArrayList<Bateau> bateaux = BateauFactory.genererTousLesBateaux();
+            
+            for(Bateau bateau : bateaux){
+                
+                ArrayList<Position> positions = genererPositionsAleatoiresValides(bateau.longueur);
 
-	public List<Bateau> choisirPositionsBateaux() {
-            List<Bateau> bateaux = new ArrayList();
-            
-            Bateau bateau = new PorteAvion();
-            
-            Random aleatoire = new Random();
-            
-            int positionInitiale = 7; // aleatoire.nextInteger(10);
-            boolean estHorizontal = true;//aleatoire.nextBoolean();
-            
-            ArrayList<Integer> positions = new ArrayList();
-            
-            
-            ArrayList<Position> positionsTemp = new ArrayList();
-            if(estHorizontal) {
-                if(positionInitiale + bateau.longueur < carte.LARGEUR) {
-                    for(int i = positionInitiale; i < carte.LARGEUR && positionsTemp.size() < bateau.longueur; i++) {
-                        positionsTemp.add(new Position(i, positionInitiale));
-                    }
-                }
-                else {
-                    for(int i = positionInitiale; i > 0 && positionsTemp.size() < bateau.longueur; i--) {
-                        positionsTemp.add(new Position(i, positionInitiale));
-                    }
-                }
+                carte.placerBateau(bateau, positions);
+
             }
-            else {
-                if(positionInitiale + bateau.longueur <= carte.HAUTEUR) {
-                    for(int i = positionInitiale; i < carte.HAUTEUR && positionsTemp.size() < bateau.longueur; i++) {
-                        positionsTemp.add(new Position(positionInitiale, i));
-                    }
-                }
-                else {
-                    for(int i = positionInitiale; i > 0 && positionsTemp.size() < bateau.longueur; i--) {
-                        positionsTemp.add(new Position(positionInitiale, i));
-                    }
-                }
-            }
-            
-//            for(Position position : positionsTemp) {
-//                if(positions.contains(position))
-//                    return true;
-//            }
-//            return false;
-            
-            carte.placerBateau(bateau);
-            
-            bateaux.add(bateau);
-            
-            
-            return new ArrayList<Bateau>();
 	}
+        
+        private ArrayList<Position> genererPositionsAleatoiresValides(int longueur) {
+            ArrayList<Position> positions;
+            do
+            {
+                positions = carte.trouverPositionsAdjacentes(orientationAleatoire(), positionAleatoire(), longueur);
+
+            } while(!carte.positionsDisponibles(positions));
+            return positions;
+        }
+
+        private Orientation orientationAleatoire() {
+            Random aleatoire = new Random();
+            if(aleatoire.nextBoolean())
+                return Orientation.Horizontal;
+            else
+                return Orientation.Vertical;
+        }
+        
+        private Position positionAleatoire() {
+            Random aleatoire = new Random();
+            Position position;
+            position = new Position(aleatoire.nextInt(carte.LARGEUR), aleatoire.nextInt(carte.HAUTEUR));
+            return position;
+        }
 
 }
