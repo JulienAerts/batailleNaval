@@ -21,7 +21,7 @@ public final class EffetControleur {
     boolean etatBateauxEstPlacer[] = new boolean[5];
     private int i=0,j=0;
     int datocolor[][]=new int [8][4];
-    
+    public boolean orientation = false;
     String temp[];
 
     
@@ -160,7 +160,7 @@ public final class EffetControleur {
         this.partie.btnSauvegarder.setEnabled(action);
         this.partie.btnDemarrerPartie.setEnabled(action);
         this.partie.btnReinitialise.setEnabled(action);
-        this.partie.btnChangerOrientation.setEnabled(action);
+
         this.partie.btnFinPartie.setEnabled(action);
     }
     
@@ -176,54 +176,104 @@ public final class EffetControleur {
         }
     }
     
-    private void dessinerGrille(String Tipo, int x, int y){    //     ←        ↑       →      ↓
+    private void dessinerGrille(String typeBateau, int x, int y){
         for(int i=0;i<10;i++){
-            switch (Tipo){
+            switch (typeBateau){
                 case "porte-avion":
-                    System.out.println(x+" "+y);
-                    if(x>=149 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                        JButton cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
-                        setboutonsSelectionner(cap);
-                    }else if(x>=10 && y>=22 && x<149 && y<=398){
-                        System.out.println(x+" entre "+y);
-                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
-                        setboutonsSelectionner(cap);
+                    if (orientation){
+                        if(x>=10 && y>=148 && x<=384 && y<398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 148)],mapBoutonsJoueur[identifierLesBoutons(x, 148)+10],mapBoutonsJoueur[identifierLesBoutons(x, 148)+20],mapBoutonsJoueur[identifierLesBoutons(x, 148)+30],mapBoutonsJoueur[identifierLesBoutons(x, 148)+40]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<384 && y<148){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20],mapBoutonsJoueur[identifierLesBoutons(x, y)+30],mapBoutonsJoueur[identifierLesBoutons(x, y)+40]};
+                            setboutonsSelectionner(cap);
+                        }
+                    }else {
+                        if(x>=149 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                            JButton cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<149 && y<=398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
+                            setboutonsSelectionner(cap);
+                        }
                     }
                     break;
                 case "croiseur":
-                    if(x>=285 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
-                        JButton cap[]={mapBoutonsJoueur[(i*10)+11],mapBoutonsJoueur[(i*10)+12],mapBoutonsJoueur[(i*15)+13],mapBoutonsJoueur[(i*10)+14]};
-                        setboutonsSelectionner(cap);
-                    }else if(x>=10 && y>=24 && x<285 && y<=398){
-                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
-                        setboutonsSelectionner(cap);
+                    if (orientation){
+                        if(x>=10 && y>=179 && x<=384 && y<398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 179)],mapBoutonsJoueur[identifierLesBoutons(x, 179)+10],mapBoutonsJoueur[identifierLesBoutons(x, 179)+20],mapBoutonsJoueur[identifierLesBoutons(x, 179)+30]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<384 && y<179){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10], mapBoutonsJoueur[identifierLesBoutons(x, y)+20], mapBoutonsJoueur[identifierLesBoutons(x, y)+30]};
+                            setboutonsSelectionner(cap);
+                        }
+                    }else {
+                        
+                        if(x>=174 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                            JButton cap[]={mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<174 && y<=398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
+                            setboutonsSelectionner(cap);
+                        }
                     }
                     break;
                 case "contre-torpilleurs":
-                    if(x>=310 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
-                        JButton cap[]={mapBoutonsJoueur[(i*10)+12],mapBoutonsJoueur[(i*10)+13],mapBoutonsJoueur[(i*10)+14]};
-                        setboutonsSelectionner(cap);
-                    }else if(x>=10 && y>=24 && x<310 && y<=398){
-                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
-                        setboutonsSelectionner(cap);
+                    if (orientation){
+                        if(x>=10 && y>=198 && x<=384 && y<398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<384 && y<198){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
+                            setboutonsSelectionner(cap);
+                        }
+                    }else{
+                        if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                            JButton cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<223 && y<=398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
+                            setboutonsSelectionner(cap);
+                        }
                     }
                     break;
                 case "sous-marin":
-                    if(x>=335 && y>=((i*25)+24) && x<=384 && y<((i*25)+49)){
-                        JButton cap[]={mapBoutonsJoueur[(i*10)+13], mapBoutonsJoueur[(i*10)+14]};
-                        setboutonsSelectionner(cap);
-                    }else if(x>=10 && y>=24 && x<335 && y<=398){
-                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
-                        setboutonsSelectionner(cap);
+                     if (orientation){
+                        if(x>=10 && y>=198 && x<=384 && y<398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<384 && y<198){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
+                            setboutonsSelectionner(cap);
+                        }
+                    }else{
+                        if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                            JButton cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<223 && y<=398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
+                            setboutonsSelectionner(cap);
+                        }
                     }
                     break;
                 case "torpilleur":
-                    if(x>=(i*25)+10 && y>=274 && x<(i*25)+35 && y<=398){
-                        JButton cap[]={mapBoutonsJoueur[i+150],mapBoutonsJoueur[i+165],mapBoutonsJoueur[i+180],mapBoutonsJoueur[i+195],mapBoutonsJoueur[i+210]};
-                        setboutonsSelectionner(cap);
-                    }else if(x>=10 && y>=24 && x<=384 && y<274){
-                        JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+15],mapBoutonsJoueur[identifierLesBoutons(x, y)+30],mapBoutonsJoueur[identifierLesBoutons(x, y)+45],mapBoutonsJoueur[identifierLesBoutons(x, y)+60]};
-                        setboutonsSelectionner(cap);
+                                                                                    System.out.println(x+" "+y);
+                    if (orientation){
+                        if(x>=10 && y>=224 && x<=384 && y<398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 224)],mapBoutonsJoueur[identifierLesBoutons(x, 224)+10]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<384 && y<224){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+10]};
+                            setboutonsSelectionner(cap);
+                        }
+                    }else{
+                        if(x>=248 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                            JButton cap[]={mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            setboutonsSelectionner(cap);
+                        }else if(x>=10 && y>=22 && x<248 && y<=398){
+                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
+                            setboutonsSelectionner(cap);
+                        } 
                     }
                     break;
                 default:
@@ -255,7 +305,7 @@ public final class EffetControleur {
                 numero=(i*10)+7;
             }else if (x>=224 && y>=(i*25)+23 && x<249 && y<(i*25)+48){
                 numero=(i*10)+8;
-            }else if (x>=249 && y>=(i*25)+22 && x<260 && y<(i*25)+48){
+            }else if (x>=249 && y>=(i*25)+23 && x<275 && y<(i*25)+48){
                 numero=(i*10)+9;
             }
         }
