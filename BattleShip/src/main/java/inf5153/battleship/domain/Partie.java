@@ -7,9 +7,14 @@ public class Partie {
 	private Date debut;
 	private Date fin;
 	private Humain joueur1;
-	private Joueur joueur2;
-	private boolean enLigne;
+	private IA joueur2;
 
+        public Partie() {
+            debut = new Date();
+            joueur1 = new Humain();
+            joueur2 = new IA();
+        }
+        
 	public void sauvegarde() {
 		// TODO - implement Partie.sauvegarde
 		throw new UnsupportedOperationException();
@@ -27,7 +32,7 @@ public class Partie {
 		this.joueur1 = joueur1;
 	}
 
-	public Joueur getJoueur2() {
+	public IA getJoueur2() {
 		return this.joueur2;
 	}
 
@@ -35,7 +40,7 @@ public class Partie {
 	 * 
 	 * @param joueur2
 	 */
-	public void setJoueur2(Joueur joueur2) {
+	public void setJoueur2(IA joueur2) {
 		this.joueur2 = joueur2;
 	}
 

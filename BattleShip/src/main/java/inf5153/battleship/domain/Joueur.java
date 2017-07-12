@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 public abstract class Joueur {
 
-	private Carte carte;
+	protected Carte carte;
 	private ArrayList<Coup> coups;
 
+        public Joueur() {
+            carte = new Carte();
+            coups = new ArrayList<Coup>();
+        }
+        
 	public ArrayList<Coup> getCoups() {
 		return this.coups;
 	}

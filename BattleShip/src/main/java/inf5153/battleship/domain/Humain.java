@@ -4,6 +4,10 @@ public class Humain extends Joueur {
 
 	private String identifiant;
 
+        public Humain() {
+            
+        }
+        
 	public String getIdentifiant() {
 		return this.identifiant;
 	}

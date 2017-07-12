@@ -5,6 +5,17 @@ public class Position {
 	private char coordonneX;
 	private Integer coordonneY;
 
+        public Position(char pCoordonneX, int pCoordonneY) {
+            coordonneX = pCoordonneX;
+            coordonneY = pCoordonneY;
+        }
+        
+        public Position(int pCoordonneX, int pCoordonneY) {
+            
+            coordonneX = (char)(int)(pCoordonneX + 'a');
+            coordonneY = pCoordonneY;
+        }
+        
 	public char getCoordonneX() {
 		return this.coordonneX;
 	}

@@ -2,6 +2,7 @@ package inf5153.battleship.controleur;
 
 import inf5153.battleship.domain.*;
 import java.util.ArrayList;
+import java.util.List;
 public class PartieControleur {
 
 	private Partie partie;
@@ -25,6 +26,9 @@ public class PartieControleur {
 
 	public void commencerPartie() {
 		// TODO - implement PartieControleur.commencerPartie
+                partie = new Partie();
+                List<Bateau> bateaux = partie.getJoueur2().choisirPositionsBateaux();
+                
 		throw new UnsupportedOperationException();
 	}
 

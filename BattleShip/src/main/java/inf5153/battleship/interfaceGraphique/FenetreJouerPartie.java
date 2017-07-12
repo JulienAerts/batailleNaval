@@ -5,6 +5,7 @@
  */
 package inf5153.battleship.interfaceGraphique;
 import inf5153.battleship.controleur.EffetControleur;
+import inf5153.battleship.controleur.PartieControleur;
 /**
  *
  * @author 0-pc
@@ -12,6 +13,8 @@ import inf5153.battleship.controleur.EffetControleur;
 public class FenetreJouerPartie extends javax.swing.JFrame {
     private final String niveauDif;
     private EffetControleur controleur ;
+    private PartieControleur controleur2;
+    
     /**
      * Creates new form FenetreJouerPartie
      * @param nivDif
@@ -20,7 +23,7 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         niveauDif = nivDif;
         initComponents();
         controleur = new EffetControleur(this);
-
+        controleur2 = new PartieControleur();
     }
 
     /**
@@ -1244,6 +1247,11 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         btnDemarrerPartie.setText("Démarrer");
+        btnDemarrerPartie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDemarrerPartieMouseClicked(evt);
+            }
+        });
 
         btnFinPartie.setText("Quitter");
 
@@ -1413,6 +1421,10 @@ public class FenetreJouerPartie extends javax.swing.JFrame {
     private void btnChangerOrientationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangerOrientationActionPerformed
         controleur.orientation = !controleur.orientation;
     }//GEN-LAST:event_btnChangerOrientationActionPerformed
+
+    private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDemarrerPartieMouseClicked
+        controleur2.commencerPartie();
+    }//GEN-LAST:event_btnDemarrerPartieMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

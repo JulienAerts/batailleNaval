@@ -10,5 +10,7 @@ package inf5153.battleship.domain;
  * @author 0-pc
  */
 public class Bateau {
+    protected int longueur;
+    
     
 }

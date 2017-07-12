@@ -3,10 +3,16 @@ package inf5153.battleship.domain;
 import java.util.ArrayList;
 
 public class Carte {
-
-	private ArrayList<Case> cases;
+        public final int HAUTEUR = 10;
+        public final int LARGEUR = 10;
+        
+	private Case[][] cases;
 	private ArrayList<Case> bateaux;
 
+        public Carte() {
+            cases = new Case[HAUTEUR][LARGEUR];
+        }
+        
 	/**
 	 * 
 	 * @param bateau
