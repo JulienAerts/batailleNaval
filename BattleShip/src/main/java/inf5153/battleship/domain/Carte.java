@@ -29,9 +29,9 @@ public class Carte {
 	 * @param bateau
 	 */
 	public void placerBateau(Bateau bateau, ArrayList<Position> positions) throws Exception {
-            
+           
             for(Position position : positions) {
-                bateau.addCase(getCase(position));
+                //bateau.addCase(getCase(position));
                 getCase(position).setBateau(bateau);
             }
             bateaux.add(bateau);

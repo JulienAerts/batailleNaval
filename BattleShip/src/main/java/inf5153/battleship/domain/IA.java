@@ -36,7 +36,7 @@ public class IA extends Joueur {
             for(Bateau bateau : bateaux){
                 
                 ArrayList<Position> positions = genererPositionsAleatoiresValides(bateau.longueur);
-
+                
                 carte.placerBateau(bateau, positions);
 
             }
