@@ -37,11 +37,21 @@ public class FenetreJouerPartie extends FenetrePartie{
             }
         });
         
+        btnReinitialise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReinitialiseActionPerformed(evt);
+            }
+        });
+        
     }
     
     private void btnChangerOrientationActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         placementBateaux.orientation = !placementBateaux.orientation;
-    }                                                     
+    }
+    
+    private void btnReinitialiseActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        placementBateaux.réinitialiserEffets();
+    }
 
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {                                               
         controleur2.commencerPartie();

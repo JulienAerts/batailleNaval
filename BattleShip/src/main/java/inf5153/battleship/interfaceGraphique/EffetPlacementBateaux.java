@@ -16,7 +16,7 @@ public final class EffetPlacementBateaux {
     JButton boutonsEnMemoire[]=new JButton[30];
     private FenetreJouerPartie partie;
     boolean CLICK=false;
-    boolean possedeBateau=false;
+    boolean bateauxPlacer=false;
     boolean etatBateauxEstPlacer[] = new boolean[5];
     public boolean orientation = false;
     String temp[];
@@ -36,6 +36,7 @@ public final class EffetPlacementBateaux {
         pred=mapBoutonsJoueur[0].getBackground();
         desactiverBoutonsOption(false);
         initialiserListenerMouse();
+
 
     }
     
@@ -60,7 +61,7 @@ public final class EffetPlacementBateaux {
         try{
             int x=partie.pnlCarteJoueur.getMousePosition().getLocation().x;
             int y=partie.pnlCarteJoueur.getMousePosition().getLocation().y;
-            if (!possedeBateau){
+            if (!bateauxPlacer){
                 if(!etatBateauxEstPlacer[0]){
                     dessinerGrille("porte-avion", x, y);
                 }else if(!etatBateauxEstPlacer[1]){
@@ -76,7 +77,7 @@ public final class EffetPlacementBateaux {
         }catch(NullPointerException e){}
     }
     private void mapBoutonsJoueurActionPerformed(java.awt.event.ActionEvent evt){
-        if (!possedeBateau){
+        if (!bateauxPlacer){
             if(pasDeRepetition(boutonsSelectionner)){
                 CLICK=true;
                 if(!etatBateauxEstPlacer[0]){
@@ -94,6 +95,10 @@ public final class EffetPlacementBateaux {
                 }else if(!etatBateauxEstPlacer[4]){
                     enregistrerBoutonMem("torpilleur");
                     etatBateauxEstPlacer[4]=true;
+                    bateauxPlacer = true;
+                    desactiverBouton(partie.btnDemarrerPartie,true);
+                    desactiverBouton(partie.btnReinitialise,true);
+
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Pas plus qu<un bateau sur les meme cases","Message Avertissement",JOptionPane.ERROR_MESSAGE);
@@ -142,7 +147,7 @@ public final class EffetPlacementBateaux {
     }
     
     private void mapBoutonsJoueurMouseExited(java.awt.event.MouseEvent evt) {
-        if(!possedeBateau){
+        if(!bateauxPlacer){
             JButton cap[]=getboutonsSelectionner();
             if(!CLICK){
                 for(int i=0;i<cap.length;i++){
@@ -155,20 +160,28 @@ public final class EffetPlacementBateaux {
     }
     private void desactiverBoutonsOption(boolean action){
         this.partie.btnSauvegarder.setEnabled(action);
-        //this.partie.btnDemarrerPartie.setEnabled(action);
+        this.partie.btnDemarrerPartie.setEnabled(action);
         this.partie.btnReinitialise.setEnabled(action);
-
         this.partie.btnFinPartie.setEnabled(action);
     }
     
+    private void desactiverBouton(JButton bouton ,boolean action){
+        bouton.setEnabled(action);
+    }
     
-    private void réinitialiserEffets(Color color){
-        int i= 0;
-        if(i<100){
-            mapBoutonsJoueur[i].setBackground(color);
-            mapBoutonsAdv[i].setBackground(color);
-            i++;
+    
+    public void réinitialiserEffets(){
+
+        for(int i=0;i<100;i++){
+            mapBoutonsJoueur[i].setBackground(pred);
         }
+        
+        desactiverBouton(partie.btnDemarrerPartie,false);
+        desactiverBouton(partie.btnReinitialise,false);
+        etatBateauxEstPlacer = new boolean[5];
+        boutonsEnMemoire = new JButton[30];
+        bateauxPlacer = false;
+        CLICK=false;
     }
     
     private void dessinerGrille(String typeBateau, int x, int y){
@@ -252,7 +265,6 @@ public final class EffetPlacementBateaux {
                     }
                     break;
                 case "torpilleur":
-                                                                                    System.out.println(x+" "+y);
                     if (orientation){
                         if(x>=10 && y>=224 && x<=384 && y<398){
                             JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 224)],mapBoutonsJoueur[identifierLesBoutons(x, 224)+10]};
