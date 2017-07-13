@@ -199,10 +199,10 @@ public final class EffetPlacementBateaux {
                             setboutonsSelectionner(cap);
                         }
                     }else {
-                        if(x>=149 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        if(x>=153 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
                             BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
-                        }else if(x>=10 && y>=22 && x<149 && y<=398){
+                        }else if(x>=10 && y>=22 && x<153 && y<=398){
                             BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
                             setboutonsSelectionner(cap);
                         }
@@ -219,10 +219,10 @@ public final class EffetPlacementBateaux {
                         }
                     }else {
                         
-                        if(x>=174 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        if(x>=178 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
                             BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
-                        }else if(x>=10 && y>=22 && x<174 && y<=398){
+                        }else if(x>=10 && y>=22 && x<178 && y<=398){
                             BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
                             setboutonsSelectionner(cap);
                         }
@@ -238,10 +238,10 @@ public final class EffetPlacementBateaux {
                             setboutonsSelectionner(cap);
                         }
                     }else{
-                        if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        if(x>=227 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
                             BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
-                        }else if(x>=10 && y>=22 && x<223 && y<=398){
+                        }else if(x>=10 && y>=22 && x<227 && y<=398){
                             BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
                             setboutonsSelectionner(cap);
                         }
@@ -257,10 +257,10 @@ public final class EffetPlacementBateaux {
                             setboutonsSelectionner(cap);
                         }
                     }else{
-                        if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        if(x>=227 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
                             BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
-                        }else if(x>=10 && y>=22 && x<223 && y<=398){
+                        }else if(x>=10 && y>=22 && x<227 && y<=398){
                             BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
                             setboutonsSelectionner(cap);
                         }
@@ -276,10 +276,10 @@ public final class EffetPlacementBateaux {
                             setboutonsSelectionner(cap);
                         }
                     }else{
-                        if(x>=248 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
+                        if(x>=252 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
                             BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
-                        }else if(x>=10 && y>=22 && x<248 && y<=398){
+                        }else if(x>=10 && y>=22 && x<252 && y<=398){
                             BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
                             setboutonsSelectionner(cap);
                         } 
@@ -296,25 +296,25 @@ public final class EffetPlacementBateaux {
         int numero=0;
         for(int i=0;i<10;i++){
             
-            if(x>=10 && y>=(i*25)+23 && x<49 && y<(i*25)+48){
+            if(x>=10 && y>=(i*25)+23 && x<53 && y<(i*25)+48){
                 numero=(i*10);
-            }else if (x>=49 && y>=(i*25)+23 && x<74 && y<(i*25)+48){
+            }else if (x>=53 && y>=(i*25)+23 && x<78 && y<(i*25)+48){
                 numero=(i*10)+1;
-            }else if (x>=74 && y>=(i*25)+23 && x<99 && y<(i*25)+48){
+            }else if (x>=78 && y>=(i*25)+23 && x<103 && y<(i*25)+48){
                 numero=(i*10)+2;
-            }else if (x>=99 && y>=(i*25)+23 && x<124 && y<(i*25)+48){
+            }else if (x>=103 && y>=(i*25)+23 && x<128 && y<(i*25)+48){
                 numero=(i*10)+3;
-            }else if (x>=124 && y>=(i*25)+23 && x<149 && y<(i*25)+48){
+            }else if (x>=128 && y>=(i*25)+23 && x<153 && y<(i*25)+48){
                 numero=(i*10)+4;
-            }else if (x>=149 && y>=(i*25)+23 && x<174 && y<(i*25)+48){
+            }else if (x>=153 && y>=(i*25)+23 && x<178 && y<(i*25)+48){
                 numero=(i*10)+5;
-            }else if (x>=174 && y>=(i*25)+23 && x<199 && y<(i*25)+48){
+            }else if (x>=178 && y>=(i*25)+23 && x<203 && y<(i*25)+48){
                 numero=(i*10)+6;
-            }else if (x>=199 && y>=(i*25)+23 && x<224 && y<(i*25)+48){
+            }else if (x>=203 && y>=(i*25)+23 && x<228 && y<(i*25)+48){
                 numero=(i*10)+7;
-            }else if (x>=224 && y>=(i*25)+23 && x<249 && y<(i*25)+48){
+            }else if (x>=228 && y>=(i*25)+23 && x<253 && y<(i*25)+48){
                 numero=(i*10)+8;
-            }else if (x>=249 && y>=(i*25)+23 && x<275 && y<(i*25)+48){
+            }else if (x>=253 && y>=(i*25)+23 && x<279 && y<(i*25)+48){
                 numero=(i*10)+9;
             }
         }

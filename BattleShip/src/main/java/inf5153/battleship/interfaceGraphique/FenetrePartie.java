@@ -586,64 +586,64 @@ public class FenetrePartie extends JFrame {
         pnlCarteJoueur.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("1");
+        lbl1.setText("A");
 
         lbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl2.setText("2");
+        lbl2.setText("B");
 
         lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl3.setText("3");
+        lbl3.setText("C");
 
         lbl4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl4.setText("4");
+        lbl4.setText("D");
 
         lbl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl5.setText("5");
+        lbl5.setText("E");
 
         lbl6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl6.setText("6");
+        lbl6.setText("F");
 
         lbl7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl7.setText("7");
+        lbl7.setText("G");
 
         lbl8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl8.setText("8");
+        lbl8.setText("H");
 
         lbl9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl9.setText("9");
+        lbl9.setText("I");
 
         lbl10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl10.setText("10");
+        lbl10.setText("J");
 
         lblA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblA.setText("A");
+        lblA.setText("1");
 
         lblB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblB.setText("B");
+        lblB.setText("2");
 
         lblC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblC.setText("C");
+        lblC.setText("3");
 
         lblD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblD.setText("D");
+        lblD.setText("4");
 
         lblE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblE.setText("E");
+        lblE.setText("5");
 
         lblF.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblF.setText("F");
+        lblF.setText("6");
 
         lblG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblG.setText("G");
+        lblG.setText("7");
 
         lblH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblH.setText("H");
+        lblH.setText("8");
 
         lblI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblI.setText("I");
+        lblI.setText("9");
 
         lblJ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblJ.setText("J");
+        lblJ.setText("10");
 
         javax.swing.GroupLayout pnlCarteJoueurLayout = new javax.swing.GroupLayout(pnlCarteJoueur);
         pnlCarteJoueur.setLayout(pnlCarteJoueurLayout);
@@ -661,7 +661,7 @@ public class FenetrePartie extends JFrame {
                     .addComponent(lblG, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblH, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblI, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblJ, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblJ, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlCarteJoueurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCarteJoueurLayout.createSequentialGroup()
@@ -1053,64 +1053,64 @@ public class FenetrePartie extends JFrame {
         jButton1A.setFont(new java.awt.Font("Tahoma", 1, 3)); // NOI18N
 
         lblAdv1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv1.setText("1");
+        lblAdv1.setText("A");
 
         lblAdv2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv2.setText("2");
+        lblAdv2.setText("B");
 
         lblAdv3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv3.setText("3");
+        lblAdv3.setText("C");
 
         lblAdv4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv4.setText("4");
+        lblAdv4.setText("D");
 
         lblAdv5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv5.setText("5");
+        lblAdv5.setText("E");
 
         lblAdv6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv6.setText("6");
+        lblAdv6.setText("F");
 
         lblAdv7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv7.setText("7");
+        lblAdv7.setText("G");
 
         lblAdv8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv8.setText("8");
+        lblAdv8.setText("H");
 
         lblAdv9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv9.setText("9");
+        lblAdv9.setText("I");
 
         lblAdv10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdv10.setText("10");
+        lblAdv10.setText("J");
 
         lblAdvA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvA.setText("A");
+        lblAdvA.setText("1");
 
         lblAdvB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvB.setText("B");
+        lblAdvB.setText("2");
 
         lblAdvC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvC.setText("C");
+        lblAdvC.setText("3");
 
         lblAdvD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvD.setText("D");
+        lblAdvD.setText("4");
 
         lblAdvE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvE.setText("E");
+        lblAdvE.setText("5");
 
         lblAdvF.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvF.setText("F");
+        lblAdvF.setText("6");
 
         lblAdvG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvG.setText("G");
+        lblAdvG.setText("7");
 
         lblAdvH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvH.setText("H");
+        lblAdvH.setText("8");
 
         lblAdvI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvI.setText("I");
+        lblAdvI.setText("9");
 
         lblAdvJ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdvJ.setText("J");
+        lblAdvJ.setText("10");
 
         javax.swing.GroupLayout pnlCarteAdversaireLayout = new javax.swing.GroupLayout(pnlCarteAdversaire);
         pnlCarteAdversaire.setLayout(pnlCarteAdversaireLayout);
@@ -1352,7 +1352,7 @@ public class FenetrePartie extends JFrame {
                             .addComponent(lblAdvG, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblAdvH, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblAdvI, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAdvJ, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblAdvJ, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCarteAdversaireLayout.setVerticalGroup(
