@@ -232,6 +232,24 @@ public class FenetrePartie extends JFrame {
     public JButton jButtonSousMarin3;
     public JButton jButtonTorpilleur1;
     public JButton jButtonTorpilleur2;
+    //Boutons de la section Mes Navires
+    public BoutonCustom jButtonContreTorpilleur1Adv;
+    public BoutonCustom jButtonContreTorpilleur2Adv;
+    public BoutonCustom jButtonContreTorpilleur3Adv;
+    public BoutonCustom jButtonCroiseur1Adv;
+    public BoutonCustom jButtonCroiseur2Adv;
+    public BoutonCustom jButtonCroiseur3Adv;
+    public BoutonCustom jButtonCroiseur4Adv;
+    public BoutonCustom jButtonPorteAvion1Adv;
+    public BoutonCustom jButtonPorteAvion2Adv;
+    public BoutonCustom jButtonPorteAvion3Adv;
+    public BoutonCustom jButtonPorteAvion4Adv;
+    public BoutonCustom jButtonPorteAvion5Adv;
+    public BoutonCustom jButtonSousMarin1Adv;
+    public BoutonCustom jButtonSousMarin2Adv;
+    public BoutonCustom jButtonSousMarin3Adv;
+    public BoutonCustom jButtonTorpilleur1Adv;
+    public BoutonCustom jButtonTorpilleur2Adv;
     //Etiquette des lignes et colonnes
     protected javax.swing.JLabel lbl1;
     protected javax.swing.JLabel lbl10;
@@ -557,7 +575,8 @@ public class FenetrePartie extends JFrame {
         jButtonSousMarin2 = new JButton();
         jButtonSousMarin3 = new JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(0);
+        setUndecorated(true); 
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
