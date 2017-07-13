@@ -85,7 +85,7 @@ public class Carte {
 	 * @param position
 	 */
 	public Case getCase(Position position) {
-            Case casea = cases[position.getCoordonneXToInt()][position.getCoordonneY()];
+            Case casea = cases[position.getCoordonneXToInt()][position.getCoordonneY()-1];
             return casea;
 	}
 

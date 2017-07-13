@@ -46,8 +46,12 @@ public class PartieControleur {
 	 * @param position
 	 */
 	public Reponse jouerCoup(Position position) {
-		// TODO - implement PartieControleur.jouerCoup
-                Reponse reponse = Reponse.Touche;
+		Reponse reponse;
+                if (partie.getJoueur2().jouerCoup(position).bateauExiste()){
+                    
+                     reponse = Reponse.Touche;
+                }else reponse = Reponse.Eau;
+
 		return reponse;
 	}
 
