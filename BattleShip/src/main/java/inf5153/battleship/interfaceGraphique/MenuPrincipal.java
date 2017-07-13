@@ -81,7 +81,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChargerPartieActionPerformed
 
     private void btnVoirRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoirRecordActionPerformed
-        // TODO add your handling code here:
+        FenetreRecords fenetreRecords = new FenetreRecords();
+        fenetreRecords.pack();
+        fenetreRecords.setLocationRelativeTo(null);
+        fenetreRecords.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnVoirRecordActionPerformed
 
     /**
