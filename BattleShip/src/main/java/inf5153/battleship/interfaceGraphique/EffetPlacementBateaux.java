@@ -9,17 +9,17 @@ import javax.swing.JOptionPane;
 
 public final class EffetPlacementBateaux {
     
-    public JButton mapBoutonsJoueur[];
-    public JButton mapBoutonsAdv[];
+    public BoutonCustom mapBoutonsJoueur[];
+    public BoutonCustom mapBoutonsAdv[];
     public JButton listeBateaux[];
-    JButton boutonsSelectionner[];
-    JButton boutonsEnMemoire[]=new JButton[30];
+    private BoutonCustom boutonsSelectionner[];
+    public BoutonCustom boutonsEnMemoire[]=new BoutonCustom[30];
     private FenetreJouerPartie partie;
-    boolean CLICK=false;
-    boolean bateauxPlacer=false;
-    boolean etatBateauxEstPlacer[] = new boolean[5];
+    private boolean CLICK=false;
+    private boolean bateauxPlacer=false;
+    private boolean etatBateauxEstPlacer[] = new boolean[5];
     public boolean orientation = false;
-    String temp[];
+
 
     
     
@@ -96,6 +96,7 @@ public final class EffetPlacementBateaux {
                     enregistrerBoutonMem("torpilleur");
                     etatBateauxEstPlacer[4]=true;
                     bateauxPlacer = true;
+                    partie.txtJournalisation.append("Parfait clique sur Démarrrer pour commencer la partie !\n");
                     desactiverBouton(partie.btnDemarrerPartie,true);
                     desactiverBouton(partie.btnReinitialise,true);
 
@@ -110,7 +111,7 @@ public final class EffetPlacementBateaux {
         return boutonsSelectionner;
     }
     
-    private void setboutonsSelectionner(JButton boutons[]){
+    private void setboutonsSelectionner(BoutonCustom boutons[]){
         boutonsSelectionner=boutons;
         for(int i=0;i<boutons.length;i++){
             boutons[i].setBackground(getColor());
@@ -179,9 +180,10 @@ public final class EffetPlacementBateaux {
         desactiverBouton(partie.btnDemarrerPartie,false);
         desactiverBouton(partie.btnReinitialise,false);
         etatBateauxEstPlacer = new boolean[5];
-        boutonsEnMemoire = new JButton[30];
+        boutonsEnMemoire = new BoutonCustom[30];
         bateauxPlacer = false;
         CLICK=false;
+        partie.txtJournalisation.append("Place les bateaux sur ta grille !\n");
     }
     
     private void dessinerGrille(String typeBateau, int x, int y){
@@ -190,18 +192,18 @@ public final class EffetPlacementBateaux {
                 case "porte-avion":
                     if (orientation){
                         if(x>=10 && y>=148 && x<=384 && y<398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 148)],mapBoutonsJoueur[identifierLesBoutons(x, 148)+10],mapBoutonsJoueur[identifierLesBoutons(x, 148)+20],mapBoutonsJoueur[identifierLesBoutons(x, 148)+30],mapBoutonsJoueur[identifierLesBoutons(x, 148)+40]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 148)],mapBoutonsJoueur[identifierLesBoutons(x, 148)+10],mapBoutonsJoueur[identifierLesBoutons(x, 148)+20],mapBoutonsJoueur[identifierLesBoutons(x, 148)+30],mapBoutonsJoueur[identifierLesBoutons(x, 148)+40]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<384 && y<148){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20],mapBoutonsJoueur[identifierLesBoutons(x, y)+30],mapBoutonsJoueur[identifierLesBoutons(x, y)+40]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20],mapBoutonsJoueur[identifierLesBoutons(x, y)+30],mapBoutonsJoueur[identifierLesBoutons(x, y)+40]};
                             setboutonsSelectionner(cap);
                         }
                     }else {
                         if(x>=149 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                            JButton cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+5],mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<149 && y<=398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2],mapBoutonsJoueur[identifierLesBoutons(x, y)+3],mapBoutonsJoueur[identifierLesBoutons(x, y)+4]};
                             setboutonsSelectionner(cap);
                         }
                     }
@@ -209,19 +211,19 @@ public final class EffetPlacementBateaux {
                 case "croiseur":
                     if (orientation){
                         if(x>=10 && y>=179 && x<=384 && y<398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 179)],mapBoutonsJoueur[identifierLesBoutons(x, 179)+10],mapBoutonsJoueur[identifierLesBoutons(x, 179)+20],mapBoutonsJoueur[identifierLesBoutons(x, 179)+30]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 179)],mapBoutonsJoueur[identifierLesBoutons(x, 179)+10],mapBoutonsJoueur[identifierLesBoutons(x, 179)+20],mapBoutonsJoueur[identifierLesBoutons(x, 179)+30]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<384 && y<179){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10], mapBoutonsJoueur[identifierLesBoutons(x, y)+20], mapBoutonsJoueur[identifierLesBoutons(x, y)+30]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10], mapBoutonsJoueur[identifierLesBoutons(x, y)+20], mapBoutonsJoueur[identifierLesBoutons(x, y)+30]};
                             setboutonsSelectionner(cap);
                         }
                     }else {
                         
                         if(x>=174 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                            JButton cap[]={mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+6],mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<174 && y<=398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1], mapBoutonsJoueur[identifierLesBoutons(x, y)+2], mapBoutonsJoueur[identifierLesBoutons(x, y)+3]};
                             setboutonsSelectionner(cap);
                         }
                     }
@@ -229,18 +231,18 @@ public final class EffetPlacementBateaux {
                 case "contre-torpilleurs":
                     if (orientation){
                         if(x>=10 && y>=198 && x<=384 && y<398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<384 && y<198){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
                             setboutonsSelectionner(cap);
                         }
                     }else{
                         if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                            JButton cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<223 && y<=398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
                             setboutonsSelectionner(cap);
                         }
                     }
@@ -248,18 +250,18 @@ public final class EffetPlacementBateaux {
                 case "sous-marin":
                      if (orientation){
                         if(x>=10 && y>=198 && x<=384 && y<398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 198)],mapBoutonsJoueur[identifierLesBoutons(x, 198)+10],mapBoutonsJoueur[identifierLesBoutons(x, 198)+20]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<384 && y<198){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+10],mapBoutonsJoueur[identifierLesBoutons(x, y)+20]};
                             setboutonsSelectionner(cap);
                         }
                     }else{
                         if(x>=223 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                            JButton cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+7],mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<223 && y<=398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)], mapBoutonsJoueur[identifierLesBoutons(x, y)+1],mapBoutonsJoueur[identifierLesBoutons(x, y)+2]};
                             setboutonsSelectionner(cap);
                         }
                     }
@@ -267,18 +269,18 @@ public final class EffetPlacementBateaux {
                 case "torpilleur":
                     if (orientation){
                         if(x>=10 && y>=224 && x<=384 && y<398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 224)],mapBoutonsJoueur[identifierLesBoutons(x, 224)+10]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, 224)],mapBoutonsJoueur[identifierLesBoutons(x, 224)+10]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<384 && y<224){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+10]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+10]};
                             setboutonsSelectionner(cap);
                         }
                     }else{
                         if(x>=248 && y>=((i*25)+23) && x<=384 && y<((i*25)+48)){
-                            JButton cap[]={mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[(i*10)+8],mapBoutonsJoueur[(i*10)+9]};
                             setboutonsSelectionner(cap);
                         }else if(x>=10 && y>=22 && x<248 && y<=398){
-                            JButton cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
+                            BoutonCustom cap[]={mapBoutonsJoueur[identifierLesBoutons(x, y)],mapBoutonsJoueur[identifierLesBoutons(x, y)+1]};
                             setboutonsSelectionner(cap);
                         } 
                     }
@@ -364,7 +366,7 @@ public final class EffetPlacementBateaux {
     }
 
     public void init_mapBoutonsJoueur(){
-        mapBoutonsJoueur = new JButton [100];
+        mapBoutonsJoueur = new BoutonCustom [100];
         
         mapBoutonsJoueur[0]=this.partie.jButtonA1;
         mapBoutonsJoueur[1]=this.partie.jButtonA2;
@@ -471,7 +473,7 @@ public final class EffetPlacementBateaux {
     }
     
     public void init_mapBoutonsAdv(){
-        mapBoutonsAdv=new JButton[100];
+        mapBoutonsAdv=new BoutonCustom[100];
         
         mapBoutonsAdv[0]=this.partie.jButton1A;
         mapBoutonsAdv[1]=this.partie.jButton2A;
