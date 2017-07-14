@@ -85,8 +85,8 @@ public class FenetreJouerPartie extends FenetrePartie{
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {
         try
         {
-            affichageBoutonDebutPartie();
-            getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
+            //affichageBoutonDebutPartie();
+            ///getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
             
             controleur.commencerPartie();
             placementBateaux.placerBateaux(controleur.getBateauxIA());
@@ -108,7 +108,7 @@ public class FenetreJouerPartie extends FenetrePartie{
     private void affichageBoutonDebutPartie(){
         
         btnSauvegarder.setEnabled(true);
-        //btnDemarrerPartie.setEnabled(false);
+        btnDemarrerPartie.setEnabled(false);
         btnReinitialise.setEnabled(false);
         btnChangerOrientation.setEnabled(false);
         btnFinPartie.setEnabled(true);

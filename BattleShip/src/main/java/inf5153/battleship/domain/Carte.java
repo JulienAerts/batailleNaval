@@ -19,7 +19,7 @@ public class Carte {
             
             for(int x = 0; x < LARGEUR; x++) {
                 for(int y = 0; y < HAUTEUR; y++)
-                    cases[x][y] = new Case(new Position(x + 1, y + 1));
+                    cases[x][y] = new Case(new Position(x, y + 1));
             }
             bateaux = new ArrayList<Bateau>();
         }
@@ -45,35 +45,33 @@ public class Carte {
             return true;
         }
         
-	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position position, int longueur) throws Exception {
+	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position positionDepart, int longueur) throws Exception {
             
             ArrayList<Position> positions = new ArrayList();
-            int positionInitiale;
+            
             if(orientation == Orientation.Horizontal) {
-                positionInitiale = position.getCoordonneXToInt();
                 
-                if(positionInitiale + longueur < LARGEUR) {
-                    for(int i = positionInitiale; i < LARGEUR && positions.size() < longueur; i++) {
-                        positions.add(new Position(i, positionInitiale));
+                if(positionDepart.getCoordonneXToInt() + longueur <= LARGEUR) {
+                    for(int i = positionDepart.getCoordonneXToInt(); i < LARGEUR && positions.size() < longueur; i++) {
+                        positions.add(new Position(i, positionDepart.getCoordonneY()));
                     }
                 }
                 else {
-                    for(int i = positionInitiale; i > 0 && positions.size() < longueur; i--) {
-                        positions.add(new Position(i, positionInitiale));
+                    for(int i = positionDepart.getCoordonneXToInt(); i > 0 && positions.size() < longueur; i--) {
+                        positions.add(new Position(i, positionDepart.getCoordonneY()));
                     }
                 }
             }
             else {
-                positionInitiale = position.getCoordonneY();
                 
-                if(positionInitiale + longueur <= HAUTEUR) {
-                    for(int i = positionInitiale; i < HAUTEUR && positions.size() < longueur; i++) {
-                        positions.add(new Position(positionInitiale, i));
+                if(positionDepart.getCoordonneY() + longueur <= HAUTEUR + 1) {
+                    for(int i = positionDepart.getCoordonneY(); i <= HAUTEUR && positions.size() < longueur; i++) {
+                        positions.add(new Position(positionDepart.getCoordonneX(), i));
                     }
                 }
                 else {
-                    for(int i = positionInitiale; i > 0 && positions.size() < longueur; i--) {
-                        positions.add(new Position(positionInitiale, i));
+                    for(int i = positionDepart.getCoordonneY(); i > 0 && positions.size() < longueur; i--) {
+                        positions.add(new Position(positionDepart.getCoordonneX(), i));
                     }
                 }
             }

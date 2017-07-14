@@ -68,7 +68,7 @@ public class IA extends Joueur {
             Random aleatoire = new Random();
             Position position;
             // +1 parce que la position commence à a,1
-            position = new Position(aleatoire.nextInt(carte.LARGEUR) + 1, aleatoire.nextInt(carte.HAUTEUR) + 1);
+            position = new Position(aleatoire.nextInt(carte.LARGEUR), aleatoire.nextInt(carte.HAUTEUR) + 1);
             
             System.out.println("Position aleatoire trouver: "+ position.getCoordonneX() + " " + position.getCoordonneY() );
             return position;
