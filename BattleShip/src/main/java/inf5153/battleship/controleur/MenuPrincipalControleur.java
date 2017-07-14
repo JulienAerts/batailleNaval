@@ -4,11 +4,6 @@ import inf5153.battleship.domain.*;
 
 public class MenuPrincipalControleur {
 
-	public Partie creerPartieMultiJoueur() {
-		// TODO - implement MenuPrincipalControleur.creerPartieMultiJoueur
-		throw new UnsupportedOperationException();
-	}
-
 	/**
 	 * 
 	 * @param difficulte
@@ -23,14 +18,6 @@ public class MenuPrincipalControleur {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean chercherJoueur() {
-		// TODO - implement MenuPrincipalControleur.chercherJoueur
-		throw new UnsupportedOperationException();
-	}
 
-	private void preparerConnection() {
-		// TODO - implement MenuPrincipalControleur.preparerConnection
-		throw new UnsupportedOperationException();
-	}
 
 }

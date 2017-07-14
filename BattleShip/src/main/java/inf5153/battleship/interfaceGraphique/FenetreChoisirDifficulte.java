@@ -47,7 +47,7 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(350, 400, 80, 26);
+        jComboBox1.setBounds(350, 400, 80, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Fenetre_Choix.png"))); // NOI18N
         getContentPane().add(jLabel1);

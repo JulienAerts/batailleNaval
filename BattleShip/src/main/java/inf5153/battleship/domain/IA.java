@@ -36,7 +36,7 @@ public class IA extends Joueur {
             for(Bateau bateau : bateaux){
                 
                 ArrayList<Position> positions = genererPositionsAleatoiresValides(bateau.longueur);
-
+                
                 carte.placerBateau(bateau, positions);
 
             }
@@ -64,6 +64,7 @@ public class IA extends Joueur {
             Random aleatoire = new Random();
             Position position;
             position = new Position(aleatoire.nextInt(carte.LARGEUR), aleatoire.nextInt(carte.HAUTEUR));
+            System.out.println("Position aleatoire trouver: "+ position.getCoordonneX() +" "+ position.getCoordonneY() );
             return position;
         }
 

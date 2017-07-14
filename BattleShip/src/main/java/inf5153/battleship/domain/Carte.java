@@ -29,9 +29,9 @@ public class Carte {
 	 * @param bateau
 	 */
 	public void placerBateau(Bateau bateau, ArrayList<Position> positions) throws Exception {
-            
+           
             for(Position position : positions) {
-                bateau.addCase(getCase(position));
+                //bateau.addCase(getCase(position));
                 getCase(position).setBateau(bateau);
             }
             bateaux.add(bateau);
@@ -85,7 +85,7 @@ public class Carte {
 	 * @param position
 	 */
 	public Case getCase(Position position) {
-            Case casea = cases[position.getCoordonneXToInt()][position.getCoordonneY()];
+            Case casea = cases[position.getCoordonneXToInt()][position.getCoordonneY()-1];
             return casea;
 	}
 

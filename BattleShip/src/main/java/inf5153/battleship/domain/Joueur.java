@@ -20,9 +20,8 @@ public abstract class Joueur {
 	 * 
 	 * @param position
 	 */
-	public Case jouerCoup(Position position) {
-		// TODO - implement Joueur.jouerCoup
-		throw new UnsupportedOperationException();
+	public Case jouerCoup(Position position) {	
+		return carte.getCase(position);
 	}
 
 	public Carte getCarte() {

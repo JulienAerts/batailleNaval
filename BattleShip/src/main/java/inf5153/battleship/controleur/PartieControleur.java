@@ -24,7 +24,7 @@ public class PartieControleur {
 		throw new UnsupportedOperationException();
 	}
 
-	public void commencerPartie() {
+	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur ,int niveauDifficulte) {
             // TODO: Validations du joueur1 ??
             try
             {
@@ -40,13 +40,19 @@ public class PartieControleur {
         public ArrayList<Bateau> getBateauxIA() {
             return partie.getJoueur2().getCarte().getBateaux();
         }
+
 	/**
 	 * 
 	 * @param position
 	 */
 	public Reponse jouerCoup(Position position) {
-		// TODO - implement PartieControleur.jouerCoup
-		throw new UnsupportedOperationException();
+		Reponse reponse;
+                if (partie.getJoueur2().jouerCoup(position).bateauExiste()){
+                    
+                     reponse = Reponse.Touche;
+                }else reponse = Reponse.Eau;
+
+		return reponse;
 	}
 
 	public void reinitialiserBateaux() {
