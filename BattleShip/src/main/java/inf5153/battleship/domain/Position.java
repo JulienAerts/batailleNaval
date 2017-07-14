@@ -14,6 +14,9 @@ public class Position {
         validerCoordonnes();
     }
 
+    /**
+     * @param coordonneX Attention, commence à 0 si c'est un Int. a = 0 et j = 9
+     */
     public Position(int pCoordonneX, int pCoordonneY) throws Exception {
 
         coordonneX = (char) (int) (pCoordonneX + 'a');
@@ -33,8 +36,7 @@ public class Position {
 
     
     /**
-     * Attention, commence à 0 si c'est un Int. a = 0 et j = 10
-     * @param coordonneX
+     * @param coordonneX Attention, commence à 0 si c'est un Int. a = 0 et j = 9
      */
     public int getCoordonneXToInt() {
         return (int) this.coordonneX - 'a';
