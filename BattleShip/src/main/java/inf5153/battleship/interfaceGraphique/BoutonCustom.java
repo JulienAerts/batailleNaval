@@ -7,7 +7,10 @@ public class BoutonCustom extends JButton {
     public Position position;
     
     public BoutonCustom() {
-
+    }
+    
+    public BoutonCustom(Position position) {
+        this.position = position;
     }
 }
 

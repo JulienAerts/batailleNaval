@@ -39,7 +39,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnJouerSeul);
-        btnJouerSeul.setBounds(330, 430, 140, 23);
+        btnJouerSeul.setBounds(330, 430, 140, 32);
 
         btnChargerPartie.setText("Charger une partie");
         btnChargerPartie.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnChargerPartie);
-        btnChargerPartie.setBounds(330, 460, 140, 23);
+        btnChargerPartie.setBounds(330, 460, 140, 32);
 
         btnVoirRecord.setText("Meilleure score");
         btnVoirRecord.setActionCommand("Meilleure record");
@@ -58,7 +58,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVoirRecord);
-        btnVoirRecord.setBounds(330, 490, 140, 23);
+        btnVoirRecord.setBounds(330, 490, 140, 32);
 
         lblImageFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Menu_Principal.png"))); // NOI18N
         lblImageFond.setText("jLabel1");

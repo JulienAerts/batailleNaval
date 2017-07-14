@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carte {
-        public final int HAUTEUR = 10;
-        public final int LARGEUR = 10;
+        public static final int HAUTEUR = 10;
+        public static final int LARGEUR = 10;
         
 	private Case[][] cases;
 	private ArrayList<Bateau> bateaux;
