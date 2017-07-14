@@ -166,7 +166,7 @@ public final class EffetPlacementBateaux {
     }
     private void desactiverBoutonsOption(boolean action){
         this.partie.btnSauvegarder.setEnabled(action);
-        //this.partie.btnDemarrerPartie.setEnabled(action);
+        this.partie.btnDemarrerPartie.setEnabled(action);
         this.partie.btnReinitialise.setEnabled(action);
         this.partie.btnFinPartie.setEnabled(action);
     }

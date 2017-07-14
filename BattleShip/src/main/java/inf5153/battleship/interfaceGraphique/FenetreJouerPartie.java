@@ -108,7 +108,7 @@ public class FenetreJouerPartie extends FenetrePartie{
     private void affichageBoutonDebutPartie(){
         
         btnSauvegarder.setEnabled(true);
-        //btnDemarrerPartie.setEnabled(false);
+        btnDemarrerPartie.setEnabled(false);
         btnReinitialise.setEnabled(false);
         btnChangerOrientation.setEnabled(false);
         btnFinPartie.setEnabled(true);

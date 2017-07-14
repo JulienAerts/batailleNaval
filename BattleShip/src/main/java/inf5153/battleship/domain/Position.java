@@ -31,6 +31,11 @@ public class Position {
         }
     }
 
+    
+    /**
+     * Attention, commence à 0 si c'est un Int. a = 0 et j = 10
+     * @param coordonneX
+     */
     public int getCoordonneXToInt() {
         return (int) this.coordonneX - 'a';
     }
@@ -43,8 +48,9 @@ public class Position {
      *
      * @param coordonneX
      */
-    public void setCoordonneX(char coordonneX) {
+    public void setCoordonneX(char coordonneX) throws Exception {
         this.coordonneX = coordonneX;
+        validerCoordonnes();
     }
 
     public Integer getCoordonneY() {
@@ -55,8 +61,9 @@ public class Position {
      *
      * @param coordonneY
      */
-    public void setCoordonneY(Integer coordonneY) {
+    public void setCoordonneY(Integer coordonneY) throws Exception {
         this.coordonneY = coordonneY;
+        validerCoordonnes();
     }
 
     @Override
