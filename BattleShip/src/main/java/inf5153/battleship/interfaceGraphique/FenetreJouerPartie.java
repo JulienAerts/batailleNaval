@@ -20,11 +20,17 @@ public class FenetreJouerPartie extends FenetrePartie{
             
     public FenetreJouerPartie(String nivDif) {
         niveauDif = nivDif;
-        super.initComponents();
-        initListener();
-        txtJournalisation.append("Place les bateaux sur ta grille !\n");
-        placementBateaux = new EffetPlacementBateaux(this);
-        controleur = new PartieControleur();
+        try
+        {
+            super.initComponents();
+            initListener();
+            txtJournalisation.append("Place les bateaux sur ta grille !\n");
+            placementBateaux = new EffetPlacementBateaux(this);
+            controleur = new PartieControleur();
+        }
+        catch(Exception ex) {
+            txtJournalisation.append(ex.getMessage());
+        }
     }
     
     private void initListener (){
@@ -77,11 +83,18 @@ public class FenetreJouerPartie extends FenetrePartie{
     }
 
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {
-
-        affichageBoutonDebutPartie();
-        getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
-        controleur.commencerPartie(getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire),0);
-        placementCoups= new EffetPlacementCoups(this,placementBateaux.mapBoutonsJoueur,placementBateaux.mapBoutonsAdv);
+        try
+        {
+            affichageBoutonDebutPartie();
+            getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
+            
+            controleur.commencerPartie();
+            placementBateaux.placerBateaux(controleur.getBateauxIA());
+            placementCoups = new EffetPlacementCoups(this,placementBateaux.mapBoutonsJoueur,placementBateaux.mapBoutonsAdv);
+        }
+        catch(Exception ex) {
+            txtJournalisation.append("Une erreur est survenu lors du démarrage de la partie : " + ex.getMessage());
+        }
     }
     
     private ArrayList<Position> getListePositionsBateauxJoueur(BoutonCustom listeBoutonsBateauxJoueur[]){
@@ -89,14 +102,13 @@ public class FenetreJouerPartie extends FenetrePartie{
         for (int i = 0;i<17;i++){
             arrlist.add(listeBoutonsBateauxJoueur[i].position);       
         }
-        
         return arrlist;
     
     }
     private void affichageBoutonDebutPartie(){
         
         btnSauvegarder.setEnabled(true);
-        btnDemarrerPartie.setEnabled(false);
+        //btnDemarrerPartie.setEnabled(false);
         btnReinitialise.setEnabled(false);
         btnChangerOrientation.setEnabled(false);
         btnFinPartie.setEnabled(true);

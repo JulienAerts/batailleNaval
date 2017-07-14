@@ -14,12 +14,12 @@ public class Carte {
             return bateaux;
         }
 
-        public Carte() {
+        public Carte() throws Exception {
             cases = new Case[HAUTEUR][LARGEUR];
             
             for(int x = 0; x < LARGEUR; x++) {
                 for(int y = 0; y < HAUTEUR; y++)
-                    cases[x][y] = new Case(new Position(x, y));
+                    cases[x][y] = new Case(new Position(x + 1, y + 1));
             }
             bateaux = new ArrayList<Bateau>();
         }
@@ -31,7 +31,7 @@ public class Carte {
 	public void placerBateau(Bateau bateau, ArrayList<Position> positions) throws Exception {
            
             for(Position position : positions) {
-                //bateau.addCase(getCase(position));
+                bateau.addCase(getCase(position));
                 getCase(position).setBateau(bateau);
             }
             bateaux.add(bateau);
@@ -45,7 +45,7 @@ public class Carte {
             return true;
         }
         
-	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position position, int longueur) {
+	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position position, int longueur) throws Exception {
             
             ArrayList<Position> positions = new ArrayList();
             int positionInitiale;

@@ -7,10 +7,14 @@ public class IA extends Joueur {
 
 	private Integer difficultee;
 
+        public IA() throws Exception {
+            
+        }
+        
 	public Integer getDifficultee() {
 		return this.difficultee;
 	}
-
+        
 	/**
 	 * 
 	 * @param difficultee
@@ -42,7 +46,7 @@ public class IA extends Joueur {
             }
 	}
         
-        private ArrayList<Position> genererPositionsAleatoiresValides(int longueur) {
+        private ArrayList<Position> genererPositionsAleatoiresValides(int longueur) throws Exception {
             ArrayList<Position> positions;
             do
             {
@@ -60,11 +64,13 @@ public class IA extends Joueur {
                 return Orientation.Vertical;
         }
         
-        private Position positionAleatoire() {
+        private Position positionAleatoire() throws Exception {
             Random aleatoire = new Random();
             Position position;
-            position = new Position(aleatoire.nextInt(carte.LARGEUR), aleatoire.nextInt(carte.HAUTEUR));
-            System.out.println("Position aleatoire trouver: "+ position.getCoordonneX() +" "+ position.getCoordonneY() );
+            // +1 parce que la position commence à a,1
+            position = new Position(aleatoire.nextInt(carte.LARGEUR) + 1, aleatoire.nextInt(carte.HAUTEUR) + 1);
+            
+            System.out.println("Position aleatoire trouver: "+ position.getCoordonneX() + " " + position.getCoordonneY() );
             return position;
         }
 

@@ -24,17 +24,11 @@ public class PartieControleur {
 		throw new UnsupportedOperationException();
 	}
 
-	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur ,int niveauDifficulte) {
+//	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte)  throws Exception {
+	public void commencerPartie() throws Exception {
             // TODO: Validations du joueur1 ??
-            try
-            {
-                partie = new Partie();
-                partie.getJoueur2().placerBateauxAleatoire();
-            }
-            catch(Exception ex)
-            {
-                // Écrire dans le log de l'écran
-            }
+            partie = new Partie();
+            partie.getJoueur2().placerBateauxAleatoire();
 	}
 
         public ArrayList<Bateau> getBateauxIA() {

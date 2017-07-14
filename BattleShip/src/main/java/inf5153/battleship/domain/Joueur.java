@@ -7,7 +7,7 @@ public abstract class Joueur {
 	protected Carte carte;
 	private ArrayList<Coup> coups;
 
-        public Joueur() {
+        public Joueur() throws Exception {
             carte = new Carte();
             coups = new ArrayList<Coup>();
         }

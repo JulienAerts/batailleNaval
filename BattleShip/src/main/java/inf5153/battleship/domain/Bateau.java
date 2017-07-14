@@ -5,6 +5,7 @@
  */
 package inf5153.battleship.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,10 @@ public class Bateau {
     protected int longueur;
     private List<Case> cases;
 
+    public Bateau() {
+        cases = new ArrayList<Case>();
+    }
+    
     public List<Case> getCases() {
         return cases;
     }

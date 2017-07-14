@@ -302,7 +302,7 @@ public class FenetrePartie extends JFrame {
     protected javax.swing.JScrollPane jScrollJournalisation;
     public javax.swing.JTextArea txtJournalisation;
     
-    protected void initComponents() {
+    protected void initComponents() throws Exception {
 
         pnlContourCarteJoueur = new javax.swing.JPanel();
         pnlCarteJoueur = new javax.swing.JPanel();

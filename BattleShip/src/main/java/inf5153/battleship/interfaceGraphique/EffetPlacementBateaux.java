@@ -1,7 +1,12 @@
 package inf5153.battleship.interfaceGraphique;
 
+import inf5153.battleship.domain.Bateau;
+import inf5153.battleship.domain.Case;
+import inf5153.battleship.domain.Position;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -161,7 +166,7 @@ public final class EffetPlacementBateaux {
     }
     private void desactiverBoutonsOption(boolean action){
         this.partie.btnSauvegarder.setEnabled(action);
-        this.partie.btnDemarrerPartie.setEnabled(action);
+        //this.partie.btnDemarrerPartie.setEnabled(action);
         this.partie.btnReinitialise.setEnabled(action);
         this.partie.btnFinPartie.setEnabled(action);
     }
@@ -343,6 +348,30 @@ public final class EffetPlacementBateaux {
                 break;
         }
     }
+    
+    public void placerBateaux(List<Bateau> bateaux) {
+        
+        // RESET DE LA GRILLE.
+        for(int i = 0; i < mapBoutonsAdv.length; i++) {
+            mapBoutonsAdv[i].setBackground(new JButton().getBackground());
+        }
+        
+        ArrayList<Position> positions = new ArrayList();
+        for(Bateau bateau : bateaux) {
+            for(Case tCase : bateau.getCases()) {
+                positions.add(tCase.getPosition());
+            }
+        }
+        colorierCase(positions, getColor());
+    }
+    public void colorierCase(List<Position> positions, Color color) {
+        for(int i = 0; i < mapBoutonsAdv.length; i++) {
+            if(positions.contains(mapBoutonsAdv[i].position)) {
+                mapBoutonsAdv[i].setBackground(color);
+            }
+        }
+    }
+    
     private void init_listeBateaux(){
         listeBateaux = new JButton[17];
         
@@ -473,7 +502,7 @@ public final class EffetPlacementBateaux {
     }
     
     public void init_mapBoutonsAdv(){
-        mapBoutonsAdv=new BoutonCustom[100];
+        mapBoutonsAdv = new BoutonCustom[100];
         
         mapBoutonsAdv[0]=this.partie.jButton1A;
         mapBoutonsAdv[1]=this.partie.jButton2A;

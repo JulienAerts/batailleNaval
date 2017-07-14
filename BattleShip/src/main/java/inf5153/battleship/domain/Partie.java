@@ -9,7 +9,7 @@ public class Partie {
 	private Humain joueur1;
 	private IA joueur2;
 
-        public Partie() {
+        public Partie() throws Exception {
             debut = new Date();
             joueur1 = new Humain();
             joueur2 = new IA();

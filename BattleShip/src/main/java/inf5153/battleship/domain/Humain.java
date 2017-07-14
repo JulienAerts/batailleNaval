@@ -4,7 +4,7 @@ public class Humain extends Joueur {
 
 	private String identifiant;
 
-        public Humain() {
+        public Humain() throws Exception {
             
         }
         

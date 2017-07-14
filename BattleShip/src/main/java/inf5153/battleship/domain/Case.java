@@ -6,6 +6,10 @@ public class Case {
 
     private Coup tir;
     private Position position;
+
+    public Position getPosition() {
+        return position;
+    }
     private Bateau bateau;
 
     public Case(Position position) {
