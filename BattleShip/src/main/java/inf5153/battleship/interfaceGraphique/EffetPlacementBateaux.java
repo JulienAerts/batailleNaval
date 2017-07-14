@@ -361,15 +361,23 @@ public final class EffetPlacementBateaux {
             for(Case tCase : bateau.getCases()) {
                 positions.add(tCase.getPosition());
             }
+            colorierCase(positions, bateau.getCouleur());
+            positions.clear();
         }
-        colorierCase(positions, getColor());
     }
     public void colorierCase(List<Position> positions, Color color) {
-        for(int i = 0; i < mapBoutonsAdv.length; i++) {
-            if(positions.contains(mapBoutonsAdv[i].position)) {
-                mapBoutonsAdv[i].setBackground(color);
-            }
+        
+        
+        for(Position position : positions) {
+            mapBoutonsAdv[(position.getCoordonneXToInt() * 10) + position.getCoordonneY() - 1].setBackground(color);
         }
+        
+//        for(int i = 0; i < mapBoutonsAdv.length; i++) {
+//            
+//            if(positions.contains(mapBoutonsAdv[i].position)) {
+//                mapBoutonsAdv[i].setBackground(color);
+//            }
+//        }
     }
     
     private void init_listeBateaux(){

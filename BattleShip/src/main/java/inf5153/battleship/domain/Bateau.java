@@ -5,6 +5,7 @@
  */
 package inf5153.battleship.domain;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,4 +36,7 @@ public class Bateau {
             throw new Exception("Le nombre de case assigné au bateau doit être identique à la longueur du bateau.");
     }
     
+    public Color getCouleur() {
+        return Color.RED;
+    }
 }

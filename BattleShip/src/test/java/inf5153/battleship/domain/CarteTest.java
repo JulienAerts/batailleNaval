@@ -73,6 +73,38 @@ public class CarteTest {
 //        fail("The test case is a prototype.");
 //    }
 //
+    
+    @Test
+    public void testTrouverPositionsAdjacentes_ToutesLesPossibilites() throws Exception {
+        
+        Orientation orientation = Orientation.Horizontal;
+        Position position;
+        Carte instance = new Carte();
+        
+        ArrayList<Position> positions;
+        for(int x = 0; x < 10; x++)
+        {
+            for(int y = 1; y <= 10; y++)
+            {
+                position = new Position(x, y);
+                positions = instance.trouverPositionsAdjacentes(orientation, position, 3);
+                
+                for(int i = 0; i < positions.size() - 1; i++)
+                {
+                    int diffX = Math.abs(positions.get(i).getCoordonneXToInt() - positions.get(i + 1).getCoordonneXToInt());
+                    int diffY = Math.abs(positions.get(i).getCoordonneY() - positions.get(i + 1).getCoordonneY());
+                    
+                    if(diffX + diffY != 1)
+                    {
+                        fail("Erreur x1 : " + positions.get(i).getCoordonneXToInt() + " x2 : " + positions.get(i + 1).getCoordonneXToInt());
+                        fail("Erreur y1 : " + positions.get(i).getCoordonneY() + " y2 : " + positions.get(i + 1).getCoordonneY());
+                    }
+                }
+            }
+        }
+                
+    }
+    
     @Test
     public void testTrouverPositionsAdjacentes_MinY() throws Exception {
         
