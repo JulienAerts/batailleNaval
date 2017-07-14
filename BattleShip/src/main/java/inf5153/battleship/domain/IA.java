@@ -37,17 +37,17 @@ public class IA extends Joueur {
                 Position position = dernierCoup.getCase().getPosition();
                 
                 Position adjacente;
-                if(position.getCoordonneXToInt() <= Position.MAX_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY()))) {
+                if(position.getCoordonneXToInt() < Position.MAX_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY()))) {
                     adjacente = new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY());
                 }
-                else if(position.getCoordonneY() <= Position.MAX_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() + 1))) {
+                else if(position.getCoordonneY() < Position.MAX_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() + 1))) {
                     adjacente = new Position(position.getCoordonneXToInt(), position.getCoordonneY() + 1);
                 }
-                else if(position.getCoordonneY() >= Position.MIN_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1))) {
-                    adjacente = new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1);
-                }
-                else if(position.getCoordonneXToInt() >= Position.MIN_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() - 1, position.getCoordonneY()))) {
+                else if(position.getCoordonneXToInt() > Position.MIN_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() - 1, position.getCoordonneY()))) {
                     adjacente = new Position(position.getCoordonneXToInt() - 1, position.getCoordonneY());
+                }
+                else if(position.getCoordonneY() > Position.MIN_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1))) {
+                    adjacente = new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1);
                 }
                 else {
                     // Si on est pas capable de généré une position adjacente, on envoi une position aléatoire.
