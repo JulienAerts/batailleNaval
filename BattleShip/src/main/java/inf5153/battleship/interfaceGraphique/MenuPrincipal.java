@@ -2,6 +2,8 @@
 
 package inf5153.battleship.interfaceGraphique;
 import inf5153.battleship.controleur.MenuPrincipalControleur;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MenuPrincipal extends javax.swing.JFrame {
     
@@ -14,7 +16,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
                         
     private void initComponents() {
+        
+        selectionneur = new JFileChooser();
+        xmlfilter = new FileNameExtensionFilter("xml files (*.xml)", "xml");
 
+        selectionneur.setDialogTitle("Charger fichier de sauvegarde");
+        // set selected filter
+        selectionneur.setFileFilter(xmlfilter);
+        selectionneur.setCurrentDirectory(new java.io.File("."));
         btnJouerSeul = new javax.swing.JButton();
         btnChargerPartie = new javax.swing.JButton();
         btnVoirRecord = new javax.swing.JButton();
@@ -69,7 +78,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }                                            
 
-    private void btnChargerPartieActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void btnChargerPartieActionPerformed(java.awt.event.ActionEvent evt) {
+        
+        selectionneur.showOpenDialog(btnChargerPartie);
 
     }                                                
 
@@ -119,7 +130,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify    
+    private JFileChooser selectionneur ;
+    private FileNameExtensionFilter xmlfilter;
     private javax.swing.JButton btnChargerPartie;
     private javax.swing.JButton btnJouerSeul;
     private javax.swing.JButton btnVoirRecord;
