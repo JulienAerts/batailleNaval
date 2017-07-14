@@ -5,12 +5,20 @@ import inf5153.battleship.controleur.*;
 public class Case {
 
     private Coup tir;
+
+    public Coup getTir() {
+        return tir;
+    }
     private Position position;
+    private Bateau bateau;
+
+    public Bateau getBateau() {
+        return bateau;
+    }
 
     public Position getPosition() {
         return position;
     }
-    private Bateau bateau;
 
     public Case(Position position) {
         tir = null;
@@ -27,8 +35,9 @@ public class Case {
     }
         
     public boolean bateauTouche() {
-            // TODO - implement Case.bateauTouche
-            throw new UnsupportedOperationException();
+        if(bateau == null)
+            return false;
+        return true;
     }
 
     public Reponse getReponse() {

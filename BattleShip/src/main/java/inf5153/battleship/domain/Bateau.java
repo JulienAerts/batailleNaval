@@ -36,6 +36,14 @@ public class Bateau {
             throw new Exception("Le nombre de case assigné au bateau doit être identique à la longueur du bateau.");
     }
     
+    public boolean estCoule() {
+        for(Case casee : cases) {
+            if(casee.getTir() == null)
+                return false;
+        }
+        return true;
+    }
+    
     public Color getCouleur() {
         return Color.RED;
     }

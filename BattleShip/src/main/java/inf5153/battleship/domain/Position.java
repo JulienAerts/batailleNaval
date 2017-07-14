@@ -1,9 +1,16 @@
 package inf5153.battleship.domain;
 
+import static inf5153.battleship.domain.Carte.HAUTEUR;
+import static inf5153.battleship.domain.Carte.LARGEUR;
 import java.util.Objects;
 
 public class Position {
 
+    public final static int MAX_X = LARGEUR - 1;
+    public final static int MIN_X = 0;
+    public final static int MAX_Y = HAUTEUR;
+    public final static int MIN_Y = 1;
+    
     private char coordonneX;
     private Integer coordonneY;
 
@@ -26,7 +33,7 @@ public class Position {
     }
 
     private void validerCoordonnes() throws Exception {
-        if (coordonneY < 1 || coordonneY > 10) {
+        if (coordonneY < MIN_Y || coordonneY > MAX_Y) {
             throw new Exception("La coordonnée Y doit être entre 1 et 10. (" + coordonneY + ")");
         }
         if (coordonneX < 'a' || coordonneX > 'j') {

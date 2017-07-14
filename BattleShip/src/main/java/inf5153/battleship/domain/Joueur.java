@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Joueur {
 
 	protected Carte carte;
-	private ArrayList<Coup> coups;
+	protected ArrayList<Coup> coups;
 
         public Joueur() throws Exception {
             carte = new Carte();
@@ -20,8 +20,11 @@ public abstract class Joueur {
 	 * 
 	 * @param position
 	 */
-	public Case jouerCoup(Position position) {	
-		return carte.getCase(position);
+	public Case jouerCoup(Position position) {
+            Coup coup = new Coup(carte.getCase(position));
+            coups.add(coup);
+            carte.getCase(position).setTir(coup);
+            return carte.getCase(position);
 	}
 
 	public Carte getCarte() {

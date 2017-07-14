@@ -12,7 +12,7 @@ public class IA extends Joueur {
         }
         
 	public Integer getDifficultee() {
-		return this.difficultee;
+            return this.difficultee;
 	}
         
 	/**
@@ -28,10 +28,51 @@ public class IA extends Joueur {
 		throw new UnsupportedOperationException();
 	}
 
-	private Position positionMiniMax() {
-		// TODO - implement IA.positionMiniMax
-		throw new UnsupportedOperationException();
+	public Position positionMiniMax() throws Exception {
+            Coup dernierCoup = dernierCoupBateauTouche();
+            
+            if(dernierCoup == null)
+                return genererCoup();
+            else {
+                Position position = dernierCoup.getCase().getPosition();
+                
+                Position adjacente;
+                if(position.getCoordonneXToInt() <= Position.MAX_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY()))) {
+                    adjacente = new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY());
+                }
+                else if(position.getCoordonneY() <= Position.MAX_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() + 1))) {
+                    adjacente = new Position(position.getCoordonneXToInt(), position.getCoordonneY() + 1);
+                }
+                else if(position.getCoordonneY() >= Position.MIN_Y && !coupDejaEffectue(new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1))) {
+                    adjacente = new Position(position.getCoordonneXToInt(), position.getCoordonneY() - 1);
+                }
+                else if(position.getCoordonneXToInt() >= Position.MIN_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() - 1, position.getCoordonneY()))) {
+                    adjacente = new Position(position.getCoordonneXToInt() - 1, position.getCoordonneY());
+                }
+                else {
+                    // Si on est pas capable de généré une position adjacente, on envoi une position aléatoire.
+                    return genererCoup();
+                }
+                return adjacente;
+            }
 	}
+        
+        private boolean coupDejaEffectue(Position position) {
+            for(Coup coup : coups) {
+                if(coup.getCase().getPosition().equals(position))
+                    return true;
+            }
+            return false;
+        }
+        
+        private Coup dernierCoupBateauTouche() {
+            for(Coup coup : coups) {
+                if(coup.getCase().bateauTouche() && !coup.getCase().getBateau().estCoule()) {
+                    return coup;
+                }
+            }
+            return null;
+        }
 
 	public void placerBateauxAleatoire() throws Exception {
             
