@@ -90,21 +90,6 @@ public class PartieControleur {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean autreJoueurEstPret() {
-		// TODO - implement PartieControleur.autreJoueurEstPret
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean estMonTour() {
-		// TODO - implement PartieControleur.estMonTour
-		throw new UnsupportedOperationException();
-	}
-
-	public Position attendreCoupAdversaire() {
-		// TODO - implement PartieControleur.attendreCoupAdversaire
-		throw new UnsupportedOperationException();
-	}
-
 	public boolean partieTerminee() {
 		// TODO - implement PartieControleur.partieTerminee
 		throw new UnsupportedOperationException();
