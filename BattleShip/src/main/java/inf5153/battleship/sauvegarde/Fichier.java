@@ -12,7 +12,7 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 import static inf5153.battleship.sauvegarde.XmlEncode.partieToXml;
-
+import inf5153.battleship.domain.Partie;
 
 /**
  *
@@ -25,7 +25,7 @@ public class Fichier {
         try{
             Document docXml = new Document();
             
-            partieToXml(docXml, partie);
+            partieToXml(docXml, objPartie);
             
             XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
 
