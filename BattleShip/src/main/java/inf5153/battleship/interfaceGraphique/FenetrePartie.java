@@ -576,7 +576,7 @@ public class FenetrePartie extends JFrame {
         jButtonSousMarin3 = new JButton();
 
         setDefaultCloseOperation(0);
-        setUndecorated(true); 
+        setUndecorated(false); 
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 

@@ -367,10 +367,11 @@ public final class EffetPlacementBateaux {
     }
     public void colorierCase(List<Position> positions, Color color) {
         
-        
         for(Position position : positions) {
             mapBoutonsAdv[(position.getCoordonneXToInt() * 10) + position.getCoordonneY() - 1].setBackground(color);
         }
+        
+       
         
 //        for(int i = 0; i < mapBoutonsAdv.length; i++) {
 //            
@@ -601,6 +602,7 @@ public final class EffetPlacementBateaux {
         mapBoutonsAdv[70]=this.partie.jButton8A;
         mapBoutonsAdv[71]=this.partie.jButton8B;
         mapBoutonsAdv[72]=this.partie.jButton8C;
+        mapBoutonsAdv[73]=this.partie.jButton8D;
         mapBoutonsAdv[74]=this.partie.jButton8E;
         mapBoutonsAdv[75]=this.partie.jButton8F;
         mapBoutonsAdv[76]=this.partie.jButton8G;

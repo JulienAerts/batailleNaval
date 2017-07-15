@@ -85,11 +85,11 @@ public class FenetreJouerPartie extends FenetrePartie{
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {
         try
         {
-            //affichageBoutonDebutPartie();
-            ///getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
+            affichageBoutonDebutPartie();
+            getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
             
             controleur.commencerPartie();
-            placementBateaux.placerBateaux(controleur.getBateauxIA());
+            //placementBateaux.placerBateaux(controleur.getBateauxIA());
             placementCoups = new EffetPlacementCoups(this,placementBateaux.mapBoutonsJoueur,placementBateaux.mapBoutonsAdv);
         }
         catch(Exception ex) {
