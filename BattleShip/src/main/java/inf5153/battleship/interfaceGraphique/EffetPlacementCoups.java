@@ -1,8 +1,13 @@
 
 package inf5153.battleship.interfaceGraphique;
 import inf5153.battleship.controleur.Reponse;
+import inf5153.battleship.domain.Bateau;
+import inf5153.battleship.domain.Case;
+import inf5153.battleship.domain.Position;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EffetPlacementCoups {
     private FenetreJouerPartie partie;
@@ -27,7 +32,7 @@ public class EffetPlacementCoups {
     }
     
     private void mapBoutonsAdvActionPerformed(ActionEvent evt){
-        if(tonTour){
+        if(true){
             BoutonCustom bouton = (BoutonCustom)evt.getSource();
             Reponse rep = partie.controleur.jouerCoup(bouton.position);
             switch (rep){
@@ -36,7 +41,7 @@ public class EffetPlacementCoups {
                     tonTour = false ;
                     break;
                 case ToucheCoule:
-                    bouton.setBackground(Color.RED);
+                    colorierCaseBateau(trouverBateau(bouton.position),Color.red);
                     tonTour = false ;
                     break;
                 case Eau:
@@ -49,5 +54,25 @@ public class EffetPlacementCoups {
 
             }
         }
+    }
+    
+    public void colorierCaseBateau(Bateau bateau, Color color) {
+        
+        for(Case cas : bateau.getCases()) {
+            mapBoutonsAdv[(cas.getPosition().getCoordonneXToInt()) + (cas.getPosition().getCoordonneY() - 1) *10].setBackground(color);
+        }
+    }
+    
+    public Bateau trouverBateau(Position pos) {
+        Bateau BateauRechercher = new Bateau();
+        for(Bateau bateau : partie.controleur.getBateauxIA()) {
+            for(Case tCase : bateau.getCases()) {
+               if(tCase.getPosition().equals(pos)){
+                   BateauRechercher = bateau;
+               }
+            }
+        }
+            
+        return BateauRechercher;
     }
 }

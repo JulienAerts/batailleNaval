@@ -368,7 +368,7 @@ public final class EffetPlacementBateaux {
     public void colorierCase(List<Position> positions, Color color) {
         
         for(Position position : positions) {
-            mapBoutonsAdv[(position.getCoordonneXToInt() * 10) + position.getCoordonneY() - 1].setBackground(color);
+            mapBoutonsAdv[(position.getCoordonneXToInt()) + (position.getCoordonneY() - 1) *10].setBackground(color);
         }
         
        

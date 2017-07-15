@@ -86,7 +86,7 @@ public class FenetreJouerPartie extends FenetrePartie{
         try
         {   
             controleur.commencerPartie(getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire),niveauDif);
-            //placementBateaux.placerBateaux(controleur.getBateauxIA());
+            placementBateaux.placerBateaux(controleur.getBateauxIA());
             affichageBoutonDebutPartie();     
             txtJournalisation.append("Tire sur une des cases de ton adversaire!\n");
             placementCoups = new EffetPlacementCoups(this,placementBateaux.mapBoutonsJoueur,placementBateaux.mapBoutonsAdv);

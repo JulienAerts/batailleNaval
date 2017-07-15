@@ -27,8 +27,8 @@ public class PartieControleur {
             // TODO: Validations du joueur1 ??
             partie = new Partie();
             partie.getJoueur1().placerBateauxUI(listePositionsBateauxJoueur);
+            partie.getJoueur2().setDifficultee(niveauDifficulte);
             partie.getJoueur2().placerBateauxAleatoire();
-
 	}
 
         public ArrayList<Bateau> getBateauxIA() {
@@ -41,9 +41,13 @@ public class PartieControleur {
 	 */
 	public Reponse jouerCoup(Position position) {
 		Reponse reponse;
-                if (partie.getJoueur2().jouerCoup(position).bateauExiste()){
-                    
-                     reponse = Reponse.Touche;
+                Case caseJouer  = partie.getJoueur2().jouerCoup(position);
+                Bateau touche;
+                if (caseJouer.bateauExiste()){
+                    touche = caseJouer.getBateau();
+                    if (touche.estCoule()){
+                        reponse = Reponse.ToucheCoule;
+                    }else reponse = Reponse.Touche;                 
                 }else reponse = Reponse.Eau;
 
 		return reponse;
