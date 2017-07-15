@@ -3,7 +3,7 @@ package inf5153.battleship.interfaceGraphique;
 
 public class FenetreChoisirDifficulte extends javax.swing.JFrame {
     
-    private String niveauDif;
+    private int niveauDif;
    
     public FenetreChoisirDifficulte() {
         initComponents();
@@ -68,7 +68,9 @@ public class FenetreChoisirDifficulte extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
-        niveauDif = jComboBox1.getSelectedItem().toString();
+        if(jComboBox1.getSelectedItem().toString() == "facile"){
+            niveauDif = 0;
+        }else niveauDif = 1;
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
