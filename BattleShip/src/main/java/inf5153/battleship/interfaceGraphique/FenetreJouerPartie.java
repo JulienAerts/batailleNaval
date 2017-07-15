@@ -12,13 +12,13 @@ import inf5153.battleship.domain.Position;
  * @author 0-pc
  */
 public class FenetreJouerPartie extends FenetrePartie{
-    private final String niveauDif;
+    private final int niveauDif;
     private EffetPlacementBateaux placementBateaux ;
     private EffetPlacementCoups placementCoups ;
     public PartieControleur controleur;
     private BoutonCustom listeBoutonsBateauxJoueur[];
             
-    public FenetreJouerPartie(String nivDif) {
+    public FenetreJouerPartie(int nivDif) {
         niveauDif = nivDif;
         try
         {
@@ -84,12 +84,11 @@ public class FenetreJouerPartie extends FenetrePartie{
 
     private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {
         try
-        {
-            affichageBoutonDebutPartie();
-            getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire);
-            
-            controleur.commencerPartie();
+        {   
+            controleur.commencerPartie(getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire),niveauDif);
             //placementBateaux.placerBateaux(controleur.getBateauxIA());
+            affichageBoutonDebutPartie();     
+            txtJournalisation.append("Tire sur une des cases de ton adversaire!\n");
             placementCoups = new EffetPlacementCoups(this,placementBateaux.mapBoutonsJoueur,placementBateaux.mapBoutonsAdv);
         }
         catch(Exception ex) {
