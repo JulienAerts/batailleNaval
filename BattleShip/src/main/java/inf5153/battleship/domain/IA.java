@@ -6,7 +6,7 @@ import java.util.Random;
 public class IA extends Joueur {
 
 	private Integer difficultee;
-        private Carte carteJoueur; 
+        private Joueur adversaire;
         public IA() throws Exception {
             
         }
@@ -23,8 +23,8 @@ public class IA extends Joueur {
 		this.difficultee = difficultee;
 	}
         
-        public void setcarteJoueur(Carte carte) {
-		carteJoueur = carte;
+        public void setAdversaire(Joueur adversaire) {
+		this.adversaire = adversaire;
 	}
         
 	public Position genererCoup() {
@@ -46,7 +46,7 @@ public class IA extends Joueur {
             Position positionGenere  = null;
             do{
             positionGenere = positionAleatoire();
-            }while(!carteJoueur.positionNonTirer(positionGenere));
+            }while(!adversaire.getCarte().positionNonTirer(positionGenere));
             
             return positionGenere;
         }
@@ -55,7 +55,7 @@ public class IA extends Joueur {
             Coup dernierCoup = dernierCoupBateauTouche();
             
             if(dernierCoup == null)
-                return genererCoup();
+                return positionFacile();
             else {
                 Position position = dernierCoup.getCase().getPosition();
                 
@@ -74,14 +74,14 @@ public class IA extends Joueur {
                 }
                 else {
                     // Si on est pas capable de généré une position adjacente, on envoi une position aléatoire.
-                    return genererCoup();
+                    return positionFacile();
                 }
                 return adjacente;
             }
 	}
         
         private boolean coupDejaEffectue(Position position) {
-            for(Coup coup : coups) {
+            for(Coup coup : adversaire.getCoups()) {
                 if(coup.getCase().getPosition().equals(position))
                     return true;
             }
@@ -89,7 +89,7 @@ public class IA extends Joueur {
         }
         
         private Coup dernierCoupBateauTouche() {
-            for(Coup coup : coups) {
+            for(Coup coup : adversaire.getCoups()) {
                 if(coup.getCase().bateauTouche() && !coup.getCase().getBateau().estCoule()) {
                     return coup;
                 }

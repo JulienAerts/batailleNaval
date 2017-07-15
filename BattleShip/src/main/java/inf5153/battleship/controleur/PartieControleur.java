@@ -28,7 +28,7 @@ public class PartieControleur {
             partie = new Partie();
             partie.getJoueur1().placerBateauxUI(listePositionsBateauxJoueur);
             partie.getJoueur2().setDifficultee(niveauDifficulte);
-            partie.getJoueur2().setcarteJoueur( partie.getJoueur1().getCarte());
+            partie.getJoueur2().setAdversaire(partie.getJoueur1());
             partie.getJoueur2().placerBateauxAleatoire();
             
 	}

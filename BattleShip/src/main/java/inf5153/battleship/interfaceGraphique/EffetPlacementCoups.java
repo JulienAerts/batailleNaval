@@ -15,6 +15,7 @@ public class EffetPlacementCoups {
     public BoutonCustom mapBoutonsJoueur[];
     public BoutonCustom mapBoutonsAdv[];
     private boolean tonTour = true ;
+    public boolean partieTermine = false ;
     int n = 0;
     public EffetPlacementCoups(FenetreJouerPartie partie,BoutonCustom[] mapBoutonsJoueur,BoutonCustom[] mapBoutonsAdv){
         this.partie=partie;
@@ -74,22 +75,25 @@ public class EffetPlacementCoups {
              switch (rep){
                 case Touche:
                     boutonToucheAI.setBackground(Color.yellow);
+                    tonTour = true ;
                     break;
                 case ToucheCoule:
                     colorierCaseBateauJoueur(trouverBateauJoueur(coupGenereAI),Color.red);
+                    tonTour = true ;
                     break;
                 case Eau:
                     boutonToucheAI.setBackground(Color.BLUE);
-
+                    tonTour = true ;
                     break;
                 case PartieTerminee:
                     colorierCaseBateauJoueur(trouverBateauJoueur(coupGenereAI),Color.red);
-                    partie.txtJournalisation.append("pARTIE TERMINER @@@@");
+                    tonTour = false ;
+                    partieTermine = true;
                     break;
 
             }
 
-         tonTour = true ;
+         
     }
     
     
