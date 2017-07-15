@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package inf5153.battleship.interfaceGraphique;
 import inf5153.battleship.controleur.Reponse;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
-/**
- *
- * @author 0-pc
- */
 public class EffetPlacementCoups {
     private FenetreJouerPartie partie;
     public BoutonCustom mapBoutonsJoueur[];
     public BoutonCustom mapBoutonsAdv[];
-    
+    private boolean tonTour = true ;
     public EffetPlacementCoups(FenetreJouerPartie partie,BoutonCustom[] mapBoutonsJoueur,BoutonCustom[] mapBoutonsAdv){
         this.partie=partie;
         this.mapBoutonsAdv = mapBoutonsAdv;
@@ -35,22 +27,27 @@ public class EffetPlacementCoups {
     }
     
     private void mapBoutonsAdvActionPerformed(ActionEvent evt){
-        BoutonCustom bouton = (BoutonCustom)evt.getSource();
-        Reponse rep = partie.controleur.jouerCoup(bouton.position);
-        switch (rep){
-            case Touche:
-                bouton.setBackground(Color.RED);
-                break;
-            case ToucheCoule:
-                bouton.setBackground(Color.RED);
-                break;
-            case Eau:
-                bouton.setBackground(Color.BLUE);
-                break;
-            case PartieTerminee:
+        if(tonTour){
+            BoutonCustom bouton = (BoutonCustom)evt.getSource();
+            Reponse rep = partie.controleur.jouerCoup(bouton.position);
+            switch (rep){
+                case Touche:
+                    bouton.setBackground(Color.yellow);
+                    tonTour = false ;
+                    break;
+                case ToucheCoule:
+                    bouton.setBackground(Color.RED);
+                    tonTour = false ;
+                    break;
+                case Eau:
+                    bouton.setBackground(Color.BLUE);
+                    tonTour = false ;
+                    break;
+                case PartieTerminee:
 
-                break;
+                    break;
 
+            }
         }
     }
 }
