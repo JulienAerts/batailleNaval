@@ -9,6 +9,6 @@ public class ContreTorpilleur extends Bateau {
     
     @Override
     public Color getCouleur() {
-        return Color.LIGHT_GRAY;
+        return Color.MAGENTA;
     }
 }
