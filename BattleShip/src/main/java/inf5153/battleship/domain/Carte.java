@@ -45,6 +45,22 @@ public class Carte {
             return true;
         }
         
+        public boolean positionNonTirer(Position position) {
+            if (getCase(position).getTir() == null){
+                 return true;
+            }else return false;
+        }
+        
+        public boolean bateauxTousCouler() {
+            boolean reponse = true;
+            for (Bateau bateau :bateaux){
+                if (reponse){
+                    reponse = bateau.estCoule();
+                }
+            }
+            return reponse;
+        }
+        
 	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position positionDepart, int longueur) throws Exception {
             
             ArrayList<Position> positions = new ArrayList();

@@ -498,7 +498,7 @@ public class FenetrePartie extends JFrame {
         jButton8G = new BoutonCustom(new Position('g',8));
         jButton9G = new BoutonCustom(new Position('g',9));
         jButton10G = new BoutonCustom(new Position('g',10));
-        jButton1H = new BoutonCustom(new Position('h',10));
+        jButton1H = new BoutonCustom(new Position('h',1));
         jButton2H = new BoutonCustom(new Position('h',2));
         jButton3H = new BoutonCustom(new Position('h',3));
         jButton4H = new BoutonCustom(new Position('h',4));

@@ -8,12 +8,14 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class EffetPlacementCoups {
     private FenetreJouerPartie partie;
     public BoutonCustom mapBoutonsJoueur[];
     public BoutonCustom mapBoutonsAdv[];
     private boolean tonTour = true ;
+    int n = 0;
     public EffetPlacementCoups(FenetreJouerPartie partie,BoutonCustom[] mapBoutonsJoueur,BoutonCustom[] mapBoutonsAdv){
         this.partie=partie;
         this.mapBoutonsAdv = mapBoutonsAdv;
@@ -32,29 +34,64 @@ public class EffetPlacementCoups {
     }
     
     private void mapBoutonsAdvActionPerformed(ActionEvent evt){
-        if(true){
+        if(tonTour){
             BoutonCustom bouton = (BoutonCustom)evt.getSource();
+
             Reponse rep = partie.controleur.jouerCoup(bouton.position);
             switch (rep){
                 case Touche:
                     bouton.setBackground(Color.yellow);
                     tonTour = false ;
+                    tireAdversaire();
                     break;
                 case ToucheCoule:
                     colorierCaseBateau(trouverBateau(bouton.position),Color.red);
                     tonTour = false ;
+                    tireAdversaire();
                     break;
                 case Eau:
                     bouton.setBackground(Color.BLUE);
                     tonTour = false ;
+                    tireAdversaire();
                     break;
                 case PartieTerminee:
+                    colorierCaseBateau(trouverBateau(bouton.position),Color.red);
+                    partie.txtJournalisation.append("pARTIE TERMINER @@@@");
+                    break;
+                case DejaTirer:
+                    JOptionPane.showMessageDialog(null, "Vous avez deja tirer sur cette case","Message avertissement",JOptionPane.ERROR_MESSAGE);
+                    tonTour = true ;
+                    break;
 
+            } 
+        }
+    }
+    
+    public void tireAdversaire() {
+            Position coupGenereAI = partie.controleur.genererCoupIA();
+            Reponse rep = partie.controleur.jouerCoupAI(coupGenereAI);
+            BoutonCustom boutonToucheAI = mapBoutonsJoueur[coupGenereAI.getCoordonneXToInt() + (coupGenereAI.getCoordonneY()- 1) *10];
+             switch (rep){
+                case Touche:
+                    boutonToucheAI.setBackground(Color.yellow);
+                    break;
+                case ToucheCoule:
+                    colorierCaseBateauJoueur(trouverBateauJoueur(coupGenereAI),Color.red);
+                    break;
+                case Eau:
+                    boutonToucheAI.setBackground(Color.BLUE);
+
+                    break;
+                case PartieTerminee:
+                    colorierCaseBateauJoueur(trouverBateauJoueur(coupGenereAI),Color.red);
+                    partie.txtJournalisation.append("pARTIE TERMINER @@@@");
                     break;
 
             }
-        }
+
+         tonTour = true ;
     }
+    
     
     public void colorierCaseBateau(Bateau bateau, Color color) {
         
@@ -63,9 +100,29 @@ public class EffetPlacementCoups {
         }
     }
     
+    public void colorierCaseBateauJoueur(Bateau bateau, Color color) {
+        
+        for(Case cas : bateau.getCases()) {
+            mapBoutonsJoueur[(cas.getPosition().getCoordonneXToInt()) + (cas.getPosition().getCoordonneY() - 1) *10].setBackground(color);
+        }
+    }
+    
     public Bateau trouverBateau(Position pos) {
         Bateau BateauRechercher = new Bateau();
         for(Bateau bateau : partie.controleur.getBateauxIA()) {
+            for(Case tCase : bateau.getCases()) {
+               if(tCase.getPosition().equals(pos)){
+                   BateauRechercher = bateau;
+               }
+            }
+        }
+            
+        return BateauRechercher;
+    }
+    
+    public Bateau trouverBateauJoueur(Position pos) {
+        Bateau BateauRechercher = new Bateau();
+        for(Bateau bateau : partie.controleur.getBateauxJoueur()) {
             for(Case tCase : bateau.getCases()) {
                if(tCase.getPosition().equals(pos)){
                    BateauRechercher = bateau;

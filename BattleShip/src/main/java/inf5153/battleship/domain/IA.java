@@ -6,7 +6,7 @@ import java.util.Random;
 public class IA extends Joueur {
 
 	private Integer difficultee;
-
+        private Carte carteJoueur; 
         public IA() throws Exception {
             
         }
@@ -22,12 +22,35 @@ public class IA extends Joueur {
 	public void setDifficultee(Integer difficultee) {
 		this.difficultee = difficultee;
 	}
-
-	public Position genererCoup() {
-		// TODO - implement IA.genererCoup
-		throw new UnsupportedOperationException();
+        
+        public void setcarteJoueur(Carte carte) {
+		carteJoueur = carte;
 	}
-
+        
+	public Position genererCoup() {
+            
+            Position positionGenere = null;
+            try
+            {
+		if (difficultee == 0){
+                    positionGenere = positionFacile();
+                    
+                }else  positionGenere = positionMiniMax();
+            }catch(Exception ex) {
+            
+            }
+            return positionGenere;
+	}
+        
+        public Position positionFacile() throws Exception{
+            Position positionGenere  = null;
+            do{
+            positionGenere = positionAleatoire();
+            }while(!carteJoueur.positionNonTirer(positionGenere));
+            
+            return positionGenere;
+        }
+        
 	public Position positionMiniMax() throws Exception {
             Coup dernierCoup = dernierCoupBateauTouche();
             
@@ -110,8 +133,6 @@ public class IA extends Joueur {
             Position position;
             // +1 parce que la position commence à a,1
             position = new Position(aleatoire.nextInt(carte.LARGEUR), aleatoire.nextInt(carte.HAUTEUR) + 1);
-            
-            System.out.println("Position aleatoire trouver: "+ position.getCoordonneX() + " " + position.getCoordonneY() );
             return position;
         }
 

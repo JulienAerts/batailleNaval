@@ -4,5 +4,6 @@ public enum Reponse {
 	Touche,
 	ToucheCoule,
 	Eau,
-	PartieTerminee
+	PartieTerminee,
+        DejaTirer
 }

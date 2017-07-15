@@ -28,11 +28,17 @@ public class PartieControleur {
             partie = new Partie();
             partie.getJoueur1().placerBateauxUI(listePositionsBateauxJoueur);
             partie.getJoueur2().setDifficultee(niveauDifficulte);
+            partie.getJoueur2().setcarteJoueur( partie.getJoueur1().getCarte());
             partie.getJoueur2().placerBateauxAleatoire();
+            
 	}
 
         public ArrayList<Bateau> getBateauxIA() {
             return partie.getJoueur2().getCarte().getBateaux();
+        }
+        
+        public ArrayList<Bateau> getBateauxJoueur() {
+            return partie.getJoueur1().getCarte().getBateaux();
         }
 
 	/**
@@ -41,12 +47,33 @@ public class PartieControleur {
 	 */
 	public Reponse jouerCoup(Position position) {
 		Reponse reponse;
-                Case caseJouer  = partie.getJoueur2().jouerCoup(position);
+                if (partie.getJoueur2().getCarte().positionNonTirer(position)){
+                    Case caseJouer  = partie.getJoueur2().jouerCoup(position);
+                    Bateau touche;
+                    if (caseJouer.bateauExiste()){
+                        touche = caseJouer.getBateau();
+                        if (touche.estCoule()){
+                             if (partie.getJoueur2().getCarte().bateauxTousCouler()){
+                            reponse = Reponse.PartieTerminee;
+                        }else reponse = Reponse.ToucheCoule;
+                        }else reponse = Reponse.Touche;                 
+                    }else reponse = Reponse.Eau;
+                }else reponse = Reponse.DejaTirer;
+
+
+		return reponse;
+	}
+        
+        public Reponse jouerCoupAI(Position position) {
+		Reponse reponse;
+                Case caseJouer  = partie.getJoueur1().jouerCoup(position);
                 Bateau touche;
                 if (caseJouer.bateauExiste()){
                     touche = caseJouer.getBateau();
                     if (touche.estCoule()){
-                        reponse = Reponse.ToucheCoule;
+                        if (partie.getJoueur1().getCarte().bateauxTousCouler()){
+                            reponse = Reponse.PartieTerminee;
+                        }else reponse = Reponse.ToucheCoule;
                     }else reponse = Reponse.Touche;                 
                 }else reponse = Reponse.Eau;
 
@@ -89,8 +116,8 @@ public class PartieControleur {
 	}
 
 	public Position genererCoupIA() {
-		// TODO - implement PartieControleur.genererCoupIA
-		throw new UnsupportedOperationException();
+		Position positionGenere =partie.getJoueur2().genererCoup();
+                return positionGenere;
 	}
 
 	public Partie getPartie() {
