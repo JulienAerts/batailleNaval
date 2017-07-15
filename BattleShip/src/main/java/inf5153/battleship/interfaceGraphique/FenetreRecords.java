@@ -5,11 +5,11 @@ import inf5153.battleship.controleur.RecordControleur;
 
 public class FenetreRecords extends javax.swing.JFrame {
 
-	private RecordControleur controleur;   
-        private javax.swing.JButton btnRetourMenu;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JTable tblMeilleureTemps;
-        private javax.swing.JLabel lblImageFond;
+	protected RecordControleur controleur;   
+        protected javax.swing.JButton btnRetourMenu;
+        protected javax.swing.JScrollPane jScrollPane1;
+        protected javax.swing.JTable tblMeilleureTemps;
+        protected javax.swing.JLabel lblImageFond;
         
         public FenetreRecords() {
             
@@ -32,7 +32,7 @@ public class FenetreRecords extends javax.swing.JFrame {
 		throw new UnsupportedOperationException();
 	}
         
-        private void initComponents() {
+        protected void initComponents() {
 
             jScrollPane1 = new javax.swing.JScrollPane();
             tblMeilleureTemps = new javax.swing.JTable();

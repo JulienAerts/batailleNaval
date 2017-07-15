@@ -35,6 +35,22 @@ public class Partie {
 	public IA getJoueur2() {
 		return this.joueur2;
 	}
+        
+        /**
+	 * 
+	 * @param fin
+	 */
+	public void setDateFin(Date fin) {
+		this.fin = fin;
+	}
+
+	public Date getDateFin() {
+		return this.fin;
+	}
+        
+        public Date getDateDebut() {
+		return this.debut;
+	}
 
 	/**
 	 * 

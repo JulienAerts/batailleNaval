@@ -6,7 +6,13 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
 
 	private JButton btnSauvegarderRecord;
 	private JTextArea txtNomduJouer;
-
+        
+        public FenetreNouveauRecord() {
+            
+            super.initComponents();
+            super.initExtraComponents();
+        }
+        
 	public void btnSauvegarderOnClickListener() {
 		// TODO - implement FenetreNouveauRecord.btnSauvegarderOnClickListener
 		throw new UnsupportedOperationException();

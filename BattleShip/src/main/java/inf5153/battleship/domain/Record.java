@@ -4,9 +4,15 @@ import java.util.Date;
 
 public class Record {
 
-	private String Nom;
-	private Date debut;
-	private Date fin;
-	private Integer difficulte;
-
+	private String nom;
+	public long temp;
+	public Integer difficulte;
+        
+        public Record(String Nom,int difficulte,long temp) {
+            this.nom = nom;
+            this.difficulte = difficulte;
+            this.temp = temp;
+        }
+        
+        
 }

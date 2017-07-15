@@ -90,16 +90,6 @@ public class PartieControleur {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean partieTerminee() {
-		// TODO - implement PartieControleur.partieTerminee
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean estUnRecord() {
-		// TODO - implement PartieControleur.estUnRecord
-		throw new UnsupportedOperationException();
-	}
-
 	public Position genererCoupIA() {
 		Position positionGenere =partie.getJoueur2().genererCoup();
                 return positionGenere;

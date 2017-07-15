@@ -16,6 +16,7 @@ public class EffetPlacementCoups {
     public BoutonCustom mapBoutonsAdv[];
     private boolean tonTour = true ;
     public boolean partieTermine = false ;
+    public boolean victoire = false ;
     int n = 0;
     public EffetPlacementCoups(FenetreJouerPartie partie,BoutonCustom[] mapBoutonsJoueur,BoutonCustom[] mapBoutonsAdv){
         this.partie=partie;
@@ -58,6 +59,9 @@ public class EffetPlacementCoups {
                 case PartieTerminee:
                     colorierCaseBateau(trouverBateau(bouton.position),Color.red);
                     partie.txtJournalisation.append("pARTIE TERMINER @@@@");
+                    tonTour = false ;
+                    victoire = true;
+                    partie.finDePartie(victoire);
                     break;
                 case DejaTirer:
                     JOptionPane.showMessageDialog(null, "Vous avez deja tirer sur cette case","Message avertissement",JOptionPane.ERROR_MESSAGE);
@@ -88,7 +92,8 @@ public class EffetPlacementCoups {
                 case PartieTerminee:
                     colorierCaseBateauJoueur(trouverBateauJoueur(coupGenereAI),Color.red);
                     tonTour = false ;
-                    partieTermine = true;
+                    victoire = false;
+                    partie.finDePartie(victoire);
                     break;
 
             }
