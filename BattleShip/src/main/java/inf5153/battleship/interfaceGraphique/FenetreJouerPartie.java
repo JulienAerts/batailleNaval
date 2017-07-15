@@ -35,8 +35,8 @@ public class FenetreJouerPartie extends FenetrePartie{
     
     private void initListener (){
 
-        btnDemarrerPartie.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        btnDemarrerPartie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDemarrerPartieMouseClicked(evt);
             }
         });
@@ -82,7 +82,7 @@ public class FenetreJouerPartie extends FenetrePartie{
         txtJournalisation.append("Sauvegarde pas implementer encore !\n");
     }
 
-    private void btnDemarrerPartieMouseClicked(java.awt.event.MouseEvent evt) {
+    private void btnDemarrerPartieMouseClicked(java.awt.event.ActionEvent evt) {
         try
         {   
             controleur.commencerPartie(getListePositionsBateauxJoueur(placementBateaux.boutonsEnMemoire),niveauDif);
