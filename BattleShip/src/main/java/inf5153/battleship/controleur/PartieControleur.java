@@ -23,12 +23,12 @@ public class PartieControleur {
 		// TODO - implement PartieControleur.placerBateau
 		throw new UnsupportedOperationException();
 	}
-
-//	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte)  throws Exception {
-	public void commencerPartie() throws Exception {
+	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte)  throws Exception {
             // TODO: Validations du joueur1 ??
             partie = new Partie();
+            partie.getJoueur1().placerBateauxUI(listePositionsBateauxJoueur);
             partie.getJoueur2().placerBateauxAleatoire();
+
 	}
 
         public ArrayList<Bateau> getBateauxIA() {
