@@ -78,28 +78,31 @@ public class XmlEncode {
    
    private static void ecrireBateau(Element Joueur, Joueur player) {
        
-       
-       Element eleBateau = new Element("Bateau");
-       
-       Element positionBateau = new Element("position");       
-       Element Case = new Element("Case");
-       
+         
        for(Bateau curBateau : player.getCarte().getBateaux()){
+           
+            Element eleBateau = new Element("Bateau");
+            Element positionBateau = new Element("position");       
+            
            
            eleBateau.setAttribute("EstCoule", Integer.toString(ecrireCoule(curBateau)));
            eleBateau.setAttribute("Longeur", Integer.toString(curBateau.getLongeur()));
            
            for(Case curCase : curBateau.getCases() ) {
                
+               Element Case = new Element("Case");
+               
                Case.setAttribute("coordonneeX", Character.toString(curCase.getPosition().getCoordonneX()));
                Case.setAttribute("CoordoneeY", Integer.toString(curCase.getPosition().getCoordonneY()));
                
+               positionBateau.addContent(Case);
            
            }
            
-           eleBateau.addContent(Joueur);
-           positionBateau.addContent(eleBateau);
-           Case.addContent(positionBateau);
+           eleBateau.addContent(positionBateau);
+           Joueur.addContent(eleBateau);
+           
+          
            
        }
        
