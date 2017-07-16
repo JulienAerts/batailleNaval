@@ -13,6 +13,7 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 import static inf5153.battleship.sauvegarde.XmlEncode.partieToXml;
 import inf5153.battleship.domain.Partie;
+import static inf5153.battleship.sauvegarde.XmlDecode.xmlToPartie;
 
 /**
  *
@@ -44,12 +45,13 @@ public class Fichier {
         try{
         
             Document lireDocXml = builder.build(new File("./src/sauvegarde.xml"));
-
+            xmlToPartie(lireDocXml);
             
         }catch(Exception e){
             e.printStackTrace();
         }
     
     }
+
     
 }

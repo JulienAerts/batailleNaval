@@ -18,7 +18,7 @@ import org.jdom2.Element;
  */
 public class XmlDecode {
     
-    private static Partie xmlToPartie(Document lireDocXml) throws Exception {
+    public static Partie xmlToPartie(Document lireDocXml) throws Exception {
         Partie laPartie = new Partie(chercherDate(lireDocXml));
         laPartie.getJoueur2().setDifficultee(Integer.parseInt(lireDocXml.getRootElement().getChild("IA").getAttributeValue("difficulte")));
         lireBateauJoueur(laPartie.getJoueur1(), lireDocXml);
