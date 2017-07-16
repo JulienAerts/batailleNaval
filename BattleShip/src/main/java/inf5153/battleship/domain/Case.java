@@ -11,6 +11,7 @@ public class Case {
     }
     private Position position;
     private Bateau bateau;
+    private Reponse reponse;
 
     public Bateau getBateau() {
         return bateau;
@@ -41,8 +42,11 @@ public class Case {
     }
 
     public Reponse getReponse() {
-            // TODO - implement Case.getReponse
-            throw new UnsupportedOperationException();
+            return reponse;
+    }
+    
+    public void setReponse(Reponse reponse) {
+            this.reponse = reponse;
     }
 
     public boolean bateauExiste() {

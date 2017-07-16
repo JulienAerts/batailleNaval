@@ -14,8 +14,7 @@ import javax.swing.JOptionPane;
 
 public final class EffetPlacementBateaux {
     
-    public BoutonCustom mapBoutonsJoueur[];
-    public BoutonCustom mapBoutonsAdv[];
+
     public JButton listeBateaux[];
     private BoutonCustom boutonsSelectionner[];
     public BoutonCustom boutonsEnMemoire[]=new BoutonCustom[30];
@@ -24,7 +23,8 @@ public final class EffetPlacementBateaux {
     private boolean bateauxPlacer=false;
     private boolean etatBateauxEstPlacer[] = new boolean[5];
     public boolean orientation = false;
-
+    private BoutonCustom mapBoutonsJoueur[];
+    private BoutonCustom mapBoutonsAdv[];
 
     
     
@@ -33,11 +33,8 @@ public final class EffetPlacementBateaux {
         
     public EffetPlacementBateaux(FenetreJouerPartie partie){
         this.partie=partie;
-        
-        init_mapBoutonsJoueur();
-        init_mapBoutonsAdv();
-        init_listeBateaux();
-        
+        mapBoutonsJoueur = partie.mapBoutonsJoueur;
+        mapBoutonsAdv = partie.mapBoutonsAdv;
         pred=mapBoutonsJoueur[0].getBackground();
         desactiverBoutonsOption(false);
         initialiserListenerMouse();
@@ -381,257 +378,6 @@ public final class EffetPlacementBateaux {
 //        }
     }
     
-    private void init_listeBateaux(){
-        listeBateaux = new JButton[17];
-        
-        listeBateaux[0]=this.partie.jButtonPorteAvion1;
-        listeBateaux[1]=this.partie.jButtonPorteAvion2;
-        listeBateaux[2]=this.partie.jButtonPorteAvion3;
-        listeBateaux[3]=this.partie.jButtonPorteAvion4;
-        listeBateaux[4]=this.partie.jButtonPorteAvion5;
-        listeBateaux[5]=this.partie.jButtonCroiseur1;
-        listeBateaux[6]=this.partie.jButtonCroiseur2;
-        listeBateaux[7]=this.partie.jButtonCroiseur3;
-        listeBateaux[8]=this.partie.jButtonCroiseur4;
-        listeBateaux[9]=this.partie.jButtonContreTorpilleur1;
-        listeBateaux[10]=this.partie.jButtonContreTorpilleur2;
-        listeBateaux[11]=this.partie.jButtonContreTorpilleur3;
-        listeBateaux[12]=this.partie.jButtonSousMarin1;
-        listeBateaux[13]=this.partie.jButtonSousMarin2;
-        listeBateaux[14]=this.partie.jButtonSousMarin3;
-        listeBateaux[15]=this.partie.jButtonTorpilleur1;
-        listeBateaux[16]=this.partie.jButtonTorpilleur2;
-    }
-
-    public void init_mapBoutonsJoueur(){
-        mapBoutonsJoueur = new BoutonCustom [100];
-        
-        mapBoutonsJoueur[0]=this.partie.jButtonA1;
-        mapBoutonsJoueur[1]=this.partie.jButtonB1;
-        mapBoutonsJoueur[2]=this.partie.jButtonC1;
-        mapBoutonsJoueur[3]=this.partie.jButtonD1;
-        mapBoutonsJoueur[4]=this.partie.jButtonE1;
-        mapBoutonsJoueur[5]=this.partie.jButtonF1;
-        mapBoutonsJoueur[6]=this.partie.jButtonG1;
-        mapBoutonsJoueur[7]=this.partie.jButtonH1;
-        mapBoutonsJoueur[8]=this.partie.jButtonI1;
-        mapBoutonsJoueur[9]=this.partie.jButtonJ1;
-        
-        mapBoutonsJoueur[10]=this.partie.jButtonA2;
-        mapBoutonsJoueur[11]=this.partie.jButtonB2;
-        mapBoutonsJoueur[12]=this.partie.jButtonC2;
-        mapBoutonsJoueur[13]=this.partie.jButtonD2;
-        mapBoutonsJoueur[14]=this.partie.jButtonE2;
-        mapBoutonsJoueur[15]=this.partie.jButtonF2;
-        mapBoutonsJoueur[16]=this.partie.jButtonG2;
-        mapBoutonsJoueur[17]=this.partie.jButtonH2;
-        mapBoutonsJoueur[18]=this.partie.jButtonI2;
-        mapBoutonsJoueur[19]=this.partie.jButtonJ2;
-        
-        mapBoutonsJoueur[20]=this.partie.jButtonA3;
-        mapBoutonsJoueur[21]=this.partie.jButtonB3;
-        mapBoutonsJoueur[22]=this.partie.jButtonC3;
-        mapBoutonsJoueur[23]=this.partie.jButtonD3;
-        mapBoutonsJoueur[24]=this.partie.jButtonE3;
-        mapBoutonsJoueur[25]=this.partie.jButtonF3;
-        mapBoutonsJoueur[26]=this.partie.jButtonG3;
-        mapBoutonsJoueur[27]=this.partie.jButtonH3;
-        mapBoutonsJoueur[28]=this.partie.jButtonI3;
-        mapBoutonsJoueur[29]=this.partie.jButtonJ3;
-        
-        mapBoutonsJoueur[30]=this.partie.jButtonA4;
-        mapBoutonsJoueur[31]=this.partie.jButtonB4;
-        mapBoutonsJoueur[32]=this.partie.jButtonC4;
-        mapBoutonsJoueur[33]=this.partie.jButtonD4;
-        mapBoutonsJoueur[34]=this.partie.jButtonE4;
-        mapBoutonsJoueur[35]=this.partie.jButtonF4;
-        mapBoutonsJoueur[36]=this.partie.jButtonG4;
-        mapBoutonsJoueur[37]=this.partie.jButtonH4;
-        mapBoutonsJoueur[38]=this.partie.jButtonI4;
-        mapBoutonsJoueur[39]=this.partie.jButtonJ4;
-        
-        mapBoutonsJoueur[40]=this.partie.jButtonA5;
-        mapBoutonsJoueur[41]=this.partie.jButtonB5;
-        mapBoutonsJoueur[42]=this.partie.jButtonC5;
-        mapBoutonsJoueur[43]=this.partie.jButtonD5;
-        mapBoutonsJoueur[44]=this.partie.jButtonE5;
-        mapBoutonsJoueur[45]=this.partie.jButtonF5;
-        mapBoutonsJoueur[46]=this.partie.jButtonG5;
-        mapBoutonsJoueur[47]=this.partie.jButtonH5;
-        mapBoutonsJoueur[48]=this.partie.jButtonI5;
-        mapBoutonsJoueur[49]=this.partie.jButtonJ5;
-        
-        mapBoutonsJoueur[50]=this.partie.jButtonA6;
-        mapBoutonsJoueur[51]=this.partie.jButtonB6;
-        mapBoutonsJoueur[52]=this.partie.jButtonC6;
-        mapBoutonsJoueur[53]=this.partie.jButtonD6;
-        mapBoutonsJoueur[54]=this.partie.jButtonE6;
-        mapBoutonsJoueur[55]=this.partie.jButtonF6;
-        mapBoutonsJoueur[56]=this.partie.jButtonG6;
-        mapBoutonsJoueur[57]=this.partie.jButtonH6;
-        mapBoutonsJoueur[58]=this.partie.jButtonI6;
-        mapBoutonsJoueur[59]=this.partie.jButtonJ6;
-        
-        mapBoutonsJoueur[60]=this.partie.jButtonA7;
-        mapBoutonsJoueur[61]=this.partie.jButtonB7;
-        mapBoutonsJoueur[62]=this.partie.jButtonC7;
-        mapBoutonsJoueur[63]=this.partie.jButtonD7;
-        mapBoutonsJoueur[64]=this.partie.jButtonE7;
-        mapBoutonsJoueur[65]=this.partie.jButtonF7;
-        mapBoutonsJoueur[66]=this.partie.jButtonG7;
-        mapBoutonsJoueur[67]=this.partie.jButtonH7;
-        mapBoutonsJoueur[68]=this.partie.jButtonI7;
-        mapBoutonsJoueur[69]=this.partie.jButtonJ7;
-        
-        mapBoutonsJoueur[70]=this.partie.jButtonA8;
-        mapBoutonsJoueur[71]=this.partie.jButtonB8;
-        mapBoutonsJoueur[72]=this.partie.jButtonC8;
-        mapBoutonsJoueur[73]=this.partie.jButtonD8;
-        mapBoutonsJoueur[74]=this.partie.jButtonE8;
-        mapBoutonsJoueur[75]=this.partie.jButtonF8;
-        mapBoutonsJoueur[76]=this.partie.jButtonG8;
-        mapBoutonsJoueur[77]=this.partie.jButtonH8;
-        mapBoutonsJoueur[78]=this.partie.jButtonI8;
-        mapBoutonsJoueur[79]=this.partie.jButtonJ8;
-        
-        mapBoutonsJoueur[80]=this.partie.jButtonA9;
-        mapBoutonsJoueur[81]=this.partie.jButtonB9;
-        mapBoutonsJoueur[82]=this.partie.jButtonC9;
-        mapBoutonsJoueur[83]=this.partie.jButtonD9;
-        mapBoutonsJoueur[84]=this.partie.jButtonE9;
-        mapBoutonsJoueur[85]=this.partie.jButtonF9;
-        mapBoutonsJoueur[86]=this.partie.jButtonG9;
-        mapBoutonsJoueur[87]=this.partie.jButtonH9;
-        mapBoutonsJoueur[88]=this.partie.jButtonI9;
-        mapBoutonsJoueur[89]=this.partie.jButtonJ9;
-        
-        mapBoutonsJoueur[90]=this.partie.jButtonA10;
-        mapBoutonsJoueur[91]=this.partie.jButtonB10;
-        mapBoutonsJoueur[92]=this.partie.jButtonC10;
-        mapBoutonsJoueur[93]=this.partie.jButtonD10;
-        mapBoutonsJoueur[94]=this.partie.jButtonE10;
-        mapBoutonsJoueur[95]=this.partie.jButtonF10;
-        mapBoutonsJoueur[96]=this.partie.jButtonG10;
-        mapBoutonsJoueur[97]=this.partie.jButtonH10;
-        mapBoutonsJoueur[98]=this.partie.jButtonI10;        
-        mapBoutonsJoueur[99]=this.partie.jButtonJ10;
-
- 
-    }
     
-    public void init_mapBoutonsAdv(){
-        mapBoutonsAdv = new BoutonCustom[100];
-        
-        mapBoutonsAdv[0]=this.partie.jButton1A;
-        mapBoutonsAdv[1]=this.partie.jButton1B;
-        mapBoutonsAdv[2]=this.partie.jButton1C;
-        mapBoutonsAdv[3]=this.partie.jButton1D;
-        mapBoutonsAdv[4]=this.partie.jButton1E;
-        mapBoutonsAdv[5]=this.partie.jButton1F;
-        mapBoutonsAdv[6]=this.partie.jButton1G;
-        mapBoutonsAdv[7]=this.partie.jButton1H;
-        mapBoutonsAdv[8]=this.partie.jButton1I;
-        mapBoutonsAdv[9]=this.partie.jButton1J;
-        
-        mapBoutonsAdv[10]=this.partie.jButton2A;
-        mapBoutonsAdv[11]=this.partie.jButton2B;
-        mapBoutonsAdv[12]=this.partie.jButton2C;
-        mapBoutonsAdv[13]=this.partie.jButton2D;
-        mapBoutonsAdv[14]=this.partie.jButton2E;
-        mapBoutonsAdv[15]=this.partie.jButton2F;
-        mapBoutonsAdv[16]=this.partie.jButton2G;
-        mapBoutonsAdv[17]=this.partie.jButton2H;
-        mapBoutonsAdv[18]=this.partie.jButton2I;
-        mapBoutonsAdv[19]=this.partie.jButton2J;
-        
-        mapBoutonsAdv[20]=this.partie.jButton3A;
-        mapBoutonsAdv[21]=this.partie.jButton3B;
-        mapBoutonsAdv[22]=this.partie.jButton3C;
-        mapBoutonsAdv[23]=this.partie.jButton3D;
-        mapBoutonsAdv[24]=this.partie.jButton3E;
-        mapBoutonsAdv[25]=this.partie.jButton3F;
-        mapBoutonsAdv[26]=this.partie.jButton3G;
-        mapBoutonsAdv[27]=this.partie.jButton3H;
-        mapBoutonsAdv[28]=this.partie.jButton3I;
-        mapBoutonsAdv[29]=this.partie.jButton3J;
-        
-        mapBoutonsAdv[30]=this.partie.jButton4A;
-        mapBoutonsAdv[31]=this.partie.jButton4B;
-        mapBoutonsAdv[32]=this.partie.jButton4C;
-        mapBoutonsAdv[33]=this.partie.jButton4D;
-        mapBoutonsAdv[34]=this.partie.jButton4E;
-        mapBoutonsAdv[35]=this.partie.jButton4F;
-        mapBoutonsAdv[36]=this.partie.jButton4G;
-        mapBoutonsAdv[37]=this.partie.jButton4H;
-        mapBoutonsAdv[38]=this.partie.jButton4I;
-        mapBoutonsAdv[39]=this.partie.jButton4J;
-        
-        mapBoutonsAdv[40]=this.partie.jButton5A;
-        mapBoutonsAdv[41]=this.partie.jButton5B;
-        mapBoutonsAdv[42]=this.partie.jButton5C;
-        mapBoutonsAdv[43]=this.partie.jButton5D;
-        mapBoutonsAdv[44]=this.partie.jButton5E;
-        mapBoutonsAdv[45]=this.partie.jButton5F;
-        mapBoutonsAdv[46]=this.partie.jButton5G;
-        mapBoutonsAdv[47]=this.partie.jButton5H;
-        mapBoutonsAdv[48]=this.partie.jButton5I;
-        mapBoutonsAdv[49]=this.partie.jButton5J;
-        
-        mapBoutonsAdv[50]=this.partie.jButton6A;
-        mapBoutonsAdv[51]=this.partie.jButton6B;
-        mapBoutonsAdv[52]=this.partie.jButton6C;
-        mapBoutonsAdv[53]=this.partie.jButton6D;
-        mapBoutonsAdv[54]=this.partie.jButton6E;
-        mapBoutonsAdv[55]=this.partie.jButton6F;
-        mapBoutonsAdv[56]=this.partie.jButton6G;
-        mapBoutonsAdv[57]=this.partie.jButton6H;
-        mapBoutonsAdv[58]=this.partie.jButton6I;
-        mapBoutonsAdv[59]=this.partie.jButton6J;
-        
-        mapBoutonsAdv[60]=this.partie.jButton7A;
-        mapBoutonsAdv[61]=this.partie.jButton7B;
-        mapBoutonsAdv[62]=this.partie.jButton7C;
-        mapBoutonsAdv[63]=this.partie.jButton7D;
-        mapBoutonsAdv[64]=this.partie.jButton7E;
-        mapBoutonsAdv[65]=this.partie.jButton7F;
-        mapBoutonsAdv[66]=this.partie.jButton7G;
-        mapBoutonsAdv[67]=this.partie.jButton7H;
-        mapBoutonsAdv[68]=this.partie.jButton7I;
-        mapBoutonsAdv[69]=this.partie.jButton7J;
-        
-        mapBoutonsAdv[70]=this.partie.jButton8A;
-        mapBoutonsAdv[71]=this.partie.jButton8B;
-        mapBoutonsAdv[72]=this.partie.jButton8C;
-        mapBoutonsAdv[73]=this.partie.jButton8D;
-        mapBoutonsAdv[74]=this.partie.jButton8E;
-        mapBoutonsAdv[75]=this.partie.jButton8F;
-        mapBoutonsAdv[76]=this.partie.jButton8G;
-        mapBoutonsAdv[77]=this.partie.jButton8H;
-        mapBoutonsAdv[78]=this.partie.jButton8I;
-        mapBoutonsAdv[79]=this.partie.jButton8J;
-        
-        mapBoutonsAdv[80]=this.partie.jButton9A;
-        mapBoutonsAdv[81]=this.partie.jButton9B;
-        mapBoutonsAdv[82]=this.partie.jButton9C;
-        mapBoutonsAdv[83]=this.partie.jButton9D;
-        mapBoutonsAdv[84]=this.partie.jButton9E;
-        mapBoutonsAdv[85]=this.partie.jButton9F;
-        mapBoutonsAdv[86]=this.partie.jButton9G;
-        mapBoutonsAdv[87]=this.partie.jButton9H;
-        mapBoutonsAdv[88]=this.partie.jButton9I;
-        mapBoutonsAdv[89]=this.partie.jButton9J;
-        
-        mapBoutonsAdv[90]=this.partie.jButton10A;
-        mapBoutonsAdv[91]=this.partie.jButton10B;
-        mapBoutonsAdv[92]=this.partie.jButton10C;
-        mapBoutonsAdv[93]=this.partie.jButton10D;
-        mapBoutonsAdv[94]=this.partie.jButton10E;
-        mapBoutonsAdv[95]=this.partie.jButton10F;
-        mapBoutonsAdv[96]=this.partie.jButton10G;
-        mapBoutonsAdv[97]=this.partie.jButton10H;
-        mapBoutonsAdv[98]=this.partie.jButton10I;       
-        mapBoutonsAdv[99]=this.partie.jButton10J;
-        
-    }
 
 }

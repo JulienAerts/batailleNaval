@@ -33,6 +33,7 @@ public class IA extends Joueur {
             try
             {
 		if (difficultee == 0){
+                    
                     positionGenere = positionFacile();
                     
                 }else  positionGenere = positionMiniMax();

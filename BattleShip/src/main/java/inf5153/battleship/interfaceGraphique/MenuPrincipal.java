@@ -2,6 +2,11 @@
 
 package inf5153.battleship.interfaceGraphique;
 import inf5153.battleship.controleur.MenuPrincipalControleur;
+import java.awt.Component;
+import java.awt.Container;
+import java.io.File;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -18,12 +23,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
         
         selectionneur = new JFileChooser();
+        disableNav(selectionneur);
         xmlfilter = new FileNameExtensionFilter("xml files (*.xml)", "xml");
 
         selectionneur.setDialogTitle("Charger fichier de sauvegarde");
         // set selected filter
         selectionneur.setFileFilter(xmlfilter);
-        selectionneur.setCurrentDirectory(new java.io.File("."));
+        selectionneur.setCurrentDirectory(new java.io.File("./src/main/resources/sauvegarde/"));
         btnJouerSeul = new javax.swing.JButton();
         btnChargerPartie = new javax.swing.JButton();
         btnVoirRecord = new javax.swing.JButton();
@@ -69,7 +75,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-
+    
+    private void disableNav(Container c) {
+        for (Component x : c.getComponents())
+          if (x instanceof JComboBox)
+            ((JComboBox)x).setEnabled(false);
+          else if (x instanceof JButton) {
+            String text = ((JButton)x).getText();
+            if (text == null || text.isEmpty())
+              ((JButton)x).setEnabled(false);
+            }
+          else if (x instanceof Container)
+            disableNav((Container)x);
+    }
+    
     private void btnJouerSeulActionPerformed(java.awt.event.ActionEvent evt) {                                             
         FenetreChoisirDifficulte fenetreChoix = new FenetreChoisirDifficulte();
         fenetreChoix.pack();
@@ -81,6 +100,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnChargerPartieActionPerformed(java.awt.event.ActionEvent evt) {
         
         selectionneur.showOpenDialog(btnChargerPartie);
+        File fichier = selectionneur.getSelectedFile();
+        FenetreJouerPartie fenetrePartie;
+        fenetrePartie = new FenetreJouerPartie();
+        fenetrePartie.pack();
+        fenetrePartie.setLocationRelativeTo(null);
+        fenetrePartie.setVisible(true);
+        fenetrePartie.chargementDePartie(fichier);
+        dispose();
+ 
+        dispose();
 
     }                                                
 

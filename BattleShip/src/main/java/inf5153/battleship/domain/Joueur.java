@@ -1,5 +1,6 @@
 package inf5153.battleship.domain;
 
+import inf5153.battleship.controleur.Reponse;
 import java.util.ArrayList;
 
 public abstract class Joueur {
@@ -22,9 +23,20 @@ public abstract class Joueur {
 	 */
 	public Case jouerCoup(Position position) {
             Coup coup = new Coup(carte.getCase(position));
+            Reponse reponse;
+            Case caseJouer  = carte.getCase(position);
+            Bateau touche;
+            if (caseJouer.bateauExiste()){
+                touche = caseJouer.getBateau();
+                    if (touche.estCoule()){
+                        reponse = Reponse.ToucheCoule;
+                    }else reponse = Reponse.Touche;                 
+                }else reponse = Reponse.Eau;
+    
             coups.add(coup);
-            carte.getCase(position).setTir(coup);
-            return carte.getCase(position);
+            caseJouer.setReponse(reponse);
+            caseJouer.setTir(coup);
+            return caseJouer;
 	}
 
 	public Carte getCarte() {

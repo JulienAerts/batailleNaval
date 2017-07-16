@@ -5,6 +5,9 @@ import inf5153.battleship.sauvegarde.*;
 import static inf5153.battleship.sauvegarde.Fichier.ecrireFichierXml;
 import java.util.ArrayList;
 import java.util.List;
+import static inf5153.battleship.sauvegarde.Fichier.lireFichierXml;
+import java.io.File;
+
 public class PartieControleur {
 
 	private Partie partie;
@@ -81,6 +84,30 @@ public class PartieControleur {
 
 		return reponse;
 	}
+        
+        public ArrayList<Case> getListeCoupJoueur(){
+            ArrayList<Case> positions = new ArrayList();
+            
+            for (Coup coup :partie.getJoueur1().getCoups()){
+                
+                positions.add(coup.getCase());
+                
+            }
+                    
+            return positions;
+        }
+        
+        public ArrayList<Case> getListeCoupAI(){
+            ArrayList<Case> positions = new ArrayList();
+            
+            for (Coup coup :partie.getJoueur2().getCoups()){
+                
+                positions.add(coup.getCase());
+                
+            }
+                    
+            return positions;
+        }
 
 	public void reinitialiserBateaux() {
 		// TODO - implement PartieControleur.reinitialiserBateaux
@@ -90,6 +117,11 @@ public class PartieControleur {
 	public void sauvegarderPartie() {
 		ecrireFichierXml(partie);
 		
+	}
+        
+        public void chargerPartie(File fichier) {
+		partie = lireFichierXml(fichier);
+		partie.getJoueur2().setAdversaire(partie.getJoueur1());
 	}
 
 	public Position genererCoupIA() {

@@ -43,11 +43,11 @@ public class XmlEncode {
        
        
        for ( Coup coupPresent : objPartie.getJoueur1().getCoups()) {
-           ecrireCoup(Joueur, coupPresent.getCase().getPosition().getCoordonneX(), coupPresent.getCase().getPosition().getCoordonneY());       
+           ecrireCoup(Ia, coupPresent.getCase().getPosition().getCoordonneX(), coupPresent.getCase().getPosition().getCoordonneY());       
        }
        
        for ( Coup coupPresent : objPartie.getJoueur2().getCoups()) {
-           ecrireCoup(Ia, coupPresent.getCase().getPosition().getCoordonneX(), coupPresent.getCase().getPosition().getCoordonneY());
+           ecrireCoup(Joueur, coupPresent.getCase().getPosition().getCoordonneX(), coupPresent.getCase().getPosition().getCoordonneY());
        }
        
        ecrireBateau(Joueur, objPartie.getJoueur1());

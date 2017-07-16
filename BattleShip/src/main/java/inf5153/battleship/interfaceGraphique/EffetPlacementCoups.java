@@ -74,6 +74,7 @@ public class EffetPlacementCoups {
     
     public void tireAdversaire() {
             Position coupGenereAI = partie.controleur.genererCoupIA();
+            System.out.println(coupGenereAI.getCoordonneX());
             Reponse rep = partie.controleur.jouerCoupAI(coupGenereAI);
             BoutonCustom boutonToucheAI = mapBoutonsJoueur[coupGenereAI.getCoordonneXToInt() + (coupGenereAI.getCoordonneY()- 1) *10];
              switch (rep){
