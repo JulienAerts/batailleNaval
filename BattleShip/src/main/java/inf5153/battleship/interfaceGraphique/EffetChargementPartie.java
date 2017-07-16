@@ -130,15 +130,7 @@ public class EffetChargementPartie {
         for(Position position : positions) {
             mapBoutonsJoueur[(position.getCoordonneXToInt()) + (position.getCoordonneY() - 1) *10].setBackground(color);
         }
-        
-       
-        
-//        for(int i = 0; i < mapBoutonsAdv.length; i++) {
-//            
-//            if(positions.contains(mapBoutonsAdv[i].position)) {
-//                mapBoutonsAdv[i].setBackground(color);
-//            }
-//        }
+
     }
     
     public void colorierCase(Position position, Color color ,BoutonCustom map[]) {
