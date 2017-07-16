@@ -46,25 +46,28 @@ public class IATest {
     public void testPositionMiniMax() throws Exception {
         System.out.println("positionMiniMax");
         IA instance = new IA();
+        Humain humain = new Humain();
+        
+        instance.setAdversaire(humain);
         
         ArrayList<Position> positionsBateau = new ArrayList();
         positionsBateau.add(new Position('b', 5));
         positionsBateau.add(new Position('b', 4));
         
-        instance.getCarte().placerBateau(new Torpilleur(), positionsBateau);
-        instance.jouerCoup(new Position('b', 5));
+        humain.getCarte().placerBateau(new Torpilleur(), positionsBateau);
+        humain.jouerCoup(new Position('b', 5));
         
         
         Position result = instance.positionMiniMax();
         
         assertEquals(new Position('c', 5), result);
-        instance.jouerCoup(result);
+        humain.jouerCoup(result);
         result = instance.positionMiniMax();
         assertEquals(new Position('b', 6), result);
-        instance.jouerCoup(result);
+        humain.jouerCoup(result);
         result = instance.positionMiniMax();
         assertEquals(new Position('a', 5), result);
-        instance.jouerCoup(result);
+        humain.jouerCoup(result);
         result = instance.positionMiniMax();
         assertEquals(new Position('b', 4), result);
     }
@@ -76,45 +79,85 @@ public class IATest {
     public void testPositionMiniMax_DansUnCoinMax() throws Exception {
         System.out.println("positionMiniMax");
         IA instance = new IA();
+        Humain humain = new Humain();
+        
+        instance.setAdversaire(humain);
         
         ArrayList<Position> positionsBateau = new ArrayList();
         positionsBateau.add(new Position('j', 10));
         positionsBateau.add(new Position('j', 9));
         
-        instance.getCarte().placerBateau(new Torpilleur(), positionsBateau);
-        instance.jouerCoup(new Position('j', 10));
+        humain.getCarte().placerBateau(new Torpilleur(), positionsBateau);
+        humain.jouerCoup(new Position('j', 10));
         
         
         Position result = instance.positionMiniMax();
         
         assertEquals(new Position('i', 10), result);
-        instance.jouerCoup(result);
+        humain.jouerCoup(result);
         result = instance.positionMiniMax();
         assertEquals(new Position('j', 9), result);
         
         
     }
-        @Test
+    
+    @Test
     public void testPositionMiniMax_DansUnCoinMin() throws Exception {
         System.out.println("positionMiniMax");
         IA instance = new IA();
+        Humain humain = new Humain();
+        
+        instance.setAdversaire(humain);
         
         ArrayList<Position> positionsBateau = new ArrayList();
         positionsBateau.add(new Position('a', 1));
         positionsBateau.add(new Position('a', 2));
         
-        instance.getCarte().placerBateau(new Torpilleur(), positionsBateau);
-        instance.jouerCoup(new Position('a', 1));
+        humain.getCarte().placerBateau(new Torpilleur(), positionsBateau);
+        humain.jouerCoup(new Position('a', 1));
         
         
         Position result = instance.positionMiniMax();
         
         assertEquals(new Position('b', 1), result);
-        instance.jouerCoup(result);
+        humain.jouerCoup(result);
         result = instance.positionMiniMax();
         assertEquals(new Position('a', 2), result);
+    }
+    
+    @Test
+    public void testPositionMiniMax_PlusieursCoups() throws Exception {
+        System.out.println("testPositionMiniMax_PlusieursCoups");
+        IA instance = new IA();
+        Humain humain = new Humain();
         
+        instance.setAdversaire(humain);
         
+        ArrayList<Position> positionsBateau = new ArrayList();
+        
+        positionsBateau.add(new Position('c', 3));
+        positionsBateau.add(new Position('c', 4));
+        positionsBateau.add(new Position('c', 5));
+        positionsBateau.add(new Position('c', 6));
+        
+        humain.getCarte().placerBateau(new Croiseur(), positionsBateau);
+        humain.jouerCoup(new Position('c', 4));
+        
+        Position result = instance.positionMiniMax();
+        
+        assertEquals(new Position('d', 4), result);
+        humain.jouerCoup(result);
+        result = instance.positionMiniMax();
+        assertEquals(new Position('c', 5), result);
+        humain.jouerCoup(result);
+        result = instance.positionMiniMax();
+        assertEquals(new Position('b', 4), result);
+        humain.jouerCoup(result);
+        result = instance.positionMiniMax();
+        assertEquals(new Position('c', 3), result);
+        humain.jouerCoup(result);
+        result = instance.positionMiniMax();
+        assertEquals(new Position('d', 5), result);
     }
 //
 //    /**

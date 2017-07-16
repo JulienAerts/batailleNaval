@@ -1,10 +1,8 @@
 package inf5153.battleship.controleur;
 
 import inf5153.battleship.domain.*;
-import inf5153.battleship.sauvegarde.*;
 import static inf5153.battleship.sauvegarde.Fichier.ecrireFichierXml;
 import java.util.ArrayList;
-import java.util.List;
 import static inf5153.battleship.sauvegarde.Fichier.lireFichierXml;
 import java.io.File;
 
