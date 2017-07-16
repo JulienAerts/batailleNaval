@@ -21,7 +21,7 @@ import inf5153.battleship.domain.Partie;
 public class Fichier {
     
     
-    private static void ecrireFichierXml(Partie objPartie){
+    public static void ecrireFichierXml(Partie objPartie){
         try{
             Document docXml = new Document();
             
@@ -32,7 +32,7 @@ public class Fichier {
             xmlOutput.output(docXml, new FileOutputStream(new File("./src/sauvegarde.xml")));
 
         }catch(Exception e){
-        
+         e.printStackTrace();
         }
         
     }
@@ -47,7 +47,7 @@ public class Fichier {
 
             
         }catch(Exception e){
-        
+            e.printStackTrace();
         }
     
     }

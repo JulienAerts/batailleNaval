@@ -1,6 +1,8 @@
 package inf5153.battleship.controleur;
 
 import inf5153.battleship.domain.*;
+import inf5153.battleship.sauvegarde.*;
+import static inf5153.battleship.sauvegarde.Fichier.ecrireFichierXml;
 import java.util.ArrayList;
 import java.util.List;
 public class PartieControleur {
@@ -86,8 +88,8 @@ public class PartieControleur {
 	}
 
 	public void sauvegarderPartie() {
-		// TODO - implement PartieControleur.sauvegarderPartie
-		throw new UnsupportedOperationException();
+		ecrireFichierXml(partie);
+		
 	}
 
 	public Position genererCoupIA() {

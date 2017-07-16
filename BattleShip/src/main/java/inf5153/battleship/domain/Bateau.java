@@ -44,6 +44,10 @@ public class Bateau {
         return true;
     }
     
+    public int getLongeur(){
+        return this.longueur;
+    }
+    
     public Color getCouleur() {
         return Color.RED;
     }

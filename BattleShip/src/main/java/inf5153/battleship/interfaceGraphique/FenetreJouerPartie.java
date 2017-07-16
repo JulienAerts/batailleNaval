@@ -83,7 +83,7 @@ public class FenetreJouerPartie extends FenetrePartie{
     }
     
     private void btnSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        txtJournalisation.append("Sauvegarde pas implementer encore !\n");
+        controleur.sauvegarderPartie();
     }
 
     private void btnDemarrerPartieMouseClicked(java.awt.event.ActionEvent evt) {
