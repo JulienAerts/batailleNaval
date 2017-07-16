@@ -17,9 +17,9 @@ public class BateauFactory {
 
         Bateau bateau = new PorteAvion();
         bateaux.add(bateau);
-        bateau = new ContreTorpilleur();
-        bateaux.add(bateau);
         bateau = new Croiseur();
+        bateaux.add(bateau);
+        bateau = new ContreTorpilleur();
         bateaux.add(bateau);
         bateau = new SousMarin();
         bateaux.add(bateau);

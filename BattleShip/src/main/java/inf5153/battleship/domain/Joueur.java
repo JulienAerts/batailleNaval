@@ -38,5 +38,20 @@ public abstract class Joueur {
 	public void setCarte(Carte carte) {
 		this.carte = carte;
 	}
+        
+        public void placerBateaux(ArrayList<Position> positions) throws Exception {
+            
+            ArrayList<Bateau> bateaux = BateauFactory.genererTousLesBateaux();
+            
+            for(Bateau bateau : bateaux){
+                
+                ArrayList<Position> positionsBateau = new ArrayList<Position>(positions.subList(0, bateau.longueur));
+                positions.removeAll(positionsBateau);
+                carte.placerBateau(bateau, positionsBateau);
+
+            }
+            
+            
+	}
 
 }

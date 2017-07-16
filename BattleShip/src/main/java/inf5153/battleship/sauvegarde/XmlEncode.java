@@ -14,6 +14,7 @@ import inf5153.battleship.domain.Case;
 import inf5153.battleship.domain.Coup;
 import inf5153.battleship.domain.Joueur;
 import inf5153.battleship.domain.Partie;
+import java.util.Date;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.Text;
@@ -30,11 +31,15 @@ public class XmlEncode {
     
     
    public static void partieToXml(Document doc, Partie objPartie) {
+      
+
        Element partie = new Element("partie");
        Element Joueur = new Element("Joueur");
        Element Ia = new Element("IA");
        
+       partie.setAttribute("dateDebut", String.valueOf(objPartie.getDateDebut()));
        Ia.setAttribute("difficulte", Integer.toString(objPartie.getJoueur2().getDifficultee()));
+        
        
        
        for ( Coup coupPresent : objPartie.getJoueur1().getCoups()) {
@@ -80,7 +85,7 @@ public class XmlEncode {
        
          
        for(Bateau curBateau : player.getCarte().getBateaux()){
-           
+           System.out.println(curBateau.getLongeur());
             Element eleBateau = new Element("Bateau");
             Element positionBateau = new Element("position");       
             

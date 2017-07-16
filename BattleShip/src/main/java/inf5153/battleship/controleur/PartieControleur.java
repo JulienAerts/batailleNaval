@@ -28,7 +28,7 @@ public class PartieControleur {
 	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte)  throws Exception {
             // TODO: Validations du joueur1 ??
             partie = new Partie();
-            partie.getJoueur1().placerBateauxUI(listePositionsBateauxJoueur);
+            partie.getJoueur1().placerBateaux(listePositionsBateauxJoueur);
             partie.getJoueur2().setDifficultee(niveauDifficulte);
             partie.getJoueur2().setAdversaire(partie.getJoueur1());
             partie.getJoueur2().placerBateauxAleatoire();

@@ -15,6 +15,12 @@ public class Partie {
             joueur2 = new IA();
         }
         
+        public Partie(Date debut) throws Exception {
+            this.debut = debut;
+            joueur1 = new Humain();
+            joueur2 = new IA();
+        }
+        
 	public void sauvegarde() {
 		// TODO - implement Partie.sauvegarde
 		throw new UnsupportedOperationException();

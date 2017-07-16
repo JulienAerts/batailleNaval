@@ -5,6 +5,10 @@
  */
 package inf5153.battleship.sauvegarde;
 
+import inf5153.battleship.domain.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;  
+import org.jdom2.Document;
 import org.jdom2.Element;
 
 /**
@@ -13,18 +17,25 @@ import org.jdom2.Element;
  */
 public class XmlDecode {
     
-    private static Partie xmlToPartie(Document lireDocXml) {
+    private static Partie xmlToPartie(Document lireDocXml) throws Exception {
+        Partie laPartie = new Partie(chercherDate(lireDocXml));
+       
+        return laPartie;
+    }
     
+    private static Date chercherDate(Document ficXml) throws Exception {
+        SimpleDateFormat formatter=new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");   
+        String S = ficXml.getRootElement().getAttribute("dateDebut").getValue();
+        Date date  = formatter.parse(S);
+        return date;
+    }
+    
+    private static void lireBateauJoueur(Partie partie){
+        ArrayList 
         
-    
-    }
-    
-   
-    
-    private static Joueur creerJoeur(){
-            Joueur Jouer1 = new Joueur(creerCarte(),creerListeCoup());
-           return Joueur1;
-    }
+        partie.getJoueur1().placerBateau();
+          
+     }
     
     private static Joueur creerAi(){
         Joueur Joueur2 = new Ia(creerCarte(), creerListeCoup(), creerDifficulte());
