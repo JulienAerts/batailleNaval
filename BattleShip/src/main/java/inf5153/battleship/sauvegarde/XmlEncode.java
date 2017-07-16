@@ -68,13 +68,11 @@ public class XmlEncode {
    private static void ecrireCoup(Element Joueur, char X, int Y) {
    
        Element Coup = new Element("coup");
-       Element CoordoneeX = new Element("coordoneeX");
-       Element CoordonneY = new Element("coordonneY");
-       CoordoneeX.addContent(new Text(Character.toString(X)));
-       CoordonneY.addContent(new Text(Integer.toString(Y)));
+      
+       Coup.setAttribute("CoordoneeX", Character.toString(X));
+       Coup.setAttribute("CoordonneY", Integer.toString(Y));
        
-       Coup.addContent(CoordoneeX);
-       Coup.addContent(CoordonneY);
+
        Joueur.addContent(Coup);
        
        
@@ -85,7 +83,7 @@ public class XmlEncode {
        
          
        for(Bateau curBateau : player.getCarte().getBateaux()){
-           System.out.println(curBateau.getLongeur());
+            
             Element eleBateau = new Element("Bateau");
             Element positionBateau = new Element("position");       
             

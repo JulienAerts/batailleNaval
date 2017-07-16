@@ -34,7 +34,7 @@ public class Carte {
                 bateau.addCase(getCase(position));
                 getCase(position).setBateau(bateau);
             }
-            System.out.println(bateau.getLongeur());
+            
             bateaux.add(bateau);
 	}
         

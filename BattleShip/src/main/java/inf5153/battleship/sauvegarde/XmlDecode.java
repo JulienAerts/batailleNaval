@@ -8,6 +8,7 @@ package inf5153.battleship.sauvegarde;
 import inf5153.battleship.domain.*;
 import java.util.Date;
 import java.text.SimpleDateFormat;  
+import java.util.ArrayList;
 import org.jdom2.Document;
 import org.jdom2.Element;
 
@@ -19,9 +20,20 @@ public class XmlDecode {
     
     private static Partie xmlToPartie(Document lireDocXml) throws Exception {
         Partie laPartie = new Partie(chercherDate(lireDocXml));
+        laPartie.getJoueur2().setDifficultee(Integer.parseInt(lireDocXml.getRootElement().getChild("IA").getAttributeValue("difficulte")));
+        lireBateauJoueur(laPartie.getJoueur1(), lireDocXml);
+        lireBateauJoueur(laPartie.getJoueur2(), lireDocXml);
+        
+        if (lireDocXml.getRootElement().getChildren("coup") != null){
+            lireListeDeCoup(lireDocXml, laPartie);
+            lireListeDeCoupAi(lireDocXml, laPartie);      
+        }
+        
        
         return laPartie;
     }
+    
+    
     
     private static Date chercherDate(Document ficXml) throws Exception {
         SimpleDateFormat formatter=new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");   
@@ -30,43 +42,34 @@ public class XmlDecode {
         return date;
     }
     
-    private static void lireBateauJoueur(Partie partie){
-        ArrayList 
+    private static void lireListeDeCoup(Document ficXml, Partie partie) throws Exception {
+        ArrayList<Coup> listeCoup = new ArrayList();
+        Element lireCoup = ficXml.getRootElement().getChild("Joueur");
+        for(Element curCoup : lireCoup.getChildren("coup")){
+            Position curPosition = new Position(curCoup.getAttributeValue("CoordoneeX").charAt(0), Integer.parseInt(curCoup.getAttributeValue("CoordoneeX")));
+            partie.getJoueur2().jouerCoup(curPosition);
+        }
+    }
+    
+    
+    private static void lireListeDeCoupAi(Document ficXml, Partie partie) throws Exception {
+        ArrayList<Coup> listeCoup = new ArrayList();
+        Element lireCoup = ficXml.getRootElement().getChild("AI");
+        for(Element curCoup : lireCoup.getChildren("coup")){
+            Position curPosition = new Position(curCoup.getAttributeValue("CoordoneeX").charAt(0), Integer.parseInt(curCoup.getAttributeValue("CoordoneeX")));
+            partie.getJoueur1().jouerCoup(curPosition);
+        }
+    }
+    
+    private static void lireBateauJoueur(Joueur joueur, Document ficXml) throws Exception {
+        ArrayList<Position> listeBateauJoueur  = new ArrayList();
+        Element lirejoueur = ficXml.getRootElement().getChild("Joueur");
+        for(Element elem : lirejoueur.getChildren("bateau")){
+            Position curPosition = new Position(elem.getAttributeValue("coordonneeX").charAt(0), Integer.parseInt(elem.getAttributeValue("CoordoneeY")));
+            listeBateauJoueur.add(curPosition);
+        }
         
-        partie.getJoueur1().placerBateau();
+       joueur.placerBateaux(listeBateauJoueur);
           
      }
-    
-    private static Joueur creerAi(){
-        Joueur Joueur2 = new Ia(creerCarte(), creerListeCoup(), creerDifficulte());
-        return Joueur2;
     }
-    
-    private static ArrayList<Coup> creerListeCoup(){
-        
-    }
-    
-    private static int creerDifficulte(Document lireDocXml){
-    return String.valueOf(lireDocXml.getRootElement().getChild("Ia").getAttributeValue("difficulte"));
-    }
-    
-    private static ArrayList<Coup> creerListeCoup(Document lireDocXml, String Joueur){
-        ArrayList<Coup> list = new ArrayList<Coup>();
-        Element root = lireDocXml.getRootElement().getChild(Joueur);
-        for(Element curElem : root.getChild("Coup")){
-            Position curPos = new Position(curElem.getChild("Coup").getAttribute("coordoneeX"), curElem.getChild("Coup").getAttribute("coordoneeY"));
-            Case curCase = new Case (NULL ,curPos, NULL);
-            
-        }
-        return list;
-    }
-    
-    }
-    
-    
-    
-    
-    
-    
-    
-}
