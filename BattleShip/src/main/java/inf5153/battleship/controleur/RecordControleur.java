@@ -119,14 +119,13 @@ public class RecordControleur {
     
     public boolean estUnRecord(Partie partie) {
         boolean record = false;
-        long difference = partie.getDateFin().getTime() - partie.getDateDebut().getTime();
         int difficulte = partie.getJoueur2().getDifficultee();
         if (!listeDesRecords.isEmpty()) {
             for (Record rec : listeDesRecords) {
                 record = true;
                 if (difficulte == rec.difficulte) {
                     record = false;
-                    if (difference > rec.temp) {
+                    if (partie.chronometre.getTempsExecution() > rec.temp) {
                         record = true;
                     }
                 }
