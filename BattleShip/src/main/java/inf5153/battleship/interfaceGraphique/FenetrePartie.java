@@ -303,7 +303,7 @@ public class FenetrePartie extends JFrame {
     //Panneau deroulant et zone de texte 
     protected javax.swing.JScrollPane jScrollJournalisation;
     public javax.swing.JTextArea txtJournalisation;
-    
+    protected javax.swing.JLabel lblImageFond;
     
     public void init_mapBoutonsJoueur() {
         mapBoutonsJoueur = new BoutonCustom[100];
@@ -536,7 +536,8 @@ public class FenetrePartie extends JFrame {
     }
     
     protected void initComponents() throws Exception {
-
+        
+        lblImageFond = new javax.swing.JLabel();
         pnlContourCarteJoueur = new javax.swing.JPanel();
         pnlCarteJoueur = new javax.swing.JPanel();
         jButtonA1 = new BoutonCustom(new Position('a',1));
@@ -1906,6 +1907,9 @@ public class FenetrePartie extends JFrame {
                     .addComponent(pnlContourMesBateaux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        lblImageFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Fenetre_Jouer.png"))); // NOI18N
+        getContentPane().add(lblImageFond);
+        lblImageFond.setBounds(0, -20, 810, 620);
 
         pack();
     }
