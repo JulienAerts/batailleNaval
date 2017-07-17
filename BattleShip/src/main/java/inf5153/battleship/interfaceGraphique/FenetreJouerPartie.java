@@ -24,7 +24,6 @@ public class FenetreJouerPartie extends FenetrePartie {
     private EffetChargementPartie effetChargementPartie;
     public PartieControleur controleur;
     public RecordControleur controleurRecord;
-    private BoutonCustom listeBoutonsBateauxJoueur[];
 
     public FenetreJouerPartie() {
         try {
@@ -113,7 +112,7 @@ public class FenetreJouerPartie extends FenetrePartie {
             placementCoups = new EffetPlacementCoups(this, mapBoutonsJoueur, mapBoutonsAdv);
 
         } catch (Exception ex) {
-            txtJournalisation.append("Une erreur est survenu lors du démarrage de la partie : " + ex.getMessage());
+            txtJournalisation.append("Une erreur est survenue lors du démarrage de la partie : " + ex.getMessage());
         }
     }
 

@@ -2,8 +2,6 @@ package inf5153.battleship.interfaceGraphique;
 
 import javax.swing.JButton;
 import inf5153.battleship.controleur.RevoirPartieControleur;
-import inf5153.battleship.domain.Bateau;
-import inf5153.battleship.domain.Case;
 import inf5153.battleship.domain.Partie;
 import inf5153.battleship.domain.Position;
 import java.awt.Color;
@@ -62,7 +60,7 @@ public class FenetreRevoirPartie extends FenetrePartie {
         } else {
             btnProchainCoup.setEnabled(false);
         }
-        controleur.incrementeTour();
+        controleur.prochainTour();
 
     }
 

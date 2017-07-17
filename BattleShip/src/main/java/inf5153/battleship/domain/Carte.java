@@ -53,13 +53,11 @@ public class Carte {
         }
         
         public boolean bateauxTousCouler() {
-            boolean reponse = true;
-            for (Bateau bateau :bateaux){
-                if (reponse){
-                    reponse = bateau.estCoule();
-                }
+            for (Bateau bateau : bateaux){
+                if(!bateau.estCoule())
+                    return false;
             }
-            return reponse;
+            return true;
         }
         
 	public ArrayList<Position> trouverPositionsAdjacentes(Orientation orientation, Position positionDepart, int longueur) throws Exception {

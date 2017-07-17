@@ -29,7 +29,7 @@ public class RevoirPartieControleur {
             return coup.getCase().getPosition();
     }
 
-    public void incrementeTour() {
+    public void prochainTour() {
         tour++;
     }
 }

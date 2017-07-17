@@ -9,21 +9,29 @@ public class Partie {
     private Humain joueur1;
     private IA joueur2;
 
-    public Partie() throws Exception {
+    public Partie(int niveauDifficulte) throws Exception {
         debut = new Date();
         joueur1 = new Humain();
-        joueur2 = new IA();
+        if(niveauDifficulte == 0) {
+            joueur2 = new IAFacile();
+        }
+        else {
+            joueur2 = new IADifficile();
+        }
+        
+        joueur2.setAdversaire(joueur1);
     }
 
-    public Partie(Date debut) throws Exception {
+    public Partie(Date debut, int niveauDifficulte) throws Exception {
         this.debut = debut;
         joueur1 = new Humain();
-        joueur2 = new IA();
-    }
-
-    public void sauvegarde() {
-        // TODO - implement Partie.sauvegarde
-        throw new UnsupportedOperationException();
+        if(niveauDifficulte == 0) {
+            joueur2 = new IAFacile();
+        }
+        else {
+            joueur2 = new IADifficile();
+        }
+        joueur2.setAdversaire(joueur1);
     }
 
     public Humain getJoueur1() {

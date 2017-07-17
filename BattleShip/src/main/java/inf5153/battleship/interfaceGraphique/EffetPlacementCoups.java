@@ -28,12 +28,16 @@ public class EffetPlacementCoups {
     private void initialiserListenerMouse() {
         for (int i = 0; i < 100; i++) {
             mapBoutonsAdv[i].addActionListener((ActionEvent evt) -> {
-                mapBoutonsAdvActionPerformed(evt);
+                try {
+                    mapBoutonsAdvActionPerformed(evt);
+                } catch (Exception ex) {
+                    partie.txtJournalisation.append("Erreur : " + ex.getMessage());
+                }
             });
         }
     }
 
-    private void mapBoutonsAdvActionPerformed(ActionEvent evt) {
+    private void mapBoutonsAdvActionPerformed(ActionEvent evt) throws Exception {
         if (tonTour) {
             BoutonCustom bouton = (BoutonCustom) evt.getSource();
 
@@ -70,7 +74,7 @@ public class EffetPlacementCoups {
         }
     }
 
-    public void tireAdversaire() {
+    public void tireAdversaire() throws Exception {
         Position coupGenereAI = partie.controleur.genererCoupIA();
         Reponse rep = partie.controleur.jouerCoupAI(coupGenereAI);
         BoutonCustom boutonToucheAI = mapBoutonsJoueur[coupGenereAI.getCoordonneXToInt() + (coupGenereAI.getCoordonneY() - 1) * 10];

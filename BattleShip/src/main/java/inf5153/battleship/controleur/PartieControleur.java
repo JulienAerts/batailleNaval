@@ -28,11 +28,9 @@ public class PartieControleur {
     }
 
     public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte) throws Exception {
-        // TODO: Validations du joueur1 ??
-        partie = new Partie();
+        
+        partie = new Partie(niveauDifficulte);
         partie.getJoueur1().placerBateaux(listePositionsBateauxJoueur);
-        partie.getJoueur2().setDifficultee(niveauDifficulte);
-        partie.getJoueur2().setAdversaire(partie.getJoueur1());
         partie.getJoueur2().placerBateauxAleatoire();
 
     }
@@ -103,7 +101,6 @@ public class PartieControleur {
         for (Coup coup : partie.getJoueur1().getCoups()) {
 
             positions.add(coup.getCase());
-
         }
 
         return positions;
@@ -136,7 +133,7 @@ public class PartieControleur {
         partie.getJoueur2().setAdversaire(partie.getJoueur1());
     }
 
-    public Position genererCoupIA() {
+    public Position genererCoupIA() throws Exception {
         Position positionGenere = partie.getJoueur2().genererCoup();
         return positionGenere;
     }
@@ -144,5 +141,6 @@ public class PartieControleur {
     public Partie getPartie() {
         return this.partie;
     }
+    
 
 }

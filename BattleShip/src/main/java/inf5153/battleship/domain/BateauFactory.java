@@ -25,7 +25,7 @@ public class BateauFactory {
         bateaux.add(bateau);
         bateau = new Torpilleur();
         bateaux.add(bateau);
-        
+//        
         return bateaux;
     }
 }
