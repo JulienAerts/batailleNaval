@@ -6,12 +6,14 @@ public class Partie {
 
     private Date debut;
     private Date fin;
+    Chronometre chronometre = new Chronometre();
     private Joueur joueur1;
     private IA joueur2;
 
     public Partie(int niveauDifficulte) throws Exception {
         debut = new Date();
         joueur1 = new Joueur();
+        chronometre.partirChrono();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
         }
