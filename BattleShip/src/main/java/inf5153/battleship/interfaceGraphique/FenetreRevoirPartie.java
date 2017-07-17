@@ -2,6 +2,7 @@ package inf5153.battleship.interfaceGraphique;
 
 import javax.swing.JButton;
 import inf5153.battleship.controleur.RevoirPartieControleur;
+import inf5153.battleship.domain.Case;
 import inf5153.battleship.domain.Partie;
 import inf5153.battleship.domain.Position;
 import java.awt.Color;
@@ -46,13 +47,13 @@ public class FenetreRevoirPartie extends FenetrePartie {
     }
 
     public void prochainCoupOnClickListener() {
-        Position position = controleur.prochainCoup();
+        Case casee = controleur.prochainCoup();
         
-        if(position != null) {
-            colorierCaseAdversaire(position);
-            position = controleur.prochainCoup();
-            if(position != null)
-                colorierCase(position);
+        if(casee != null) {
+            colorierCaseAdversaire(casee);
+            casee = controleur.prochainCoup();
+            if(casee != null)
+                colorierCase(casee);
         } else {
             btnProchainCoup.setEnabled(false);
         }
@@ -60,26 +61,19 @@ public class FenetreRevoirPartie extends FenetrePartie {
 
     }
 
-    public void colorierCaseAdversaire(Position position) {
-        mapBoutonsAdv[(position.getCoordonneXToInt()) + (position.getCoordonneY() - 1) * 10].setBackground(Color.BLUE);
+    public void colorierCaseAdversaire(Case casee) {
+        Color couleur = Color.BLUE;
+        if(casee.bateauExiste())
+            couleur = Color.RED;
+        
+        mapBoutonsAdv[(casee.getPosition().getCoordonneXToInt()) + (casee.getPosition().getCoordonneY() - 1) * 10].setBackground(couleur);
     }
 
-    public void colorierCase(Position position) {
-        mapBoutonsJoueur[(position.getCoordonneXToInt()) + (position.getCoordonneY() - 1) * 10].setBackground(Color.BLUE);
+    public void colorierCase(Case casee) {
+        Color couleur = Color.BLUE;
+        if(casee.bateauExiste())
+            couleur = Color.RED;
+        
+        mapBoutonsJoueur[(casee.getPosition().getCoordonneXToInt()) + (casee.getPosition().getCoordonneY() - 1) * 10].setBackground(couleur);
     }
-
-    /**
-     *
-     * @param position
-     */
-    public void ajouterCoupDansGrid(Position position) {
-        // TODO - implement FenetreRevoirPartie.ajouterCoupDansGrid
-        throw new UnsupportedOperationException();
-    }
-
-    public void btnRetourMenuOnClickListener() {
-        // TODO - implement FenetreRevoirPartie.btnRetourMenuOnClickListener
-        throw new UnsupportedOperationException();
-    }
-
 }

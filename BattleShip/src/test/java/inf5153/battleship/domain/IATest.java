@@ -46,7 +46,7 @@ public class IATest {
     public void testPositionMiniMax() throws Exception {
         System.out.println("positionMiniMax");
         IADifficile instance = new IADifficile();
-        Humain humain = new Humain();
+        Joueur humain = new Joueur();
         
         instance.setAdversaire(humain);
         
@@ -79,7 +79,7 @@ public class IATest {
     public void testPositionMiniMax_DansUnCoinMax() throws Exception {
         System.out.println("positionMiniMax");
         IADifficile instance = new IADifficile();
-        Humain humain = new Humain();
+        Joueur humain = new Joueur();
         
         instance.setAdversaire(humain);
         
@@ -105,7 +105,7 @@ public class IATest {
     public void testPositionMiniMax_DansUnCoinMin() throws Exception {
         System.out.println("positionMiniMax");
         IADifficile instance = new IADifficile();
-        Humain humain = new Humain();
+        Joueur humain = new Joueur();
         
         instance.setAdversaire(humain);
         
@@ -129,7 +129,7 @@ public class IATest {
     public void testPositionMiniMax_PlusieursCoups() throws Exception {
         System.out.println("testPositionMiniMax_PlusieursCoups");
         IADifficile instance = new IADifficile();
-        Humain humain = new Humain();
+        Joueur humain = new Joueur();
         
         instance.setAdversaire(humain);
         
