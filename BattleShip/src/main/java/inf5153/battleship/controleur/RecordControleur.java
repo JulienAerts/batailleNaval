@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class RecordControleur {
 
-    private String cheminRecordFacile = "./src/main/resources/record0.ser";
-    private String cheminRecordDifficile = "./src/main/resources/record1.ser";
+    private String cheminRecordFacile = System.getProperty("user.home")+"\\save_game\\record0.ser";
+    private String cheminRecordDifficile = System.getProperty("user.home")+"\\save_game\\record1.ser";
     public ArrayList<Record> listeDesRecords = new ArrayList<>();
 
     public void sauvegarderRecord(String nom, Partie partie) {
