@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<partie dateDebut="Mon Jul 17 00:28:36 EDT 2017">
+  <Joueur>
+    <coup CoordoneeX="a" CoordonneY="1" />
+    <coup CoordoneeX="a" CoordonneY="2" />
+    <coup CoordoneeX="b" CoordonneY="3" />
+    <coup CoordoneeX="a" CoordonneY="5" />
+    <coup CoordoneeX="b" CoordonneY="4" />
+    <coup CoordoneeX="a" CoordonneY="6" />
+    <coup CoordoneeX="d" CoordonneY="7" />
+    <coup CoordoneeX="c" CoordonneY="5" />
+    <coup CoordoneeX="c" CoordonneY="7" />
+    <coup CoordoneeX="c" CoordonneY="6" />
+    <coup CoordoneeX="e" CoordonneY="6" />
+    <coup CoordoneeX="f" CoordonneY="4" />
+    <coup CoordoneeX="e" CoordonneY="5" />
+    <coup CoordoneeX="e" CoordonneY="7" />
+    <coup CoordoneeX="e" CoordonneY="8" />
+    <coup CoordoneeX="e" CoordonneY="9" />
+    <coup CoordoneeX="d" CoordonneY="10" />
+    <coup CoordoneeX="b" CoordonneY="10" />
+    <coup CoordoneeX="a" CoordonneY="9" />
+    <coup CoordoneeX="a" CoordonneY="8" />
+    <coup CoordoneeX="a" CoordonneY="7" />
+    <coup CoordoneeX="d" CoordonneY="3" />
+    <coup CoordoneeX="e" CoordonneY="3" />
+    <coup CoordoneeX="g" CoordonneY="3" />
+    <coup CoordoneeX="h" CoordonneY="3" />
+    <coup CoordoneeX="i" CoordonneY="5" />
+    <coup CoordoneeX="g" CoordonneY="6" />
+    <coup CoordoneeX="g" CoordonneY="7" />
+    <coup CoordoneeX="i" CoordonneY="7" />
+    <coup CoordoneeX="h" CoordonneY="9" />
+    <coup CoordoneeX="b" CoordonneY="9" />
+    <coup CoordoneeX="d" CoordonneY="9" />
+    <coup CoordoneeX="b" CoordonneY="8" />
+    <coup CoordoneeX="b" CoordonneY="7" />
+    <coup CoordoneeX="b" CoordonneY="6" />
+    <coup CoordoneeX="a" CoordonneY="3" />
+    <coup CoordoneeX="c" CoordonneY="1" />
+    <coup CoordoneeX="e" CoordonneY="1" />
+    <coup CoordoneeX="f" CoordonneY="2" />
+    <coup CoordoneeX="g" CoordonneY="2" />
+    <coup CoordoneeX="h" CoordonneY="2" />
+    <coup CoordoneeX="h" CoordonneY="6" />
+    <coup CoordoneeX="h" CoordonneY="7" />
+    <coup CoordoneeX="h" CoordonneY="8" />
+    <coup CoordoneeX="i" CoordonneY="8" />
+    <coup CoordoneeX="j" CoordonneY="8" />
+    <coup CoordoneeX="j" CoordonneY="6" />
+    <coup CoordoneeX="j" CoordonneY="7" />
+    <coup CoordoneeX="c" CoordonneY="9" />
+    <coup CoordoneeX="a" CoordonneY="10" />
+    <coup CoordoneeX="i" CoordonneY="2" />
+    <coup CoordoneeX="i" CoordonneY="4" />
+    <coup CoordoneeX="h" CoordonneY="4" />
+    <coup CoordoneeX="g" CoordonneY="10" />
+    <coup CoordoneeX="g" CoordonneY="9" />
+    <coup CoordoneeX="f" CoordonneY="10" />
+    <coup CoordoneeX="h" CoordonneY="10" />
+    <Bateau EstCoule="1" Longeur="5">
+      <position>
+        <Case coordonneeX="d" CoordoneeY="5" />
+        <Case coordonneeX="e" CoordoneeY="5" />
+        <Case coordonneeX="f" CoordoneeY="5" />
+        <Case coordonneeX="g" CoordoneeY="5" />
+        <Case coordonneeX="h" CoordoneeY="5" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="4">
+      <position>
+        <Case coordonneeX="f" CoordoneeY="8" />
+        <Case coordonneeX="g" CoordoneeY="8" />
+        <Case coordonneeX="h" CoordoneeY="8" />
+        <Case coordonneeX="i" CoordoneeY="8" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="3">
+      <position>
+        <Case coordonneeX="b" CoordoneeY="7" />
+        <Case coordonneeX="c" CoordoneeY="7" />
+        <Case coordonneeX="d" CoordoneeY="7" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="3">
+      <position>
+        <Case coordonneeX="f" CoordoneeY="1" />
+        <Case coordonneeX="g" CoordoneeY="1" />
+        <Case coordonneeX="h" CoordoneeY="1" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="2">
+      <position>
+        <Case coordonneeX="b" CoordoneeY="2" />
+        <Case coordonneeX="c" CoordoneeY="2" />
+      </position>
+    </Bateau>
+  </Joueur>
+  <IA difficulte="0">
+    <coup CoordoneeX="d" CoordonneY="5" />
+    <coup CoordoneeX="d" CoordonneY="3" />
+    <coup CoordoneeX="j" CoordonneY="2" />
+    <coup CoordoneeX="c" CoordonneY="9" />
+    <coup CoordoneeX="d" CoordonneY="7" />
+    <coup CoordoneeX="a" CoordonneY="5" />
+    <coup CoordoneeX="i" CoordonneY="6" />
+    <coup CoordoneeX="c" CoordonneY="1" />
+    <coup CoordoneeX="c" CoordonneY="2" />
+    <coup CoordoneeX="b" CoordonneY="6" />
+    <coup CoordoneeX="f" CoordonneY="2" />
+    <coup CoordoneeX="j" CoordonneY="9" />
+    <coup CoordoneeX="a" CoordonneY="9" />
+    <coup CoordoneeX="a" CoordonneY="8" />
+    <coup CoordoneeX="e" CoordonneY="5" />
+    <coup CoordoneeX="g" CoordonneY="8" />
+    <coup CoordoneeX="b" CoordonneY="9" />
+    <coup CoordoneeX="g" CoordonneY="6" />
+    <coup CoordoneeX="e" CoordonneY="1" />
+    <coup CoordoneeX="c" CoordonneY="3" />
+    <coup CoordoneeX="j" CoordonneY="4" />
+    <coup CoordoneeX="i" CoordonneY="9" />
+    <coup CoordoneeX="b" CoordonneY="8" />
+    <coup CoordoneeX="c" CoordonneY="8" />
+    <coup CoordoneeX="h" CoordonneY="3" />
+    <coup CoordoneeX="d" CoordonneY="4" />
+    <coup CoordoneeX="i" CoordonneY="4" />
+    <coup CoordoneeX="b" CoordonneY="1" />
+    <coup CoordoneeX="c" CoordonneY="10" />
+    <coup CoordoneeX="h" CoordonneY="7" />
+    <coup CoordoneeX="a" CoordonneY="4" />
+    <coup CoordoneeX="d" CoordonneY="1" />
+    <coup CoordoneeX="f" CoordonneY="1" />
+    <coup CoordoneeX="e" CoordonneY="3" />
+    <coup CoordoneeX="j" CoordonneY="10" />
+    <coup CoordoneeX="i" CoordonneY="1" />
+    <coup CoordoneeX="g" CoordonneY="9" />
+    <coup CoordoneeX="i" CoordonneY="5" />
+    <coup CoordoneeX="f" CoordonneY="10" />
+    <coup CoordoneeX="f" CoordonneY="9" />
+    <coup CoordoneeX="g" CoordonneY="1" />
+    <coup CoordoneeX="b" CoordonneY="3" />
+    <coup CoordoneeX="h" CoordonneY="2" />
+    <coup CoordoneeX="a" CoordonneY="3" />
+    <coup CoordoneeX="f" CoordonneY="4" />
+    <coup CoordoneeX="i" CoordonneY="3" />
+    <coup CoordoneeX="i" CoordonneY="7" />
+    <coup CoordoneeX="b" CoordonneY="4" />
+    <coup CoordoneeX="j" CoordonneY="7" />
+    <coup CoordoneeX="f" CoordonneY="8" />
+    <coup CoordoneeX="h" CoordonneY="9" />
+    <coup CoordoneeX="d" CoordonneY="8" />
+    <coup CoordoneeX="e" CoordonneY="6" />
+    <coup CoordoneeX="j" CoordonneY="8" />
+    <coup CoordoneeX="g" CoordonneY="5" />
+    <coup CoordoneeX="d" CoordonneY="6" />
+    <coup CoordoneeX="i" CoordonneY="2" />
+    <Bateau EstCoule="1" Longeur="5">
+      <position>
+        <Case coordonneeX="f" CoordoneeY="10" />
+        <Case coordonneeX="g" CoordoneeY="10" />
+        <Case coordonneeX="h" CoordoneeY="10" />
+        <Case coordonneeX="i" CoordoneeY="10" />
+        <Case coordonneeX="j" CoordoneeY="10" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="4">
+      <position>
+        <Case coordonneeX="e" CoordoneeY="8" />
+        <Case coordonneeX="e" CoordoneeY="7" />
+        <Case coordonneeX="e" CoordoneeY="6" />
+        <Case coordonneeX="e" CoordoneeY="5" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="3">
+      <position>
+        <Case coordonneeX="f" CoordoneeY="2" />
+        <Case coordonneeX="g" CoordoneeY="2" />
+        <Case coordonneeX="h" CoordoneeY="2" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="3">
+      <position>
+        <Case coordonneeX="j" CoordoneeY="6" />
+        <Case coordonneeX="j" CoordoneeY="7" />
+        <Case coordonneeX="j" CoordoneeY="8" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="2">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="9" />
+        <Case coordonneeX="b" CoordoneeY="9" />
+      </position>
+    </Bateau>
+  </IA>
+</partie>

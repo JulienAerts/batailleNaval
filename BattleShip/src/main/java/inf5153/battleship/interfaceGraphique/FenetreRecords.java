@@ -1,6 +1,7 @@
 package inf5153.battleship.interfaceGraphique;
 import javax.swing.JButton;
 import inf5153.battleship.controleur.RecordControleur;
+import inf5153.battleship.domain.Record;
 import java.awt.Font;
 import javax.swing.JTextField;
 
@@ -8,7 +9,7 @@ import javax.swing.JTextField;
 public class FenetreRecords extends javax.swing.JFrame {
     
         protected javax.swing.JButton btnRevoirPartie;
-	protected RecordControleur controleur;   
+	protected RecordControleur controleur ;   
         protected javax.swing.JButton btnRetourMenu;
         protected javax.swing.JButton btnSauvegarder;
         protected javax.swing.JScrollPane jScrollPane1;
@@ -22,7 +23,9 @@ public class FenetreRecords extends javax.swing.JFrame {
         public FenetreRecords() {
             
             initComponents();
-            
+            controleur = new RecordControleur();
+            controleur.chargerRecordsHistorique();
+            informationVersGrid();
         }
         
 	public void btnRetourMenuOnClickListener(java.awt.event.ActionEvent evt) {
@@ -35,11 +38,24 @@ public class FenetreRecords extends javax.swing.JFrame {
             
 	}
 
-	public void informationVersGrid() {
-		// TODO - implement FenetreRecords.informationVersGrid
-		throw new UnsupportedOperationException();
-	}
+        protected void informationVersGrid(){
+        int i =0;
+        int l =0;
+        String niveau;
+        for (Record record :controleur.consulterRecords()){
+            System.out.println("record");
+            if (record.difficulte==0){
+                niveau = "facile";
+            }else  niveau = "difficile";
+            tblMeilleureTemps.setValueAt(record.nom, i, l);
+            tblMeilleureTemps.setValueAt(niveau, i, l+1);
+            tblMeilleureTemps.setValueAt(((record.temp/1000))+" secondes", i, l+2);
+            l =0;
+            i =i+1;
+        }
+ 
         
+    }
         protected void initComponents() {
 
             jScrollPane1 = new javax.swing.JScrollPane();

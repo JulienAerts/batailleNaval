@@ -1,10 +1,11 @@
 package inf5153.battleship.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Record {
+public class Record implements Serializable  {
 
-	private String nom;
+	public String nom;
 	public long temp;
 	public Integer difficulte;
         
