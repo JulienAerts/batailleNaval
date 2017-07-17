@@ -11,8 +11,7 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
 
     public FenetreNouveauRecord(Partie partie) {
         super(partie);
-        super.initComponents();
-        super.initExtraComponents();
+
     }
 
     public void btnSauvegarderOnClickListener() {
