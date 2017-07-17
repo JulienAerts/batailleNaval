@@ -43,7 +43,6 @@ public class FenetreRecords extends javax.swing.JFrame {
         int l =0;
         String niveau;
         for (Record record :controleur.consulterRecords()){
-            System.out.println("record");
             if (record.difficulte==0){
                 niveau = "facile";
             }else  niveau = "difficile";

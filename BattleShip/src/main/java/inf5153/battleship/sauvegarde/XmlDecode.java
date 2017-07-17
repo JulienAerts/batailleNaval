@@ -23,7 +23,7 @@ public class XmlDecode {
 
     public static Partie xmlToPartie(Document lireDocXml) throws Exception {
 
-        Partie laPartie = new Partie(chercherDate(lireDocXml), Integer.parseInt(lireDocXml.getRootElement().getChild("IA").getAttributeValue("difficulte")), (long) Integer.parseInt(lireDocXml.getRootElement().getAttribute("tempsEchoule").getValue()));
+        Partie laPartie = new Partie(chercherDate(lireDocXml), Integer.parseInt(lireDocXml.getRootElement().getChild("IA").getAttributeValue("difficulte")),  Long.parseLong(lireDocXml.getRootElement().getAttribute("tempsEchoule").getValue()));
         lireBateauJoueur(laPartie.getJoueur1(), lireDocXml);
         lireBateauAI(laPartie.getJoueur2(), lireDocXml);
 
