@@ -30,5 +30,9 @@ public class Chronometre {
         return this.tempsexecution;
     }
     
+    public void setTempsExecution(long temps){
+        this.tempsexecution = temps;
+    }
+    
     
 }

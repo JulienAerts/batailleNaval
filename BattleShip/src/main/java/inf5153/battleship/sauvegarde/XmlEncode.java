@@ -26,6 +26,7 @@ public class XmlEncode {
         Element Ia = new Element("IA");
 
         partie.setAttribute("dateDebut", String.valueOf(objPartie.getDateDebut()));
+        partie.setAttribute("tempsEchoule", String.valueOf(objPartie.chronometre.getTempsExecution()));
         Ia.setAttribute("difficulte", Integer.toString(objPartie.getJoueur2().getDifficultee()));
 
         for (Coup coupPresent : objPartie.getJoueur1().getCoups()) {

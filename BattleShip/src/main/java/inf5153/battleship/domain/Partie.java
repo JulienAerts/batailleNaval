@@ -6,13 +6,14 @@ public class Partie {
 
     private Date debut;
     private Date fin;
-    Chronometre chronometre = new Chronometre();
+    public Chronometre chronometre;
     private Joueur joueur1;
     private IA joueur2;
 
     public Partie(int niveauDifficulte) throws Exception {
         debut = new Date();
         joueur1 = new Joueur();
+        chronometre = new Chronometre();
         chronometre.partirChrono();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
@@ -24,8 +25,11 @@ public class Partie {
         joueur2.setAdversaire(joueur1);
     }
 
-    public Partie(Date debut, int niveauDifficulte) throws Exception {
+    public Partie(Date debut, int niveauDifficulte, long tempsEchoue) throws Exception {
         this.debut = debut;
+        chronometre = new Chronometre();
+        chronometre.setTempsExecution(tempsEchoue);
+        chronometre.partirChrono();
         joueur1 = new Joueur();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
