@@ -9,7 +9,7 @@ public class Record implements Serializable  {
 	public long temp;
 	public Integer difficulte;
         
-        public Record(String Nom,int difficulte,long temp) {
+        public Record(String nom,int difficulte,long temp) {
             this.nom = nom;
             this.difficulte = difficulte;
             this.temp = temp;
