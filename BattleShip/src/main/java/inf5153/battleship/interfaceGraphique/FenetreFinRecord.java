@@ -6,10 +6,13 @@ import javax.swing.JButton;
 public class FenetreFinRecord extends FenetreRecords {
     
         protected Partie partie;
+        protected boolean victoire;
         
-        public FenetreFinRecord(Partie partie) {
+        public FenetreFinRecord(Partie partie ,boolean victoire ) {
             this.partie = partie;
+            this.victoire = victoire;
             initBoutonRevoirPartie();
+            initMessageVictoire();
         }
         
 	protected void btnRevoirPartieOnClickListener(java.awt.event.ActionEvent evt) throws Exception {
@@ -33,6 +36,16 @@ public class FenetreFinRecord extends FenetreRecords {
                 }
             });
             btnRevoirPartie.setVisible(true);
+            this.repaint();
+            
+        }
+        
+         protected void initMessageVictoire(){
+            
+            if (victoire){
+                lblVictoire.setVisible(true);
+
+            }else lblDefaite.setVisible(true);
             this.repaint();
             
         }

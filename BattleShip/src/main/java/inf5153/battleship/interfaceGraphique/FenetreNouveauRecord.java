@@ -9,8 +9,9 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
     private JButton btnSauvegarderRecord;
     private JTextArea txtNomduJouer;
 
-    public FenetreNouveauRecord(Partie partie) {
-        super(partie);
+    public FenetreNouveauRecord(Partie partie ,boolean victoire) {
+        super(partie,victoire);
+       
 
     }
 
