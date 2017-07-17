@@ -131,8 +131,8 @@ public class PartieControleur {
 
     }
 
-    public void chargerPartie(Partie partie) {
-
+    public void chargerPartie(File fichier) {
+        partie = lireFichierXml(fichier);
         partie.getJoueur2().setAdversaire(partie.getJoueur1());
     }
 
