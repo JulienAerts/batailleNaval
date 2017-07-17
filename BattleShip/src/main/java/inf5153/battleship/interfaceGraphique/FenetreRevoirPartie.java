@@ -29,10 +29,6 @@ public class FenetreRevoirPartie extends FenetrePartie {
         
         btnFinPartie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                menuPrincipal.pack();
-                menuPrincipal.setLocationRelativeTo(null);
-                menuPrincipal.setVisible(true);
                 dispose();
             }
         });

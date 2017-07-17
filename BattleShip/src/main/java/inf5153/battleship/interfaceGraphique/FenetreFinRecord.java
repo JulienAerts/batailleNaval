@@ -21,7 +21,7 @@ public class FenetreFinRecord extends FenetreRecords {
             fenetrePartie.pack();
             fenetrePartie.setLocationRelativeTo(null);
             fenetrePartie.setVisible(true);
-            dispose();
+            
 	}
         
         protected void initBoutonRevoirPartie(){
