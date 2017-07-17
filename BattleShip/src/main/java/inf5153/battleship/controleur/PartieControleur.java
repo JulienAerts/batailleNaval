@@ -101,10 +101,6 @@ public class PartieControleur {
         return positions;
     }
 
-    public void reinitialiserBateaux() {
-        // TODO - implement PartieControleur.reinitialiserBateaux
-        throw new UnsupportedOperationException();
-    }
 
     public void sauvegarderPartie() {
         ecrireFichierXml(partie);

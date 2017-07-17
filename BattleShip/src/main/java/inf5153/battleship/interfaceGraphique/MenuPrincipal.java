@@ -13,9 +13,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class MenuPrincipal extends javax.swing.JFrame {
     
     MenuPrincipalControleur controleur = new MenuPrincipalControleur();
-    /**
-     * Creates new form MenuPrincipal
-     */
+
     public MenuPrincipal() {
         initComponents();
     }
@@ -74,7 +72,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         lblImageFond.setBounds(0, -20, 800, 600);
 
         pack();
-    }// </editor-fold>                        
+    }                    
     
     private void disableNav(Container c) {
         for (Component x : c.getComponents())
@@ -122,9 +120,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
     }                                             
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -149,7 +145,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MenuPrincipal menu = new MenuPrincipal();
@@ -159,13 +155,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify    
+  
     private JFileChooser selectionneur ;
     private FileNameExtensionFilter xmlfilter;
     private javax.swing.JButton btnChargerPartie;
     private javax.swing.JButton btnJouerSeul;
     private javax.swing.JButton btnVoirRecord;
-    private javax.swing.JLabel lblImageFond;
-    // End of variables declaration                   
+    private javax.swing.JLabel lblImageFond;                 
 }

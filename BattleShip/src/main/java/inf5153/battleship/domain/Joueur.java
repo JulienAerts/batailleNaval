@@ -25,6 +25,7 @@ public class Joueur {
         Coup coup = new Coup(carte.getCase(position));
         Reponse reponse;
         Case caseJouer = carte.getCase(position);
+        caseJouer.setTir(coup);
         if (caseJouer.bateauExiste()) {
             Bateau touche = caseJouer.getBateau();
             if (touche.estCoule()) {
@@ -38,7 +39,6 @@ public class Joueur {
 
         coups.add(coup);
         caseJouer.setReponse(reponse);
-        caseJouer.setTir(coup);
         return caseJouer;
     }
 
