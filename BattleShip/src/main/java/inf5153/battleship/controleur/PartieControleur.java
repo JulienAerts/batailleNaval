@@ -18,15 +18,6 @@ public class PartieControleur {
         this.partie = partie;
     }
 
-    /**
-     *
-     * @param positions
-     */
-    public void placerBateau(ArrayList<Position> positions) {
-        // TODO - implement PartieControleur.placerBateau
-        throw new UnsupportedOperationException();
-    }
-
     public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte) throws Exception {
         
         partie = new Partie(niveauDifficulte);
@@ -118,10 +109,6 @@ public class PartieControleur {
         return positions;
     }
 
-    public void reinitialiserBateaux() {
-        // TODO - implement PartieControleur.reinitialiserBateaux
-        throw new UnsupportedOperationException();
-    }
 
     public void sauvegarderPartie() {
         ecrireFichierXml(partie);

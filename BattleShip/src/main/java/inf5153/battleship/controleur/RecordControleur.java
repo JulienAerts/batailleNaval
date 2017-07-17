@@ -11,11 +11,6 @@ import java.util.ArrayList;
 
 public class RecordControleur {
 
-    /**
-     *
-     * @param nom
-     * @param partie
-     */
     private String cheminRecordFacile = "./src/main/resources/record0.ser";
     private String cheminRecordDifficile = "./src/main/resources/record1.ser";
     public ArrayList<Record> listeDesRecords = new ArrayList<>();
