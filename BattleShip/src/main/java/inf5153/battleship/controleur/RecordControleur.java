@@ -125,7 +125,7 @@ public class RecordControleur {
                 record = true;
                 if (difficulte == rec.difficulte) {
                     record = false;
-                    if (partie.chronometre.getTempsExecution() > rec.temp) {
+                    if (partie.chronometre.getTempsExecution() < rec.temp) {
                         record = true;
                     }
                 }
