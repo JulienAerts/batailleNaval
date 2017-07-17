@@ -10,21 +10,8 @@ public class PartieControleur {
 
     private Partie partie;
 
-    /**
-     *
-     * @param partie
-     */
     public void setPartie(Partie partie) {
         this.partie = partie;
-    }
-
-    /**
-     *
-     * @param positions
-     */
-    public void placerBateau(ArrayList<Position> positions) {
-        // TODO - implement PartieControleur.placerBateau
-        throw new UnsupportedOperationException();
     }
 
     public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte) throws Exception {
@@ -43,10 +30,6 @@ public class PartieControleur {
         return partie.getJoueur1().getCarte().getBateaux();
     }
 
-    /**
-     *
-     * @param position
-     */
     public Reponse jouerCoup(Position position) {
         Reponse reponse;
         if (partie.getJoueur2().getCarte().positionNonTirer(position)) {

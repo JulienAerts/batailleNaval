@@ -13,7 +13,7 @@ public class RevoirPartieControleur {
         tour = 0;
     }
 
-    public Position prochainCoup() {
+    public Case prochainCoup() {
         
         if(partie.getJoueur2() == joueurActuel) {
             joueurActuel = partie.getJoueur1();
@@ -26,7 +26,7 @@ public class RevoirPartieControleur {
         if(coup == null)
             return null;
         else
-            return coup.getCase().getPosition();
+            return coup.getCase();
     }
 
     public void prochainTour() {

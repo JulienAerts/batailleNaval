@@ -3,7 +3,7 @@ package inf5153.battleship.domain;
 import inf5153.battleship.controleur.Reponse;
 import java.util.ArrayList;
 
-public abstract class Joueur {
+public class Joueur {
 
     protected Carte carte;
     protected ArrayList<Coup> coups;

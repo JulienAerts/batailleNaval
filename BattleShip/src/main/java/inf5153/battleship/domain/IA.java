@@ -11,6 +11,7 @@ public abstract class IA extends Joueur {
     }
 
     abstract public Position genererCoup() throws Exception;
+    
     abstract public int getDifficultee();
 
     public void placerBateauxAleatoire() throws Exception {
