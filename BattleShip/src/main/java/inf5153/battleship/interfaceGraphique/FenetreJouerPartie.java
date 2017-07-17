@@ -130,7 +130,7 @@ public class FenetreJouerPartie extends FenetrePartie {
         controleur.getPartie().chronometre.arretChrono();
 
         FenetreFinRecord fenetreFinRecord;
-
+        controleurRecord.chargerRecordsHistorique();
         if (victoire && controleurRecord.estUnRecord(controleur.getPartie())) {
             fenetreFinRecord = new FenetreNouveauRecord(controleur.getPartie(),victoire);
         } else {

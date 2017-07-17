@@ -29,7 +29,7 @@ public class Partie {
         this.debut = debut;
         chronometre = new Chronometre();
         chronometre.setTempsExecution(tempsEchoue);
-        chronometre.partirChrono();
+
         joueur1 = new Joueur();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
