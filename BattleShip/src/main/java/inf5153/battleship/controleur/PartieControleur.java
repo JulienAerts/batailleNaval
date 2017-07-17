@@ -10,10 +10,6 @@ public class PartieControleur {
 
     private Partie partie;
 
-    /**
-     *
-     * @param partie
-     */
     public void setPartie(Partie partie) {
         this.partie = partie;
     }
@@ -34,10 +30,6 @@ public class PartieControleur {
         return partie.getJoueur1().getCarte().getBateaux();
     }
 
-    /**
-     *
-     * @param position
-     */
     public Reponse jouerCoup(Position position) {
         Reponse reponse;
         if (partie.getJoueur2().getCarte().positionNonTirer(position)) {

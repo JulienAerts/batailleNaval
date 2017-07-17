@@ -27,7 +27,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         selectionneur.setDialogTitle("Charger fichier de sauvegarde");
         // set selected filter
         selectionneur.setFileFilter(xmlfilter);
-        selectionneur.setCurrentDirectory(new java.io.File("./src/main/resources/sauvegarde/"));
+        File workingDirectory = new File(System.getProperty("user.home"), "save_game");
+        boolean exists = workingDirectory.exists();
+        if (!exists){
+        new java.io.File(System.getProperty("user.home"), "save_game").mkdirs();
+        }
+        selectionneur.setCurrentDirectory(workingDirectory);
         btnJouerSeul = new javax.swing.JButton();
         btnChargerPartie = new javax.swing.JButton();
         btnVoirRecord = new javax.swing.JButton();

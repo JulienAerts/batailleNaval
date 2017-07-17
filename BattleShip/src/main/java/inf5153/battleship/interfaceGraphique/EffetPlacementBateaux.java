@@ -104,7 +104,7 @@ public final class EffetPlacementBateaux {
 
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "Pas plus qu<un bateau sur les meme cases","Message Avertissement",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Pas plus qu'un bateau sur les mêmes cases","Message Avertissement",JOptionPane.ERROR_MESSAGE);
             }
         }
     }

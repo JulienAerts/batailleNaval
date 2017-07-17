@@ -21,7 +21,8 @@ public class Fichier {
             String nomFichier = formatter.format(new Date());
             String extension = ".xml";
             String nomFichierAvecExtension = nomFichier.concat(extension);
-            String repertoire = "./src/main/resources/sauvegarde/";
+            File workingDirectory = new File(System.getProperty("user.home"), "save_game");
+            String repertoire = System.getProperty("user.home")+"/save_game/";
             String cheminComplet = repertoire.concat(nomFichierAvecExtension);
             partieToXml(docXml, objPartie);
 

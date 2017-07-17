@@ -6,15 +6,12 @@ public class Partie {
 
     private Date debut;
     private Date fin;
-    private Chronometre chronometre;
-    private Humain joueur1;
+    private Joueur joueur1;
     private IA joueur2;
 
     public Partie(int niveauDifficulte) throws Exception {
         debut = new Date();
-        Chronometre chronometre = new Chronometre();
-        chronometre.partirChrono();
-        joueur1 = new Humain();
+        joueur1 = new Joueur();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
         }
@@ -27,7 +24,7 @@ public class Partie {
 
     public Partie(Date debut, int niveauDifficulte) throws Exception {
         this.debut = debut;
-        joueur1 = new Humain();
+        joueur1 = new Joueur();
         if(niveauDifficulte == 0) {
             joueur2 = new IAFacile();
         }
@@ -37,7 +34,7 @@ public class Partie {
         joueur2.setAdversaire(joueur1);
     }
 
-    public Humain getJoueur1() {
+    public Joueur getJoueur1() {
         return this.joueur1;
     }
 
@@ -45,7 +42,7 @@ public class Partie {
      *
      * @param joueur1
      */
-    public void setJoueur1(Humain joueur1) {
+    public void setJoueur1(Joueur joueur1) {
         this.joueur1 = joueur1;
     }
 

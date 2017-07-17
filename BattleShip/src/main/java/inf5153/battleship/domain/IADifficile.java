@@ -34,7 +34,7 @@ public class IADifficile extends IA {
         } else {
 
             Position position = dernierCoup.getCase().getPosition();
-            Position adjacente = positionAdjacente(position);
+            Position adjacente = positionAdjacenteNonUtilisee(position);
 
             ArrayList<Coup> coupExclure = new ArrayList();
             while (adjacente == null) {
@@ -47,7 +47,7 @@ public class IADifficile extends IA {
                     return positionAleatoireValide();
                 }
 
-                adjacente = positionAdjacente(dernierCoup.getCase().getPosition());
+                adjacente = positionAdjacenteNonUtilisee(dernierCoup.getCase().getPosition());
 
             }
             return adjacente;
@@ -72,7 +72,7 @@ public class IADifficile extends IA {
         return null;
     }
 
-    private Position positionAdjacente(Position position) throws Exception {
+    private Position positionAdjacenteNonUtilisee(Position position) throws Exception {
         Position adjacente = null;
         if (position.getCoordonneXToInt() < Position.MAX_X && !coupDejaEffectue(new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY()))) {
             adjacente = new Position(position.getCoordonneXToInt() + 1, position.getCoordonneY());
