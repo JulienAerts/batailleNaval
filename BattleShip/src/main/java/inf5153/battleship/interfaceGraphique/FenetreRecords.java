@@ -3,8 +3,9 @@ import javax.swing.JButton;
 import inf5153.battleship.controleur.RecordControleur;
 import inf5153.battleship.domain.Record;
 import java.awt.Font;
+import java.util.concurrent.TimeUnit;
 import javax.swing.JTextField;
-
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 public class FenetreRecords extends javax.swing.JFrame {
     
@@ -48,7 +49,8 @@ public class FenetreRecords extends javax.swing.JFrame {
             }else  niveau = "difficile";
             tblMeilleureTemps.setValueAt(record.nom, i, l);
             tblMeilleureTemps.setValueAt(niveau, i, l+1);
-            tblMeilleureTemps.setValueAt(((record.temp/1000))+" secondes", i, l+2);
+            double elapsedTimeInSeconds = TimeUnit.MILLISECONDS.convert(record.temp, TimeUnit.NANOSECONDS) / 1000.0;
+            tblMeilleureTemps.setValueAt(elapsedTimeInSeconds+" secondes", i, l+2);
             l =0;
             i =i+1;
         }

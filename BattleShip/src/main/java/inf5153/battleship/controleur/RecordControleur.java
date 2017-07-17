@@ -16,8 +16,7 @@ public class RecordControleur {
     public ArrayList<Record> listeDesRecords = new ArrayList<>();
 
     public void sauvegarderRecord(String nom, Partie partie) {
-        long difference = partie.getDateFin().getTime() - partie.getDateDebut().getTime();
-        Record nouveauRecord = new Record(nom, partie.getJoueur2().getDifficultee(), difference);
+        Record nouveauRecord = new Record(nom, partie.getJoueur2().getDifficultee(), partie.chronometre.getTempsExecution());
         if (nouveauRecord.difficulte == 0 ){
             serializeRecord(nouveauRecord,cheminRecordFacile);
         }else{
