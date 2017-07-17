@@ -31,6 +31,7 @@ public class RecordControleur {
     }
 
     public void chargerRecordsHistorique() {
+        listeDesRecords = new ArrayList<>();
         File fileRecordFacile = new File(cheminRecordFacile);
         File fileRecordDifficile = new File(cheminRecordDifficile);
         if (fileRecordFacile.exists()){
