@@ -133,9 +133,9 @@ public class FenetreJouerPartie extends FenetrePartie {
         FenetreFinRecord fenetreFinRecord;
 
         if (victoire && controleurRecord.estUnRecord(controleur.getPartie())) {
-            fenetreFinRecord = new FenetreNouveauRecord(controleur.getPartie());
+            fenetreFinRecord = new FenetreNouveauRecord(controleur.getPartie(),victoire);
         } else {
-            fenetreFinRecord = new FenetreFinRecord(controleur.getPartie());
+            fenetreFinRecord = new FenetreFinRecord(controleur.getPartie(),victoire);
         }
 
         fenetreFinRecord.pack();
