@@ -127,7 +127,7 @@ public class FenetreJouerPartie extends FenetrePartie {
     }
 
     public void finDePartie(boolean victoire) {
-        controleur.getPartie().setDateFin(new Date());
+        controleur.getPartie().chronometre.arretChrono();
 
         FenetreFinRecord fenetreFinRecord;
 
