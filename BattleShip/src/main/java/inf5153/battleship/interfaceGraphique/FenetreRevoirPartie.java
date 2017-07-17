@@ -10,7 +10,6 @@ import java.awt.Color;
 public class FenetreRevoirPartie extends FenetrePartie {
 
     private RevoirPartieControleur controleur;
-    private JButton btnProchainCoup;
     private JButton btnRetourMenu;
 
     public FenetreRevoirPartie(Partie partie) throws Exception {
@@ -27,7 +26,7 @@ public class FenetreRevoirPartie extends FenetrePartie {
         pnlMesBateaux.setVisible(false);
         txtJournalisation.setVisible(false);
         jScrollJournalisation.setVisible(false);
-        
+        btnProchainCoup.setVisible(true);
         btnFinPartie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dispose();
@@ -35,15 +34,13 @@ public class FenetreRevoirPartie extends FenetrePartie {
         });
         
         
-        btnProchainCoup = new javax.swing.JButton();
-        btnProchainCoup.setText("Prochain coup");
+     
         btnProchainCoup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prochainCoupOnClickListener();
             }
         });
-        super.getContentPane().add(btnProchainCoup);
-        btnProchainCoup.setBounds(330, 355, 140, 30);
+
     }
 
     public void prochainCoupOnClickListener() {

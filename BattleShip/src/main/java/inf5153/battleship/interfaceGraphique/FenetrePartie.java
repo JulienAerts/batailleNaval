@@ -304,6 +304,7 @@ public class FenetrePartie extends JFrame {
     protected javax.swing.JScrollPane jScrollJournalisation;
     public javax.swing.JTextArea txtJournalisation;
     protected javax.swing.JLabel lblImageFond;
+    protected JButton btnProchainCoup;
     
     public void init_mapBoutonsJoueur() {
         mapBoutonsJoueur = new BoutonCustom[100];
@@ -808,7 +809,7 @@ public class FenetrePartie extends JFrame {
         jButtonSousMarin1 = new JButton();
         jButtonSousMarin2 = new JButton();
         jButtonSousMarin3 = new JButton();
-
+        btnProchainCoup = new javax.swing.JButton();
         setUndecorated(false); 
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
@@ -1907,6 +1908,11 @@ public class FenetrePartie extends JFrame {
                     .addComponent(pnlContourMesBateaux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        
+        btnProchainCoup.setText("Prochain coup");
+        getContentPane().add(btnProchainCoup);
+        btnProchainCoup.setBounds(330, 355, 140, 30);
+         btnProchainCoup.setVisible(false);
         lblImageFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fond_Fenetre_Jouer.png"))); // NOI18N
         getContentPane().add(lblImageFond);
         lblImageFond.setBounds(0, -20, 810, 620);
