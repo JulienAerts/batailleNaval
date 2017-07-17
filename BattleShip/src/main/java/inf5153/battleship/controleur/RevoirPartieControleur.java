@@ -4,21 +4,32 @@ import inf5153.battleship.domain.*;
 
 public class RevoirPartieControleur {
 
-	private Partie partie;
-	private Coup coupActuel;
+    private Partie partie;
+    private int tour;
+    private Joueur joueurActuel;
 
-	/**
-	 * 
-	 * @param partie
-	 */
-	public void initialiserPartie(Partie partie) {
-		// TODO - implement RevoirPartieControleur.initialiserPartie
-		throw new UnsupportedOperationException();
-	}
+    public RevoirPartieControleur(Partie partie) {
+        this.partie = partie;
+        tour = 0;
+    }
 
-	public Position prochainCoup() {
-		// TODO - implement RevoirPartieControleur.prochainCoup
-		throw new UnsupportedOperationException();
-	}
+    public Position prochainCoup() {
+        
+        if(partie.getJoueur2() == joueurActuel) {
+            joueurActuel = partie.getJoueur1();
+        } else {
+            joueurActuel = partie.getJoueur2();
+        }
+        
+        Coup coup = joueurActuel.getCoup(tour);
+        
+        if(coup == null)
+            return null;
+        else
+            return coup.getCase().getPosition();
+    }
 
+    public void incrementeTour() {
+        tour++;
+    }
 }

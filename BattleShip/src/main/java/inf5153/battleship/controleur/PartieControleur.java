@@ -8,127 +8,141 @@ import java.io.File;
 
 public class PartieControleur {
 
-	private Partie partie;
+    private Partie partie;
 
-	/**
-	 * 
-	 * @param partie
-	 */
-	public void setPartie(Partie partie) {
-		this.partie = partie;
-	}
+    /**
+     *
+     * @param partie
+     */
+    public void setPartie(Partie partie) {
+        this.partie = partie;
+    }
 
-	/**
-	 * 
-	 * @param positions
-	 */
-	public void placerBateau(ArrayList<Position> positions) {
-		// TODO - implement PartieControleur.placerBateau
-		throw new UnsupportedOperationException();
-	}
-	public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte)  throws Exception {
-            // TODO: Validations du joueur1 ??
-            partie = new Partie();
-            partie.getJoueur1().placerBateaux(listePositionsBateauxJoueur);
-            partie.getJoueur2().setDifficultee(niveauDifficulte);
-            partie.getJoueur2().setAdversaire(partie.getJoueur1());
-            partie.getJoueur2().placerBateauxAleatoire();
-            
-	}
+    /**
+     *
+     * @param positions
+     */
+    public void placerBateau(ArrayList<Position> positions) {
+        // TODO - implement PartieControleur.placerBateau
+        throw new UnsupportedOperationException();
+    }
 
-        public ArrayList<Bateau> getBateauxIA() {
-            return partie.getJoueur2().getCarte().getBateaux();
-        }
-        
-        public ArrayList<Bateau> getBateauxJoueur() {
-            return partie.getJoueur1().getCarte().getBateaux();
-        }
+    public void commencerPartie(ArrayList<Position> listePositionsBateauxJoueur, int niveauDifficulte) throws Exception {
+        // TODO: Validations du joueur1 ??
+        partie = new Partie();
+        partie.getJoueur1().placerBateaux(listePositionsBateauxJoueur);
+        partie.getJoueur2().setDifficultee(niveauDifficulte);
+        partie.getJoueur2().setAdversaire(partie.getJoueur1());
+        partie.getJoueur2().placerBateauxAleatoire();
 
-	/**
-	 * 
-	 * @param position
-	 */
-	public Reponse jouerCoup(Position position) {
-		Reponse reponse;
-                if (partie.getJoueur2().getCarte().positionNonTirer(position)){
-                    Case caseJouer  = partie.getJoueur2().jouerCoup(position);
-                    Bateau touche;
-                    if (caseJouer.bateauExiste()){
-                        touche = caseJouer.getBateau();
-                        if (touche.estCoule()){
-                             if (partie.getJoueur2().getCarte().bateauxTousCouler()){
-                            reponse = Reponse.PartieTerminee;
-                        }else reponse = Reponse.ToucheCoule;
-                        }else reponse = Reponse.Touche;                 
-                    }else reponse = Reponse.Eau;
-                }else reponse = Reponse.DejaTirer;
+    }
 
+    public ArrayList<Bateau> getBateauxIA() {
+        return partie.getJoueur2().getCarte().getBateaux();
+    }
 
-		return reponse;
-	}
-        
-        public Reponse jouerCoupAI(Position position) {
-		Reponse reponse;
-                Case caseJouer  = partie.getJoueur1().jouerCoup(position);
-                Bateau touche;
-                if (caseJouer.bateauExiste()){
-                    touche = caseJouer.getBateau();
-                    if (touche.estCoule()){
-                        if (partie.getJoueur1().getCarte().bateauxTousCouler()){
-                            reponse = Reponse.PartieTerminee;
-                        }else reponse = Reponse.ToucheCoule;
-                    }else reponse = Reponse.Touche;                 
-                }else reponse = Reponse.Eau;
+    public ArrayList<Bateau> getBateauxJoueur() {
+        return partie.getJoueur1().getCarte().getBateaux();
+    }
 
-		return reponse;
-	}
-        
-        public ArrayList<Case> getListeCoupJoueur(){
-            ArrayList<Case> positions = new ArrayList();
-            
-            for (Coup coup :partie.getJoueur1().getCoups()){
-                
-                positions.add(coup.getCase());
-                
+    /**
+     *
+     * @param position
+     */
+    public Reponse jouerCoup(Position position) {
+        Reponse reponse;
+        if (partie.getJoueur2().getCarte().positionNonTirer(position)) {
+            Case caseJouer = partie.getJoueur2().jouerCoup(position);
+            Bateau touche;
+            if (caseJouer.bateauExiste()) {
+                touche = caseJouer.getBateau();
+                if (touche.estCoule()) {
+                    if (partie.getJoueur2().getCarte().bateauxTousCouler()) {
+                        reponse = Reponse.PartieTerminee;
+                    } else {
+                        reponse = Reponse.ToucheCoule;
+                    }
+                } else {
+                    reponse = Reponse.Touche;
+                }
+            } else {
+                reponse = Reponse.Eau;
             }
-                    
-            return positions;
+        } else {
+            reponse = Reponse.DejaTirer;
         }
-        
-        public ArrayList<Case> getListeCoupAI(){
-            ArrayList<Case> positions = new ArrayList();
-            
-            for (Coup coup :partie.getJoueur2().getCoups()){
-                
-                positions.add(coup.getCase());
-                
+
+        return reponse;
+    }
+
+    public Reponse jouerCoupAI(Position position) {
+        Reponse reponse;
+        Case caseJouer = partie.getJoueur1().jouerCoup(position);
+        Bateau touche;
+        if (caseJouer.bateauExiste()) {
+            touche = caseJouer.getBateau();
+            if (touche.estCoule()) {
+                if (partie.getJoueur1().getCarte().bateauxTousCouler()) {
+                    reponse = Reponse.PartieTerminee;
+                } else {
+                    reponse = Reponse.ToucheCoule;
+                }
+            } else {
+                reponse = Reponse.Touche;
             }
-                    
-            return positions;
+        } else {
+            reponse = Reponse.Eau;
         }
 
-	public void reinitialiserBateaux() {
-		// TODO - implement PartieControleur.reinitialiserBateaux
-		throw new UnsupportedOperationException();
-	}
+        return reponse;
+    }
 
-	public void sauvegarderPartie() {
-		ecrireFichierXml(partie);
-		
-	}
-        
-        public void chargerPartie(File fichier) {
-		partie = lireFichierXml(fichier);
-		partie.getJoueur2().setAdversaire(partie.getJoueur1());
-	}
+    public ArrayList<Case> getListeCoupJoueur() {
+        ArrayList<Case> positions = new ArrayList();
 
-	public Position genererCoupIA() {
-		Position positionGenere =partie.getJoueur2().genererCoup();
-                return positionGenere;
-	}
+        for (Coup coup : partie.getJoueur1().getCoups()) {
 
-	public Partie getPartie() {
-		return this.partie;
-	}
+            positions.add(coup.getCase());
+
+        }
+
+        return positions;
+    }
+
+    public ArrayList<Case> getListeCoupAI() {
+        ArrayList<Case> positions = new ArrayList();
+
+        for (Coup coup : partie.getJoueur2().getCoups()) {
+
+            positions.add(coup.getCase());
+
+        }
+
+        return positions;
+    }
+
+    public void reinitialiserBateaux() {
+        // TODO - implement PartieControleur.reinitialiserBateaux
+        throw new UnsupportedOperationException();
+    }
+
+    public void sauvegarderPartie() {
+        ecrireFichierXml(partie);
+
+    }
+
+    public void chargerPartie(Partie partie) {
+
+        partie.getJoueur2().setAdversaire(partie.getJoueur1());
+    }
+
+    public Position genererCoupIA() {
+        Position positionGenere = partie.getJoueur2().genererCoup();
+        return positionGenere;
+    }
+
+    public Partie getPartie() {
+        return this.partie;
+    }
 
 }

@@ -68,4 +68,11 @@ public abstract class Joueur {
 
     }
 
+    public Coup getCoup(int tour) {
+        if (tour < coups.size()) {
+            return coups.get(tour);
+        }
+        return null;
+    }
+
 }

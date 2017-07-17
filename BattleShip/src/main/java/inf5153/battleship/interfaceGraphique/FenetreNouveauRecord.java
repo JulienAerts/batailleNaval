@@ -1,21 +1,23 @@
 package inf5153.battleship.interfaceGraphique;
+
+import inf5153.battleship.domain.Partie;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
 public class FenetreNouveauRecord extends FenetreFinRecord {
 
-	private JButton btnSauvegarderRecord;
-	private JTextArea txtNomduJouer;
-        
-        public FenetreNouveauRecord() {
-            
-            super.initComponents();
-            super.initExtraComponents();
-        }
-        
-	public void btnSauvegarderOnClickListener() {
-		// TODO - implement FenetreNouveauRecord.btnSauvegarderOnClickListener
-		throw new UnsupportedOperationException();
-	}
+    private JButton btnSauvegarderRecord;
+    private JTextArea txtNomduJouer;
+
+    public FenetreNouveauRecord(Partie partie) {
+        super(partie);
+        super.initComponents();
+        super.initExtraComponents();
+    }
+
+    public void btnSauvegarderOnClickListener() {
+        // TODO - implement FenetreNouveauRecord.btnSauvegarderOnClickListener
+        throw new UnsupportedOperationException();
+    }
 
 }

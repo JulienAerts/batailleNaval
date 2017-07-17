@@ -101,15 +101,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         selectionneur.showOpenDialog(btnChargerPartie);
         File fichier = selectionneur.getSelectedFile();
-        FenetreJouerPartie fenetrePartie;
-        fenetrePartie = new FenetreJouerPartie();
-        fenetrePartie.pack();
-        fenetrePartie.setLocationRelativeTo(null);
-        fenetrePartie.setVisible(true);
-        fenetrePartie.chargementDePartie(fichier);
-        dispose();
+        if(fichier != null) {
+            FenetreJouerPartie fenetrePartie;
+            fenetrePartie = new FenetreJouerPartie();
+            fenetrePartie.pack();
+            fenetrePartie.setLocationRelativeTo(null);
+            fenetrePartie.setVisible(true);
+            fenetrePartie.chargementDePartie(fichier);
+            dispose();
+        }
  
-        dispose();
 
     }                                                
 

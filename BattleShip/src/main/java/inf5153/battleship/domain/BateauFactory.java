@@ -16,11 +16,11 @@ public class BateauFactory {
         ArrayList<Bateau> bateaux = new ArrayList();
 
         Bateau bateau = new PorteAvion();
-        bateaux.add(bateau);
-        bateau = new Croiseur();
-        bateaux.add(bateau);
-        bateau = new ContreTorpilleur();
-        bateaux.add(bateau);
+//        bateaux.add(bateau);
+//        bateau = new Croiseur();
+//        bateaux.add(bateau);
+//        bateau = new ContreTorpilleur();
+//        bateaux.add(bateau);
         bateau = new SousMarin();
         bateaux.add(bateau);
         bateau = new Torpilleur();

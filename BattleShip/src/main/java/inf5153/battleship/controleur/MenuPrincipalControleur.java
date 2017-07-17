@@ -6,20 +6,9 @@ import static inf5153.battleship.sauvegarde.Fichier.lireFichierXml;
 
 public class MenuPrincipalControleur {
 
-
-	public void chargerPartie(File fichier) {
-            Partie partie = lireFichierXml(fichier);
-            if (partie != null){
-                
-            }else{
-                
-                
-                
-            }
-
-            
-	}
-
-
+    public Partie chargerPartie(File fichier) {
+        Partie partie = lireFichierXml(fichier);
+        return partie;
+    }
 
 }
