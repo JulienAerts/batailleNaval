@@ -26,29 +26,10 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
             entrerNom.setEnabled(false);
             btnSauvegarder.setText("Record sauvegarder!");
             controleur.chargerRecordsHistorique();
-            updateTableauScore();
+            informationVersGrid();
         }
     }
     
-    private void updateTableauScore(){
-        int i =0;
-        int l =0;
-        String niveau;
-
-        for (Record record :controleur.consulterRecords()){
-            if (record.difficulte==0){
-                niveau = "facile";
-            }else  niveau = "difficile";
-            tblMeilleureTemps.setValueAt(record.nom, i, l);
-            tblMeilleureTemps.setValueAt(niveau, i, l+1);
-            tblMeilleureTemps.setValueAt(((record.temp/1000)/60)+" secondes", i, l+2);
-            l =0;
-            i =i+1;
-        }
- 
-        
-    }
-
      protected void initMessageNouveauRecord(){
             
         lblNouveauRecord.setVisible(true);
