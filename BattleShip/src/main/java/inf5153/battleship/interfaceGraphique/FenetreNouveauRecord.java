@@ -11,7 +11,7 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
 
     public FenetreNouveauRecord(Partie partie ,boolean victoire) {
         super(partie,victoire);
-       
+       initMessageNouveauRecord();
 
     }
 
@@ -19,5 +19,14 @@ public class FenetreNouveauRecord extends FenetreFinRecord {
         // TODO - implement FenetreNouveauRecord.btnSauvegarderOnClickListener
         throw new UnsupportedOperationException();
     }
+    
+     protected void initMessageNouveauRecord(){
+            
+        lblNouveauRecord.setVisible(true);
+        lblEntrerNom.setVisible(true);
+        entrerNom.setVisible(true);
+        this.repaint();
+            
+        }
 
 }

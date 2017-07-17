@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<partie dateDebut="Sun Jul 16 22:33:46 EDT 2017">
+  <Joueur>
+    <coup CoordoneeX="a" CoordonneY="8" />
+    <coup CoordoneeX="b" CoordonneY="8" />
+    <coup CoordoneeX="c" CoordonneY="8" />
+    <coup CoordoneeX="a" CoordonneY="5" />
+    <coup CoordoneeX="b" CoordonneY="5" />
+    <coup CoordoneeX="e" CoordonneY="8" />
+    <coup CoordoneeX="e" CoordonneY="7" />
+    <coup CoordoneeX="e" CoordonneY="6" />
+    <coup CoordoneeX="e" CoordonneY="5" />
+    <coup CoordoneeX="e" CoordonneY="4" />
+    <coup CoordoneeX="f" CoordonneY="8" />
+    <coup CoordoneeX="f" CoordonneY="7" />
+    <coup CoordoneeX="f" CoordonneY="6" />
+    <coup CoordoneeX="g" CoordonneY="4" />
+    <coup CoordoneeX="h" CoordonneY="4" />
+    <coup CoordoneeX="i" CoordonneY="4" />
+    <Bateau EstCoule="1" Longeur="5">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="1" />
+        <Case coordonneeX="b" CoordoneeY="1" />
+        <Case coordonneeX="c" CoordoneeY="1" />
+        <Case coordonneeX="d" CoordoneeY="1" />
+        <Case coordonneeX="e" CoordoneeY="1" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="4">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="2" />
+        <Case coordonneeX="b" CoordoneeY="2" />
+        <Case coordonneeX="c" CoordoneeY="2" />
+        <Case coordonneeX="d" CoordoneeY="2" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="3">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="3" />
+        <Case coordonneeX="b" CoordoneeY="3" />
+        <Case coordonneeX="c" CoordoneeY="3" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="3">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="4" />
+        <Case coordonneeX="b" CoordoneeY="4" />
+        <Case coordonneeX="c" CoordoneeY="4" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="2">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="5" />
+        <Case coordonneeX="b" CoordoneeY="5" />
+      </position>
+    </Bateau>
+  </Joueur>
+  <IA difficulte="0">
+    <coup CoordoneeX="b" CoordonneY="4" />
+    <coup CoordoneeX="j" CoordonneY="6" />
+    <coup CoordoneeX="f" CoordonneY="7" />
+    <coup CoordoneeX="i" CoordonneY="8" />
+    <coup CoordoneeX="h" CoordonneY="5" />
+    <coup CoordoneeX="d" CoordonneY="4" />
+    <coup CoordoneeX="i" CoordonneY="3" />
+    <coup CoordoneeX="c" CoordonneY="7" />
+    <coup CoordoneeX="a" CoordonneY="1" />
+    <coup CoordoneeX="a" CoordonneY="6" />
+    <coup CoordoneeX="i" CoordonneY="6" />
+    <coup CoordoneeX="d" CoordonneY="7" />
+    <coup CoordoneeX="g" CoordonneY="2" />
+    <coup CoordoneeX="g" CoordonneY="1" />
+    <coup CoordoneeX="j" CoordonneY="3" />
+    <coup CoordoneeX="g" CoordonneY="5" />
+    <Bateau EstCoule="0" Longeur="5">
+      <position>
+        <Case coordonneeX="e" CoordoneeY="8" />
+        <Case coordonneeX="e" CoordoneeY="7" />
+        <Case coordonneeX="e" CoordoneeY="6" />
+        <Case coordonneeX="e" CoordoneeY="5" />
+        <Case coordonneeX="e" CoordoneeY="4" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="1" Longeur="4">
+      <position>
+        <Case coordonneeX="j" CoordoneeY="4" />
+        <Case coordonneeX="i" CoordoneeY="4" />
+        <Case coordonneeX="h" CoordoneeY="4" />
+        <Case coordonneeX="g" CoordoneeY="4" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="3">
+      <position>
+        <Case coordonneeX="f" CoordoneeY="6" />
+        <Case coordonneeX="f" CoordoneeY="7" />
+        <Case coordonneeX="f" CoordoneeY="8" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="3">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="8" />
+        <Case coordonneeX="b" CoordoneeY="8" />
+        <Case coordonneeX="c" CoordoneeY="8" />
+      </position>
+    </Bateau>
+    <Bateau EstCoule="0" Longeur="2">
+      <position>
+        <Case coordonneeX="a" CoordoneeY="5" />
+        <Case coordonneeX="b" CoordoneeY="5" />
+      </position>
+    </Bateau>
+  </IA>
+</partie>

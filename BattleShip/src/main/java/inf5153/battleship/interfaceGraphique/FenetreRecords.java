@@ -52,7 +52,7 @@ public class FenetreRecords extends javax.swing.JFrame {
             lblDefaite = new javax.swing.JLabel();
             lblNouveauRecord = new javax.swing.JLabel();
             lblEntrerNom = new javax.swing.JLabel();
-            JTextField entrerNom = new JTextField();
+            entrerNom = new JTextField();
             lblImageFond = new javax.swing.JLabel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
