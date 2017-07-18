@@ -1,9 +1,9 @@
 
- # Bataille navale
+# Bataille navale
  
 La conception du jeu bataille navale pour le troisième projet de session dans le cadre du cours INF5153 à l'été 2017.
  
- ## L'installation
+## L'installation
  
 * Le programme a été developpé et testé sur **NetBeans 8.X** seulement.
 * Nous vous recommandons d'utiliser cet *IDE* pour installer le jeux.
