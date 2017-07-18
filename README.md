@@ -8,10 +8,9 @@ La conception du jeu bataille navale pour le troisième projet de session dans l
 * Le programme a été developpé et testé sur **NetBeans 8.X** seulement.
 * Nous vous recommandons d'utiliser cet *IDE* pour installer le jeux.
  
-1. Sur Ide de votre choix, importer le code source du projet maven.
-2. Compiler le projet à l'aide du *build* dans *Ide* que vous avez choisi, les librairies vont être téléchargées.
-3. Exporter le projet en un fichier *Jar* dans le document de votre choix.
-4. Executer le programme en ouvrant le fichier *Jar*.
+1. Sur l'IDE de votre choix, importez le code source du projet maven.
+2. Compiler le projet à l'aide du *build* dans *IDE* que vous avez choisi, les librairies vont être téléchargées.
+3. Executer le programme en appuyant sur le bouton *RUN* de votre IDE.
  
 ## Auteurs
  
