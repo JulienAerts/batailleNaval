@@ -1,24 +1,19 @@
 # README #
 
-Description et instruction pour lancer l'application
+# Bataille navale
 
-### Intro ###
+La conception du jeu battaille navale pour le troisième projets de session dans le cadre du cours INF5153 à l'été 2017
 
-* Battleship game made with Java
-* Version 1.0
+## L'installation
 
 
-### Installation? ###
+## Auteur
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+. Tommy Demers
+. Julien Aerts
+. Pier-Olivier Décoste
 
-### Auteurs ###
+## Construit Avec
 
-* Writing tests
-* Code review
-* Other guidelines
+- Maven
+- Jdom2
