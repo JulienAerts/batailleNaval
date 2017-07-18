@@ -9,9 +9,9 @@ La conception du jeu battaille navale pour le troisième projets de session dans
 
 ## Auteur
 
-. Tommy Demers
-. Julien Aerts
-. Pier-Olivier Décoste
+- Tommy Demers
+- Julien Aerts
+- Pier-Olivier Décoste
 
 ## Construit Avec
 
