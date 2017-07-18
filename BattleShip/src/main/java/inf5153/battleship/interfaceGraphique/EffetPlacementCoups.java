@@ -66,7 +66,7 @@ public class EffetPlacementCoups {
                     partie.finDePartie(victoire);
                     break;
                 case DejaTirer:
-                    JOptionPane.showMessageDialog(null, "Vous avez deja tirer sur cette case", "Message avertissement", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Vous avez deja tiré sur cette case", "Message avertissement", JOptionPane.ERROR_MESSAGE);
                     tonTour = true;
                     break;
 

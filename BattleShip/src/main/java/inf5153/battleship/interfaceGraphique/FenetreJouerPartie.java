@@ -92,7 +92,7 @@ public class FenetreJouerPartie extends FenetrePartie {
     }
 
     private void btnReinitialiseActionPerformed(java.awt.event.ActionEvent evt) {
-        placementBateaux.réinitialiserEffets();
+        placementBateaux.reinitialiserEffets();
     }
 
     private void btnFinPartieActionPerformed(java.awt.event.ActionEvent evt) {
